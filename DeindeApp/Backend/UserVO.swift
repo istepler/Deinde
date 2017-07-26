@@ -26,7 +26,7 @@ struct UserVO: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        id <- map["id"]
+        //id <- map["id"]
         firstName <- map ["firstName"]
         secondName <- map["secondName"]
         email <- map["email"]

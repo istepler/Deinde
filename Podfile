@@ -13,6 +13,7 @@ pod 'SDWebImage', '4.0.0'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'Parse'
+pod 'WARangeSlider'
 
 end
 

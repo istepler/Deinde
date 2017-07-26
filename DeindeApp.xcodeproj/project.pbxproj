@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		22963F101F23B665002E6A64 /* MyTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F0F1F23B665002E6A64 /* MyTourViewController.swift */; };
-		350E62AB1F246B6A0039A231 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350E62AA1F246B6A0039A231 /* GoogleService-Info.plist */; };
+		22963F181F23CD9F002E6A64 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F171F23CD9F002E6A64 /* MapMarker.swift */; };
+		22963F1A1F23CDE5002E6A64 /* TripScheduledEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F191F23CDE5002E6A64 /* TripScheduledEvent.swift */; };
+		22963F1C1F23CF25002E6A64 /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */; };
+		22E613F61F27A2D5000B7D50 /* RangeSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E613F51F27A2D5000B7D50 /* RangeSliderController.swift */; };
 		3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B79E1F22AA4900827A98 /* UserVO.swift */; };
 		3582B7A11F22AB9600827A98 /* TripVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B7A01F22AB9600827A98 /* TripVO.swift */; };
 		3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B7A21F22AC2B00827A98 /* PlaceVO.swift */; };
@@ -23,7 +26,10 @@
 
 /* Begin PBXFileReference section */
 		22963F0F1F23B665002E6A64 /* MyTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTourViewController.swift; sourceTree = "<group>"; };
-		350E62AA1F246B6A0039A231 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22963F171F23CD9F002E6A64 /* MapMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
+		22963F191F23CDE5002E6A64 /* TripScheduledEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripScheduledEvent.swift; sourceTree = "<group>"; };
+		22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
+		22E613F51F27A2D5000B7D50 /* RangeSliderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderController.swift; sourceTree = "<group>"; };
 		3582B79E1F22AA4900827A98 /* UserVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
 		3582B7A01F22AB9600827A98 /* TripVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripVO.swift; sourceTree = "<group>"; };
 		3582B7A21F22AC2B00827A98 /* PlaceVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceVO.swift; sourceTree = "<group>"; };
@@ -52,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22963F161F23CD7C002E6A64 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				22963F171F23CD9F002E6A64 /* MapMarker.swift */,
+				22963F191F23CDE5002E6A64 /* TripScheduledEvent.swift */,
+				22E613F51F27A2D5000B7D50 /* RangeSliderController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		2FB406D5F3255BC366291689 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +96,6 @@
 				3582B7A01F22AB9600827A98 /* TripVO.swift */,
 				3582B7A21F22AC2B00827A98 /* PlaceVO.swift */,
 				3582B7A41F22ADE300827A98 /* PlaceCoordsVO.swift */,
-				350E62AA1F246B6A0039A231 /* GoogleService-Info.plist */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -90,6 +105,8 @@
 			children = (
 				359222341F224F4200C64D6C /* ViewController.swift */,
 				22963F0F1F23B665002E6A64 /* MyTourViewController.swift */,
+				22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */,
+				22963F161F23CD7C002E6A64 /* Map */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -166,7 +183,7 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3398483R66;
+						DevelopmentTeam = 2K7D2CJX45;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -195,7 +212,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3592223D1F224F4200C64D6C /* LaunchScreen.storyboard in Resources */,
-				350E62AB1F246B6A0039A231 /* GoogleService-Info.plist in Resources */,
 				3592223A1F224F4200C64D6C /* Assets.xcassets in Resources */,
 				359222381F224F4200C64D6C /* Main.storyboard in Resources */,
 			);
@@ -246,7 +262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -258,9 +274,13 @@
 			files = (
 				22963F101F23B665002E6A64 /* MyTourViewController.swift in Sources */,
 				359222351F224F4200C64D6C /* ViewController.swift in Sources */,
+				22963F181F23CD9F002E6A64 /* MapMarker.swift in Sources */,
 				3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */,
 				359222331F224F4200C64D6C /* AppDelegate.swift in Sources */,
 				3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */,
+				22963F1C1F23CF25002E6A64 /* PlaceDetailsViewController.swift in Sources */,
+				22E613F61F27A2D5000B7D50 /* RangeSliderController.swift in Sources */,
+				22963F1A1F23CDE5002E6A64 /* TripScheduledEvent.swift in Sources */,
 				3582B7A51F22ADE300827A98 /* PlaceCoordsVO.swift in Sources */,
 				3582B7A11F22AB9600827A98 /* TripVO.swift in Sources */,
 			);
@@ -389,7 +409,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 3398483R66;
+				DEVELOPMENT_TEAM = 2K7D2CJX45;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -403,7 +423,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 3398483R66;
+				DEVELOPMENT_TEAM = 2K7D2CJX45;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
