@@ -25,6 +25,8 @@
 		359222381F224F4200C64D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359222361F224F4200C64D6C /* Main.storyboard */; };
 		3592223A1F224F4200C64D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359222391F224F4200C64D6C /* Assets.xcassets */; };
 		3592223D1F224F4200C64D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3592223B1F224F4200C64D6C /* LaunchScreen.storyboard */; };
+		35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F591F2DF6850039749B /* TripsViewController.swift */; };
+		35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */; };
 		B797F56FCF4E74EE584CCCAC /* Pods_DeindeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		359222391F224F4200C64D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DeindeApp/Assets.xcassets; sourceTree = "<group>"; };
 		3592223C1F224F4200C64D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3592223E1F224F4200C64D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = DeindeApp/Info.plist; sourceTree = "<group>"; };
+		35BC4F591F2DF6850039749B /* TripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeindeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		3582B79B1F22A71900827A98 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				35BC4F5B1F2E77190039749B /* TripsViewController */,
 				359222341F224F4200C64D6C /* ViewController.swift */,
 				22963F0F1F23B665002E6A64 /* MyTourViewController.swift */,
 				22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */,
@@ -158,6 +163,15 @@
 				3582B7981F22A1FF00827A98 /* Supporting Files */,
 			);
 			path = DeindeApp;
+			sourceTree = "<group>";
+		};
+		35BC4F5B1F2E77190039749B /* TripsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				35BC4F591F2DF6850039749B /* TripsViewController.swift */,
+				35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */,
+			);
+			name = TripsViewController;
 			sourceTree = "<group>";
 		};
 		F62318C12F3D5B2E326019F7 /* Frameworks */ = {
@@ -299,9 +313,11 @@
 				3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */,
 				22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */,
 				22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */,
+				35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */,
 				359222331F224F4200C64D6C /* AppDelegate.swift in Sources */,
 				22E6141D1F2A2A38000B7D50 /* RangeSlider.swift in Sources */,
 				3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */,
+				35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */,
 				22963F1C1F23CF25002E6A64 /* PlaceDetailsViewController.swift in Sources */,
 				22963F1A1F23CDE5002E6A64 /* TripScheduledEvent.swift in Sources */,
 				3582B7A51F22ADE300827A98 /* PlaceCoordsVO.swift in Sources */,
