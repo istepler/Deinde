@@ -9,25 +9,30 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
-import WARangeSlider
 
 
 
 class MyTourViewController: UIViewController, GMSMapViewDelegate  {
+    
+    let tripDays = 5//temp
+    var rangeSlider: RangeSlider? = nil
 
-   
     var markerArray = [MapMarker]()
     
     @IBOutlet weak var viewWithMap: GMSMapView!
-   
-    @IBOutlet weak var rangeSliderView: RangeSlider!
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rangeSlider = RangeSlider(frame: CGRect.zero, tripDays: tripDays)
+        //rangeSlider?.setMarkers()
+        view.addSubview(rangeSlider!)
         
-        let sliderController = RangeSliderController(slider: rangeSliderView)
+        
+        rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
+        
+
         
         //temp struct fill
         var eventArray = [TripScheduledEvent]()
@@ -64,9 +69,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate  {
         navigationItem.backBarButtonItem = backItem
 
     }
-    func rangeSliderValueChanged() {
-    
-    }
+   
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         print("yes")
@@ -81,13 +84,18 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate  {
         }
         return true
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let backItem = UIBarButtonItem()
-//        backItem.title = "Back"
-//        navigationItem.backBarButtonItem = backItem
-//    }
     
+    
+    override func viewDidLayoutSubviews() {
+        let margin: CGFloat = 10.0
+        let width: CGFloat = 30.0 //view.bounds.width - 2.0*margin
+        let height: CGFloat = view.bounds.height - 3.0*margin//wtf 3?
+        rangeSlider?.frame = CGRect(x: margin, y: margin + topLayoutGuide.length, width: width, height: height)
+    }
 
+    func rangeSliderValueChanged(rangeSlider: RangeSlider) {
+        print("Range slider value changed: \(rangeSlider.lowerValue) \(rangeSlider.upperValue)")
+    }
 
 }
 
