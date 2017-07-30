@@ -12,6 +12,7 @@ pod 'AlamofireObjectMapper', '4.1.0'
 pod 'SDWebImage', '4.0.0'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'Parse'
 
 
 end

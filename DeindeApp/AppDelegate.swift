@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Parse
+import GoogleMaps
+import GooglePlaces
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Initialize Parse.
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "Ocv8swtg1bdHTbVtXHOfPOuY1GVwKMpngwn7HRGk"
+            $0.clientKey = "iWG0goZF38VsxVJKWr6Q2l5Nw7qfSopfR3oQh1LH"
+            $0.server = "https://parseapi.back4app.com"
+        }
+        Parse.initialize(with: configuration)
+        
+        
+        GMSPlacesClient.provideAPIKey("AIzaSyDUbn8NuBavls6OpGpbE4N0mGqjmD1e2Cw")
+        GMSServices.provideAPIKey("AIzaSyDUbn8NuBavls6OpGpbE4N0mGqjmD1e2Cw")
+
+        
+        
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -40,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+   
 
 }
 

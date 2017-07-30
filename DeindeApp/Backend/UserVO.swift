@@ -11,6 +11,7 @@ import ObjectMapper
 
 struct UserVO: Mappable {
     
+    var token: String? // what comes from firebaase
     var id: Int?
     var firstName: String?
     var secondName: String?
@@ -25,7 +26,7 @@ struct UserVO: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        id <- map["id"]
+        //id <- map["id"]
         firstName <- map ["firstName"]
         secondName <- map["secondName"]
         email <- map["email"]

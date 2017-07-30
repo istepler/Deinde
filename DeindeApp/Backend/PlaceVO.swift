@@ -15,6 +15,7 @@ struct PlaceVO: Mappable {
     var description: String?
     var coords: CoordsVO?
     var placeImage: URL? // or Image????
+   
     
     init?(map: Map) {
         

@@ -11,10 +11,12 @@ import ObjectMapper
 
 
 struct TripVO: Mappable {
+    var tourId: Int?
     var title: String?
     var tripDate: Date?
     var tripImage: URL?
-    var tripBenefits: [String]?
+    var tripFeatures: [String]?
+    var duration: Int?
     
     init?(map: Map) {
         
@@ -24,7 +26,8 @@ struct TripVO: Mappable {
         title <- map["title"]
         tripDate <- map["tripDate"]
         tripImage <- map["tripImage"]
-        tripBenefits <- map["tripBenefits"]
+        tripFeatures <- map["tripBenefits"]
+        duration <- map["duration"]
     }
     
     
