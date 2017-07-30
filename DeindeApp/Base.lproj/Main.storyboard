@@ -42,42 +42,9 @@
                                 <rect key="frame" x="50" y="64" width="325" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFz-ed-XZr">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFz-ed-XZr">
                                 <rect key="frame" x="0.0" y="64" width="50" height="554"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Eg-dG-29r" customClass="RangeSlider" customModule="WARangeSlider">
-                                        <rect key="frame" x="-193" y="252" width="436" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="curvaceousness">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="thumbTintColor">
-                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="thumbBorderColor">
-                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="trackHighlightTintColor">
-                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" cyan="0.51000000000000001" magenta="0.02" yellow="0.93999999999999995" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0eJ-NF-0hH"/>
                                 </constraints>
@@ -96,7 +63,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="cIX-qx-ukA"/>
                     <connections>
-                        <outlet property="rangeSliderView" destination="7Eg-dG-29r" id="kwD-t1-AcS"/>
                         <outlet property="viewWithMap" destination="Us8-XD-8qH" id="qAC-K5-yYm"/>
                     </connections>
                 </viewController>
@@ -236,7 +202,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qGZ-62-kuN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Мої тури" id="EwN-NT-0KF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VpJ-ct-ZtI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VpJ-ct-ZtI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -255,7 +221,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AV1-9z-Rwk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Всі тури" id="WPm-4X-WEx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a5y-EV-p3H">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a5y-EV-p3H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -274,7 +240,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2dA-0W-M2Z" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Профіль" id="UB5-if-nb6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aET-57-3Wd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aET-57-3Wd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

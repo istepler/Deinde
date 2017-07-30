@@ -17,7 +17,6 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
-  - WARangeSlider (1.1.1)
 
 DEPENDENCIES:
   - Alamofire (= 4.5.0)
@@ -26,7 +25,6 @@ DEPENDENCIES:
   - GooglePlaces
   - Parse
   - SDWebImage (= 4.0.0)
-  - WARangeSlider
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -37,8 +35,7 @@ SPEC CHECKSUMS:
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
-  WARangeSlider: 54b3e0853b8d16c444fd539005901aecee86837d
 
-PODFILE CHECKSUM: a612cd971d83c60908f3b104d4ce79d4ef3f5b9c
+PODFILE CHECKSUM: 6491e00fc7cd108ab1515c4168101294e4935582
 
 COCOAPODS: 1.2.1
