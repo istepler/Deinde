@@ -300,6 +300,7 @@
                                             <outlet property="dataTitleLabel" destination="DEE-XM-Jux" id="XIV-VY-P6y"/>
                                             <outlet property="tripImageView" destination="4co-jU-ZoL" id="J3u-GX-rbG"/>
                                             <outlet property="tripTitleLabel" destination="aEu-x9-1Oq" id="1zh-YB-Y8H"/>
+                                            <segue destination="e37-M1-qdP" kind="show" id="jVL-1B-MXG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -334,7 +335,7 @@
         <!--Detail Trip View-->
         <scene sceneID="o35-0h-xYj">
             <objects>
-                <viewController id="e37-M1-qdP" userLabel="Detail Trip View" sceneMemberID="viewController">
+                <viewController id="e37-M1-qdP" userLabel="Detail Trip View" customClass="DetailWebViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ig3-y4-OMd"/>
                         <viewControllerLayoutGuide type="bottom" id="BRt-rg-QJ2"/>
@@ -342,12 +343,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ksq-mh-DTe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-3a-qFM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dCw-3a-qFM" secondAttribute="trailing" id="grI-dQ-fhh"/>
+                            <constraint firstItem="dCw-3a-qFM" firstAttribute="top" secondItem="Ig3-y4-OMd" secondAttribute="bottom" id="hAt-hY-Z18"/>
+                            <constraint firstItem="dCw-3a-qFM" firstAttribute="leading" secondItem="Ksq-mh-DTe" secondAttribute="leading" id="ngK-v4-m3T"/>
+                            <constraint firstItem="BRt-rg-QJ2" firstAttribute="top" secondItem="dCw-3a-qFM" secondAttribute="bottom" id="w4c-TF-Zjo"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tripDetailsWebView" destination="dCw-3a-qFM" id="In7-n2-Xac"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4J-zz-wSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3964" y="349"/>
+            <point key="canvasLocation" x="3943" y="349"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="yxQ-sy-60U">
