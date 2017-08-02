@@ -5,12 +5,16 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="ProximaNova-BoldIt.otf">
             <string>ProximaNova-BoldIt</string>
+        </array>
+        <array key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -148,7 +152,7 @@
                     <connections>
                         <segue destination="AV1-9z-Rwk" kind="relationship" relationship="viewControllers" id="Sem-aZ-8x8"/>
                         <segue destination="qGZ-62-kuN" kind="relationship" relationship="viewControllers" id="Sla-eV-boC"/>
-                        <segue destination="2dA-0W-M2Z" kind="relationship" relationship="viewControllers" id="2UZ-zE-EMa"/>
+                        <segue destination="PRQ-KZ-xGM" kind="relationship" relationship="viewControllers" id="tM7-yN-yte"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owa-tQ-RAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -374,7 +378,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="yxQ-sy-60U">
             <objects>
-                <viewController id="PRQ-KZ-xGM" userLabel="User Profile View Controller" sceneMemberID="viewController">
+                <viewController id="PRQ-KZ-xGM" userLabel="User Profile View Controller" customClass="ProfileViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LXc-vb-BvQ"/>
                         <viewControllerLayoutGuide type="bottom" id="5dn-76-ESO"/>
@@ -382,13 +386,124 @@
                     <view key="view" contentMode="scaleToFill" id="Snt-HC-us4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0187217119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="x9O-dD-7na">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQr-9s-1z3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="deindeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aHz-C6-1Ww">
+                                                <rect key="frame" x="139" y="8" width="97" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="isj-6t-taR">
+                                                <rect key="frame" x="18" y="46" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sneaker" translatesAutoresizingMaskIntoConstraints="NO" id="8Ks-Nj-FGf">
+                                                <rect key="frame" x="67" y="237" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder" translatesAutoresizingMaskIntoConstraints="NO" id="1wP-9z-Llt">
+                                                <rect key="frame" x="309" y="237" width="30" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fb" translatesAutoresizingMaskIntoConstraints="NO" id="qGJ-l5-MnR">
+                                                <rect key="frame" x="167" y="249" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="face" translatesAutoresizingMaskIntoConstraints="NO" id="QqX-mH-bue">
+                                                <rect key="frame" x="127" y="64" width="120" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Маруся Ивченко" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-Hz-yBT">
+                                                <rect key="frame" x="93" y="192" width="188" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pen" translatesAutoresizingMaskIntoConstraints="NO" id="5TA-Z4-Bmg">
+                                                <rect key="frame" x="289" y="205" width="14" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.94708508253097534" green="0.25140425562858582" blue="0.16514763236045837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TQr-9s-1z3" secondAttribute="height" multiplier="25:21" id="PmR-xK-goW"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfG-TB-CbJ">
+                                        <rect key="frame" x="0.0" y="315" width="375" height="283"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-Gr-vsU">
+                                                <rect key="frame" x="18" y="45" width="342" height="65"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Розкажіть про себе:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXU-E5-rfE">
+                                                <rect key="frame" x="18" y="14" width="168" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wEE-i8-39v">
+                                                <rect key="frame" x="18" y="128" width="357" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-Xv-SJE">
+                                                <rect key="frame" x="18" y="171" width="357" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Мобільний номер телефону" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nY8-n7-PcS">
+                                                <rect key="frame" x="18" y="135" width="342" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DfG-TB-CbJ" secondAttribute="trailing" id="8B8-XT-RuS"/>
+                                    <constraint firstAttribute="bottom" secondItem="DfG-TB-CbJ" secondAttribute="bottom" id="AGN-s2-Tcr"/>
+                                    <constraint firstItem="DfG-TB-CbJ" firstAttribute="leading" secondItem="x9O-dD-7na" secondAttribute="leading" id="MWL-hm-40D"/>
+                                    <constraint firstItem="TQr-9s-1z3" firstAttribute="top" secondItem="x9O-dD-7na" secondAttribute="top" id="SLR-hK-T3L"/>
+                                    <constraint firstItem="TQr-9s-1z3" firstAttribute="leading" secondItem="x9O-dD-7na" secondAttribute="leading" id="Srs-2I-yUM"/>
+                                    <constraint firstAttribute="trailing" secondItem="TQr-9s-1z3" secondAttribute="trailing" id="Uie-QB-fY8"/>
+                                    <constraint firstItem="DfG-TB-CbJ" firstAttribute="top" secondItem="TQr-9s-1z3" secondAttribute="bottom" id="ZST-VR-HVp"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5dn-76-ESO" firstAttribute="top" secondItem="x9O-dD-7na" secondAttribute="bottom" id="HqL-Gu-abO"/>
+                            <constraint firstAttribute="trailing" secondItem="x9O-dD-7na" secondAttribute="trailing" id="NK8-rQ-emw"/>
+                            <constraint firstItem="x9O-dD-7na" firstAttribute="top" secondItem="LXc-vb-BvQ" secondAttribute="bottom" id="Pcg-jn-Cia"/>
+                            <constraint firstItem="x9O-dD-7na" firstAttribute="leading" secondItem="Snt-HC-us4" secondAttribute="leading" id="wR3-2E-Jxj"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HZp-m4-Ief"/>
+                    <tabBarItem key="tabBarItem" title="Профіль" id="NAD-Qx-Xqj"/>
+                    <navigationItem key="navigationItem" title="Профіль" id="HZp-m4-Ief"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="5Hs-Gr-vsU" id="N1f-Xv-I0d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZB-ar-cq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3191" y="1283"/>
+            <point key="canvasLocation" x="2252" y="1295.8020989505249"/>
         </scene>
         <!--Мої тури-->
         <scene sceneID="6b1-Jq-Q3H">
@@ -435,28 +550,16 @@
             </objects>
             <point key="canvasLocation" x="2252" y="349"/>
         </scene>
-        <!--Профіль-->
-        <scene sceneID="lKG-UF-7R6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2dA-0W-M2Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Профіль" id="UB5-if-nb6"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aET-57-3Wd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PRQ-KZ-xGM" kind="relationship" relationship="rootViewController" id="qCK-cM-uJc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BSC-h0-0IK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2252" y="1284"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="deindeLogo" width="97" height="35"/>
         <image name="deinde_logo_big" width="362" height="374"/>
         <image name="deinde_logo_small" width="89" height="38"/>
+        <image name="face" width="120" height="120"/>
+        <image name="fb" width="168" height="160"/>
+        <image name="folder" width="120" height="141"/>
+        <image name="heart" width="184" height="168"/>
+        <image name="pen" width="13" height="13"/>
+        <image name="sneaker" width="221" height="250"/>
     </resources>
 </document>

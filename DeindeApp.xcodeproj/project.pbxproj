@@ -47,6 +47,7 @@
 		C147BCED1F32566700A17760 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDB1F3254EA00A17760 /* ProximaNova-Regular.otf */; };
 		C147BCEE1F32566700A17760 /* ProximaNova-Xbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDC1F3254EA00A17760 /* ProximaNova-Xbold.otf */; };
 		C147BCEF1F32566700A17760 /* Mark Simonson - Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */; };
+		C147BCF21F32606C00A17760 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C147BCF11F32606C00A17760 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		C147BCDB1F3254EA00A17760 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		C147BCDC1F3254EA00A17760 /* ProximaNova-Xbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Xbold.otf"; sourceTree = "<group>"; };
 		C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		C147BCF11F32606C00A17760 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 		3582B79B1F22A71900827A98 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C147BCF01F325FF600A17760 /* ProfileViewController */,
 				35BC4F5B1F2E77190039749B /* TripsViewController */,
 				359222341F224F4200C64D6C /* ViewController.swift */,
 				35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */,
@@ -237,6 +240,14 @@
 				C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		C147BCF01F325FF600A17760 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C147BCF11F32606C00A17760 /* ProfileViewController.swift */,
+			);
+			name = ProfileViewController;
 			sourceTree = "<group>";
 		};
 		F62318C12F3D5B2E326019F7 /* Frameworks */ = {
@@ -398,6 +409,7 @@
 				22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */,
 				35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */,
 				359222331F224F4200C64D6C /* AppDelegate.swift in Sources */,
+				C147BCF21F32606C00A17760 /* ProfileViewController.swift in Sources */,
 				22E6141D1F2A2A38000B7D50 /* RangeSlider.swift in Sources */,
 				3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */,
 				35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */,
