@@ -29,6 +29,24 @@
 		35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */; };
 		35BC4F5F1F2E93130039749B /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */; };
 		B797F56FCF4E74EE584CCCAC /* Pods_DeindeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */; };
+		C147BCDE1F32566700A17760 /* Proxima Nova Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */; };
+		C147BCDF1F32566700A17760 /* Proxima Nova Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */; };
+		C147BCE01F32566700A17760 /* Proxima Nova Extrabold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCE1F3254EA00A17760 /* Proxima Nova Extrabold Italic.otf */; };
+		C147BCE11F32566700A17760 /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCF1F3254EA00A17760 /* Proxima Nova Extrabold.otf */; };
+		C147BCE21F32566700A17760 /* Proxima Nova Semibold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD01F3254EA00A17760 /* Proxima Nova Semibold Italic.otf */; };
+		C147BCE31F32566700A17760 /* Proxima Nova Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD11F3254EA00A17760 /* Proxima Nova Semibold.otf */; };
+		C147BCE41F32566700A17760 /* Proxima Nova Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD21F3254EA00A17760 /* Proxima Nova Thin Italic.otf */; };
+		C147BCE51F32566700A17760 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD31F3254EA00A17760 /* Proxima Nova Thin.otf */; };
+		C147BCE61F32566700A17760 /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD41F3254EA00A17760 /* ProximaNova-Black.otf */; };
+		C147BCE71F32566700A17760 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD51F3254EA00A17760 /* ProximaNova-Bold.otf */; };
+		C147BCE81F32566700A17760 /* ProximaNova-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD61F3254EA00A17760 /* ProximaNova-BoldIt.otf */; };
+		C147BCE91F32566700A17760 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD71F3254EA00A17760 /* ProximaNova-Light.otf */; };
+		C147BCEA1F32566700A17760 /* ProximaNova-LightIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD81F3254EA00A17760 /* ProximaNova-LightIt.otf */; };
+		C147BCEB1F32566700A17760 /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD91F3254EA00A17760 /* ProximaNova-Reg.otf */; };
+		C147BCEC1F32566700A17760 /* ProximaNova-RegIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDA1F3254EA00A17760 /* ProximaNova-RegIt.otf */; };
+		C147BCED1F32566700A17760 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDB1F3254EA00A17760 /* ProximaNova-Regular.otf */; };
+		C147BCEE1F32566700A17760 /* ProximaNova-Xbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDC1F3254EA00A17760 /* ProximaNova-Xbold.otf */; };
+		C147BCEF1F32566700A17760 /* Mark Simonson - Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +75,24 @@
 		35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
 		6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeindeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black Italic.otf"; sourceTree = "<group>"; };
+		C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold Italic.otf"; sourceTree = "<group>"; };
+		C147BCCE1F3254EA00A17760 /* Proxima Nova Extrabold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold Italic.otf"; sourceTree = "<group>"; };
+		C147BCCF1F3254EA00A17760 /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
+		C147BCD01F3254EA00A17760 /* Proxima Nova Semibold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Semibold Italic.otf"; sourceTree = "<group>"; };
+		C147BCD11F3254EA00A17760 /* Proxima Nova Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Semibold.otf"; sourceTree = "<group>"; };
+		C147BCD21F3254EA00A17760 /* Proxima Nova Thin Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin Italic.otf"; sourceTree = "<group>"; };
+		C147BCD31F3254EA00A17760 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
+		C147BCD41F3254EA00A17760 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.otf"; sourceTree = "<group>"; };
+		C147BCD51F3254EA00A17760 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		C147BCD61F3254EA00A17760 /* ProximaNova-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-BoldIt.otf"; sourceTree = "<group>"; };
+		C147BCD71F3254EA00A17760 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		C147BCD81F3254EA00A17760 /* ProximaNova-LightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-LightIt.otf"; sourceTree = "<group>"; };
+		C147BCD91F3254EA00A17760 /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Reg.otf"; sourceTree = "<group>"; };
+		C147BCDA1F3254EA00A17760 /* ProximaNova-RegIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-RegIt.otf"; sourceTree = "<group>"; };
+		C147BCDB1F3254EA00A17760 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		C147BCDC1F3254EA00A17760 /* ProximaNova-Xbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Xbold.otf"; sourceTree = "<group>"; };
+		C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Bold.otf"; sourceTree = "<group>"; };
 		F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +142,7 @@
 		3582B7981F22A1FF00827A98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C147BCCB1F3254CD00A17760 /* Fonts */,
 				359222321F224F4200C64D6C /* AppDelegate.swift */,
 				359222391F224F4200C64D6C /* Assets.xcassets */,
 				3592223B1F224F4200C64D6C /* LaunchScreen.storyboard */,
@@ -177,6 +214,31 @@
 			name = TripsViewController;
 			sourceTree = "<group>";
 		};
+		C147BCCB1F3254CD00A17760 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */,
+				C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */,
+				C147BCCE1F3254EA00A17760 /* Proxima Nova Extrabold Italic.otf */,
+				C147BCCF1F3254EA00A17760 /* Proxima Nova Extrabold.otf */,
+				C147BCD01F3254EA00A17760 /* Proxima Nova Semibold Italic.otf */,
+				C147BCD11F3254EA00A17760 /* Proxima Nova Semibold.otf */,
+				C147BCD21F3254EA00A17760 /* Proxima Nova Thin Italic.otf */,
+				C147BCD31F3254EA00A17760 /* Proxima Nova Thin.otf */,
+				C147BCD41F3254EA00A17760 /* ProximaNova-Black.otf */,
+				C147BCD51F3254EA00A17760 /* ProximaNova-Bold.otf */,
+				C147BCD61F3254EA00A17760 /* ProximaNova-BoldIt.otf */,
+				C147BCD71F3254EA00A17760 /* ProximaNova-Light.otf */,
+				C147BCD81F3254EA00A17760 /* ProximaNova-LightIt.otf */,
+				C147BCD91F3254EA00A17760 /* ProximaNova-Reg.otf */,
+				C147BCDA1F3254EA00A17760 /* ProximaNova-RegIt.otf */,
+				C147BCDB1F3254EA00A17760 /* ProximaNova-Regular.otf */,
+				C147BCDC1F3254EA00A17760 /* ProximaNova-Xbold.otf */,
+				C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		F62318C12F3D5B2E326019F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +282,7 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2K7D2CJX45;
+						DevelopmentTeam = EXHN4BTS59;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -248,6 +310,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C147BCDE1F32566700A17760 /* Proxima Nova Black Italic.otf in Resources */,
+				C147BCDF1F32566700A17760 /* Proxima Nova Bold Italic.otf in Resources */,
+				C147BCE01F32566700A17760 /* Proxima Nova Extrabold Italic.otf in Resources */,
+				C147BCE11F32566700A17760 /* Proxima Nova Extrabold.otf in Resources */,
+				C147BCE21F32566700A17760 /* Proxima Nova Semibold Italic.otf in Resources */,
+				C147BCE31F32566700A17760 /* Proxima Nova Semibold.otf in Resources */,
+				C147BCE41F32566700A17760 /* Proxima Nova Thin Italic.otf in Resources */,
+				C147BCE51F32566700A17760 /* Proxima Nova Thin.otf in Resources */,
+				C147BCE61F32566700A17760 /* ProximaNova-Black.otf in Resources */,
+				C147BCE71F32566700A17760 /* ProximaNova-Bold.otf in Resources */,
+				C147BCE81F32566700A17760 /* ProximaNova-BoldIt.otf in Resources */,
+				C147BCE91F32566700A17760 /* ProximaNova-Light.otf in Resources */,
+				C147BCEA1F32566700A17760 /* ProximaNova-LightIt.otf in Resources */,
+				C147BCEB1F32566700A17760 /* ProximaNova-Reg.otf in Resources */,
+				C147BCEC1F32566700A17760 /* ProximaNova-RegIt.otf in Resources */,
+				C147BCED1F32566700A17760 /* ProximaNova-Regular.otf in Resources */,
+				C147BCEE1F32566700A17760 /* ProximaNova-Xbold.otf in Resources */,
+				C147BCEF1F32566700A17760 /* Mark Simonson - Proxima Nova Bold.otf in Resources */,
 				3592223D1F224F4200C64D6C /* LaunchScreen.storyboard in Resources */,
 				3592223A1F224F4200C64D6C /* Assets.xcassets in Resources */,
 				359222381F224F4200C64D6C /* Main.storyboard in Resources */,
@@ -453,11 +533,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2K7D2CJX45;
+				DEVELOPMENT_TEAM = EXHN4BTS59;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = vladhamilton.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -467,11 +547,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2K7D2CJX45;
+				DEVELOPMENT_TEAM = EXHN4BTS59;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = vladhamilton.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
