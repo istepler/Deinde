@@ -19,6 +19,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case freeTrips(trips: [TripVO]?)
     }
     
+    let model = TripsModel()
+    
     var state: TripsViewControllerState? {
         didSet {
             if let state = state {
@@ -40,6 +42,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tripsTableView.dataSource = self
         tripsTableView.delegate = self
         state = .allTrips(trips: nil)
+      
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

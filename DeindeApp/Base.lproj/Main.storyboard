@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GVN-Ih-fSn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="ProximaNova-BoldIt.otf">
-            <string>ProximaNova-BoldIt</string>
-        </array>
-        <array key="ProximaNova-Regular.otf">
+        <array key="ProximaNova-Reg.otf">
             <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
@@ -21,7 +18,7 @@
         <!--SIgn In View Controller-->
         <scene sceneID="OaD-rH-Sz0">
             <objects>
-                <viewController id="phn-Kn-XMJ" userLabel="SIgn In View Controller" sceneMemberID="viewController">
+                <viewController id="phn-Kn-XMJ" userLabel="SIgn In View Controller" customClass="LoadingViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WgQ-lT-SAx"/>
                         <viewControllerLayoutGuide type="bottom" id="1Lg-mB-2wg"/>
@@ -38,8 +35,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Завантаження..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tb-ac-yrz">
-                                <rect key="frame" x="25" y="308" width="326" height="51.5"/>
-                                <fontDescription key="fontDescription" name="ProximaNova-BoldIt" family="Proxima Nova" pointSize="42"/>
+                                <rect key="frame" x="107.5" y="320.5" width="160.5" height="27"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -52,10 +49,11 @@
                             <constraint firstItem="6Tb-ac-yrz" firstAttribute="centerX" secondItem="TUZ-uk-6ik" secondAttribute="centerX" id="xjA-NT-2WC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8Zr-Es-DnM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjm-ne-DsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611.25" y="59.154929577464792"/>
+            <point key="canvasLocation" x="1549.5999999999999" y="58.920539730134934"/>
         </scene>
         <!--My Tour View Controller-->
         <scene sceneID="A9d-be-lZd">
@@ -99,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Omr-yS-WD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3191.1999999999998" y="-355.7721139430285"/>
+            <point key="canvasLocation" x="4130.3999999999996" y="-355.7721139430285"/>
         </scene>
         <!--My Tour Detail View-->
         <scene sceneID="XPX-XV-IaI">
@@ -137,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lti-kU-tYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3943.1999999999998" y="-356.67166416791605"/>
+            <point key="canvasLocation" x="4882.3999999999996" y="-356.67166416791605"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lh4-y1-aTF">
@@ -148,6 +146,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.9119997621" green="0.18182963129999999" blue="0.14378869529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="AV1-9z-Rwk" kind="relationship" relationship="viewControllers" id="Sem-aZ-8x8"/>
@@ -157,12 +156,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owa-tQ-RAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="60"/>
+            <point key="canvasLocation" x="2415.1999999999998" y="59.820089955022496"/>
         </scene>
         <!--Trips View Controller-->
         <scene sceneID="ESA-LR-dVK">
             <objects>
-                <viewController id="xah-VM-Vf1" customClass="TripsViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TripsViewController" id="xah-VM-Vf1" customClass="TripsViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xa1-HV-2RZ"/>
                         <viewControllerLayoutGuide type="bottom" id="zzl-TB-kKp"/>
@@ -339,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwD-hf-eHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3167.1999999999998" y="348.57571214392806"/>
+            <point key="canvasLocation" x="4106.3999999999996" y="348.57571214392806"/>
         </scene>
         <!--Detail Trip View-->
         <scene sceneID="o35-0h-xYj">
@@ -373,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4J-zz-wSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3943" y="349"/>
+            <point key="canvasLocation" x="4880.8000000000002" y="348.57571214392806"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="yxQ-sy-60U">
@@ -441,6 +440,7 @@
                                                 <rect key="frame" x="18" y="45" width="342" height="65"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -495,7 +495,7 @@
                             <constraint firstItem="x9O-dD-7na" firstAttribute="leading" secondItem="Snt-HC-us4" secondAttribute="leading" id="wR3-2E-Jxj"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Профіль" id="NAD-Qx-Xqj"/>
+                    <tabBarItem key="tabBarItem" title="Профіль" image="profile_icon" selectedImage="profile_icon" id="NAD-Qx-Xqj"/>
                     <navigationItem key="navigationItem" title="Профіль" id="HZp-m4-Ief"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="5Hs-Gr-vsU" id="N1f-Xv-I0d"/>
@@ -509,7 +509,7 @@
         <scene sceneID="6b1-Jq-Q3H">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qGZ-62-kuN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Мої тури" id="EwN-NT-0KF"/>
+                    <tabBarItem key="tabBarItem" title="Мої тури" image="my_tours_icon" selectedImage="my_tours_icon" id="EwN-NT-0KF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VpJ-ct-ZtI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -522,13 +522,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZl-7q-DGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2252" y="-355.7721139430285"/>
+            <point key="canvasLocation" x="3191.1999999999998" y="-355.7721139430285"/>
         </scene>
         <!--Всі тури-->
         <scene sceneID="UIX-Am-fET">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="AV1-9z-Rwk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Всі тури" id="WPm-4X-WEx"/>
+                    <tabBarItem key="tabBarItem" title="Всі тури" image="all_tours_icon" selectedImage="all_tours_icon" id="WPm-4X-WEx"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -548,10 +548,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjN-nH-HZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2252" y="349"/>
+            <point key="canvasLocation" x="3191.1999999999998" y="348.57571214392806"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="INv-no-dXh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GVN-Ih-fSn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nqe-6y-DuH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="phn-Kn-XMJ" kind="relationship" relationship="rootViewController" id="1CS-xq-U5X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MsT-u3-M9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="60"/>
         </scene>
     </scenes>
     <resources>
+        <image name="all_tours_icon" width="34" height="27"/>
         <image name="deindeLogo" width="97" height="35"/>
         <image name="deinde_logo_big" width="362" height="374"/>
         <image name="deinde_logo_small" width="89" height="38"/>
@@ -559,7 +579,9 @@
         <image name="fb" width="168" height="160"/>
         <image name="folder" width="120" height="141"/>
         <image name="heart" width="184" height="168"/>
+        <image name="my_tours_icon" width="23" height="28"/>
         <image name="pen" width="13" height="13"/>
+        <image name="profile_icon" width="29" height="29"/>
         <image name="sneaker" width="221" height="250"/>
     </resources>
 </document>
