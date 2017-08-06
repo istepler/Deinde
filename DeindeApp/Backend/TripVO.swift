@@ -10,25 +10,16 @@ import Foundation
 import ObjectMapper
 
 
-struct TripVO: Mappable {
-    var tourId: Int?
+struct TripVO {
+    var tourId: String?
     var title: String?
+    var fullTitle: String?
     var tripDate: Date?
     var tripImage: URL?
+    var imagebBackground: [Int]?
     var tripFeatures: [String]?
     var duration: Int?
     
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        title <- map["title"]
-        tripDate <- map["tripDate"]
-        tripImage <- map["tripImage"]
-        tripFeatures <- map["tripBenefits"]
-        duration <- map["duration"]
-    }
     
     
 }
