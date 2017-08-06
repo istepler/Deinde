@@ -2,6 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Proxima Nova Black Italic.otf</string>
+		<string>Proxima Nova Bold Italic.otf</string>
+		<string>Proxima Nova Extrabold Italic.otf</string>
+		<string>Proxima Nova Extrabold.otf</string>
+		<string>Proxima Nova Semibold Italic.otf</string>
+		<string>Proxima Nova Semibold.otf</string>
+		<string>Proxima Nova Thin Italic.otf</string>
+		<string>Proxima Nova Thin.otf</string>
+		<string>ProximaNova-Black.otf</string>
+		<string>ProximaNova-Bold.otf</string>
+		<string>ProximaNova-BoldIt.otf</string>
+		<string>ProximaNova-Light.otf</string>
+		<string>ProximaNova-LightIt.otf</string>
+		<string>ProximaNova-Reg.otf</string>
+		<string>ProximaNova-RegIt.otf</string>
+		<string>ProximaNova-Regular.otf</string>
+		<string>ProximaNova-Xbold.otf</string>
+		<string>Mark Simonson - Proxima Nova Bold.otf</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

@@ -16,6 +16,8 @@
 		22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614201F2A2A47000B7D50 /* RangeSliderTrackLayer.swift */; };
 		22E614231F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614221F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift */; };
 		22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */; };
+		350F6CE11F36030400B924F8 /* TripsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350F6CE01F36030400B924F8 /* TripsModel.swift */; };
+		350F6CE31F3604CA00B924F8 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350F6CE21F3604CA00B924F8 /* DataLoader.swift */; };
 		3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B79E1F22AA4900827A98 /* UserVO.swift */; };
 		3582B7A11F22AB9600827A98 /* TripVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B7A01F22AB9600827A98 /* TripVO.swift */; };
 		3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B7A21F22AC2B00827A98 /* PlaceVO.swift */; };
@@ -25,7 +27,29 @@
 		359222381F224F4200C64D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359222361F224F4200C64D6C /* Main.storyboard */; };
 		3592223A1F224F4200C64D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359222391F224F4200C64D6C /* Assets.xcassets */; };
 		3592223D1F224F4200C64D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3592223B1F224F4200C64D6C /* LaunchScreen.storyboard */; };
+		35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F591F2DF6850039749B /* TripsViewController.swift */; };
+		35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */; };
+		35BC4F5F1F2E93130039749B /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */; };
 		B797F56FCF4E74EE584CCCAC /* Pods_DeindeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */; };
+		C147BCDE1F32566700A17760 /* Proxima Nova Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */; };
+		C147BCDF1F32566700A17760 /* Proxima Nova Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */; };
+		C147BCE01F32566700A17760 /* Proxima Nova Extrabold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCE1F3254EA00A17760 /* Proxima Nova Extrabold Italic.otf */; };
+		C147BCE11F32566700A17760 /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCF1F3254EA00A17760 /* Proxima Nova Extrabold.otf */; };
+		C147BCE21F32566700A17760 /* Proxima Nova Semibold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD01F3254EA00A17760 /* Proxima Nova Semibold Italic.otf */; };
+		C147BCE31F32566700A17760 /* Proxima Nova Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD11F3254EA00A17760 /* Proxima Nova Semibold.otf */; };
+		C147BCE41F32566700A17760 /* Proxima Nova Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD21F3254EA00A17760 /* Proxima Nova Thin Italic.otf */; };
+		C147BCE51F32566700A17760 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD31F3254EA00A17760 /* Proxima Nova Thin.otf */; };
+		C147BCE61F32566700A17760 /* ProximaNova-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD41F3254EA00A17760 /* ProximaNova-Black.otf */; };
+		C147BCE71F32566700A17760 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD51F3254EA00A17760 /* ProximaNova-Bold.otf */; };
+		C147BCE81F32566700A17760 /* ProximaNova-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD61F3254EA00A17760 /* ProximaNova-BoldIt.otf */; };
+		C147BCE91F32566700A17760 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD71F3254EA00A17760 /* ProximaNova-Light.otf */; };
+		C147BCEA1F32566700A17760 /* ProximaNova-LightIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD81F3254EA00A17760 /* ProximaNova-LightIt.otf */; };
+		C147BCEB1F32566700A17760 /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCD91F3254EA00A17760 /* ProximaNova-Reg.otf */; };
+		C147BCEC1F32566700A17760 /* ProximaNova-RegIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDA1F3254EA00A17760 /* ProximaNova-RegIt.otf */; };
+		C147BCED1F32566700A17760 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDB1F3254EA00A17760 /* ProximaNova-Regular.otf */; };
+		C147BCEE1F32566700A17760 /* ProximaNova-Xbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDC1F3254EA00A17760 /* ProximaNova-Xbold.otf */; };
+		C147BCEF1F32566700A17760 /* Mark Simonson - Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */; };
+		C147BCF21F32606C00A17760 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C147BCF11F32606C00A17760 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +62,8 @@
 		22E614201F2A2A47000B7D50 /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
 		22E614221F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderDayMarkerLayer.swift; sourceTree = "<group>"; };
 		22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderDayMarkerColors.swift; sourceTree = "<group>"; };
+		350F6CE01F36030400B924F8 /* TripsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModel.swift; sourceTree = "<group>"; };
+		350F6CE21F3604CA00B924F8 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		3582B79E1F22AA4900827A98 /* UserVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
 		3582B7A01F22AB9600827A98 /* TripVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripVO.swift; sourceTree = "<group>"; };
 		3582B7A21F22AC2B00827A98 /* PlaceVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceVO.swift; sourceTree = "<group>"; };
@@ -49,8 +75,30 @@
 		359222391F224F4200C64D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DeindeApp/Assets.xcassets; sourceTree = "<group>"; };
 		3592223C1F224F4200C64D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3592223E1F224F4200C64D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = DeindeApp/Info.plist; sourceTree = "<group>"; };
+		35BC4F591F2DF6850039749B /* TripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
 		6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeindeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black Italic.otf"; sourceTree = "<group>"; };
+		C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold Italic.otf"; sourceTree = "<group>"; };
+		C147BCCE1F3254EA00A17760 /* Proxima Nova Extrabold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold Italic.otf"; sourceTree = "<group>"; };
+		C147BCCF1F3254EA00A17760 /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
+		C147BCD01F3254EA00A17760 /* Proxima Nova Semibold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Semibold Italic.otf"; sourceTree = "<group>"; };
+		C147BCD11F3254EA00A17760 /* Proxima Nova Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Semibold.otf"; sourceTree = "<group>"; };
+		C147BCD21F3254EA00A17760 /* Proxima Nova Thin Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin Italic.otf"; sourceTree = "<group>"; };
+		C147BCD31F3254EA00A17760 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
+		C147BCD41F3254EA00A17760 /* ProximaNova-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Black.otf"; sourceTree = "<group>"; };
+		C147BCD51F3254EA00A17760 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		C147BCD61F3254EA00A17760 /* ProximaNova-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-BoldIt.otf"; sourceTree = "<group>"; };
+		C147BCD71F3254EA00A17760 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		C147BCD81F3254EA00A17760 /* ProximaNova-LightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-LightIt.otf"; sourceTree = "<group>"; };
+		C147BCD91F3254EA00A17760 /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Reg.otf"; sourceTree = "<group>"; };
+		C147BCDA1F3254EA00A17760 /* ProximaNova-RegIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-RegIt.otf"; sourceTree = "<group>"; };
+		C147BCDB1F3254EA00A17760 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		C147BCDC1F3254EA00A17760 /* ProximaNova-Xbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Xbold.otf"; sourceTree = "<group>"; };
+		C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		C147BCF11F32606C00A17760 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,9 +145,37 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		350F6CDF1F3602E700B924F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				350F6CE01F36030400B924F8 /* TripsModel.swift */,
+			);
+			name = Models;
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		350F6CE41F361CA600B924F8 /* LoadingViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LoadingViewController;
+			sourceTree = "<group>";
+		};
+		350F6CE71F36261A00B924F8 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3582B79E1F22AA4900827A98 /* UserVO.swift */,
+				3582B7A21F22AC2B00827A98 /* PlaceVO.swift */,
+				3582B7A01F22AB9600827A98 /* TripVO.swift */,
+				3582B7A41F22ADE300827A98 /* PlaceCoordsVO.swift */,
+			);
+			name = VO;
+			sourceTree = "<group>";
+		};
 		3582B7981F22A1FF00827A98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C147BCCB1F3254CD00A17760 /* Fonts */,
 				359222321F224F4200C64D6C /* AppDelegate.swift */,
 				359222391F224F4200C64D6C /* Assets.xcassets */,
 				3592223B1F224F4200C64D6C /* LaunchScreen.storyboard */,
@@ -112,10 +188,8 @@
 		3582B79A1F22A67800827A98 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				3582B79E1F22AA4900827A98 /* UserVO.swift */,
-				3582B7A01F22AB9600827A98 /* TripVO.swift */,
-				3582B7A21F22AC2B00827A98 /* PlaceVO.swift */,
-				3582B7A41F22ADE300827A98 /* PlaceCoordsVO.swift */,
+				350F6CE71F36261A00B924F8 /* VO */,
+				350F6CE21F3604CA00B924F8 /* DataLoader.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -123,7 +197,11 @@
 		3582B79B1F22A71900827A98 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				350F6CE41F361CA600B924F8 /* LoadingViewController */,
+				C147BCF01F325FF600A17760 /* ProfileViewController */,
+				35BC4F5B1F2E77190039749B /* TripsViewController */,
 				359222341F224F4200C64D6C /* ViewController.swift */,
+				35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */,
 				22963F0F1F23B665002E6A64 /* MyTourViewController.swift */,
 				22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */,
 				22963F161F23CD7C002E6A64 /* Map */,
@@ -153,11 +231,54 @@
 		359222311F224F4200C64D6C /* DeindeApp */ = {
 			isa = PBXGroup;
 			children = (
+				350F6CDF1F3602E700B924F8 /* Models */,
 				3582B79B1F22A71900827A98 /* View Controllers */,
 				3582B79A1F22A67800827A98 /* Backend */,
 				3582B7981F22A1FF00827A98 /* Supporting Files */,
 			);
 			path = DeindeApp;
+			sourceTree = "<group>";
+		};
+		35BC4F5B1F2E77190039749B /* TripsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				35BC4F591F2DF6850039749B /* TripsViewController.swift */,
+				35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */,
+			);
+			name = TripsViewController;
+			sourceTree = "<group>";
+		};
+		C147BCCB1F3254CD00A17760 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */,
+				C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */,
+				C147BCCE1F3254EA00A17760 /* Proxima Nova Extrabold Italic.otf */,
+				C147BCCF1F3254EA00A17760 /* Proxima Nova Extrabold.otf */,
+				C147BCD01F3254EA00A17760 /* Proxima Nova Semibold Italic.otf */,
+				C147BCD11F3254EA00A17760 /* Proxima Nova Semibold.otf */,
+				C147BCD21F3254EA00A17760 /* Proxima Nova Thin Italic.otf */,
+				C147BCD31F3254EA00A17760 /* Proxima Nova Thin.otf */,
+				C147BCD41F3254EA00A17760 /* ProximaNova-Black.otf */,
+				C147BCD51F3254EA00A17760 /* ProximaNova-Bold.otf */,
+				C147BCD61F3254EA00A17760 /* ProximaNova-BoldIt.otf */,
+				C147BCD71F3254EA00A17760 /* ProximaNova-Light.otf */,
+				C147BCD81F3254EA00A17760 /* ProximaNova-LightIt.otf */,
+				C147BCD91F3254EA00A17760 /* ProximaNova-Reg.otf */,
+				C147BCDA1F3254EA00A17760 /* ProximaNova-RegIt.otf */,
+				C147BCDB1F3254EA00A17760 /* ProximaNova-Regular.otf */,
+				C147BCDC1F3254EA00A17760 /* ProximaNova-Xbold.otf */,
+				C147BCDD1F3254EA00A17760 /* Mark Simonson - Proxima Nova Bold.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		C147BCF01F325FF600A17760 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C147BCF11F32606C00A17760 /* ProfileViewController.swift */,
+			);
+			name = ProfileViewController;
 			sourceTree = "<group>";
 		};
 		F62318C12F3D5B2E326019F7 /* Frameworks */ = {
@@ -203,7 +324,7 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2K7D2CJX45;
+						DevelopmentTeam = 3398483R66;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -231,6 +352,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C147BCDE1F32566700A17760 /* Proxima Nova Black Italic.otf in Resources */,
+				C147BCDF1F32566700A17760 /* Proxima Nova Bold Italic.otf in Resources */,
+				C147BCE01F32566700A17760 /* Proxima Nova Extrabold Italic.otf in Resources */,
+				C147BCE11F32566700A17760 /* Proxima Nova Extrabold.otf in Resources */,
+				C147BCE21F32566700A17760 /* Proxima Nova Semibold Italic.otf in Resources */,
+				C147BCE31F32566700A17760 /* Proxima Nova Semibold.otf in Resources */,
+				C147BCE41F32566700A17760 /* Proxima Nova Thin Italic.otf in Resources */,
+				C147BCE51F32566700A17760 /* Proxima Nova Thin.otf in Resources */,
+				C147BCE61F32566700A17760 /* ProximaNova-Black.otf in Resources */,
+				C147BCE71F32566700A17760 /* ProximaNova-Bold.otf in Resources */,
+				C147BCE81F32566700A17760 /* ProximaNova-BoldIt.otf in Resources */,
+				C147BCE91F32566700A17760 /* ProximaNova-Light.otf in Resources */,
+				C147BCEA1F32566700A17760 /* ProximaNova-LightIt.otf in Resources */,
+				C147BCEB1F32566700A17760 /* ProximaNova-Reg.otf in Resources */,
+				C147BCEC1F32566700A17760 /* ProximaNova-RegIt.otf in Resources */,
+				C147BCED1F32566700A17760 /* ProximaNova-Regular.otf in Resources */,
+				C147BCEE1F32566700A17760 /* ProximaNova-Xbold.otf in Resources */,
+				C147BCEF1F32566700A17760 /* Mark Simonson - Proxima Nova Bold.otf in Resources */,
 				3592223D1F224F4200C64D6C /* LaunchScreen.storyboard in Resources */,
 				3592223A1F224F4200C64D6C /* Assets.xcassets in Resources */,
 				359222381F224F4200C64D6C /* Main.storyboard in Resources */,
@@ -294,14 +433,20 @@
 			files = (
 				22963F101F23B665002E6A64 /* MyTourViewController.swift in Sources */,
 				359222351F224F4200C64D6C /* ViewController.swift in Sources */,
+				350F6CE31F3604CA00B924F8 /* DataLoader.swift in Sources */,
 				22963F181F23CD9F002E6A64 /* MapMarker.swift in Sources */,
 				22E614231F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift in Sources */,
 				3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */,
 				22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */,
 				22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */,
+				35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */,
 				359222331F224F4200C64D6C /* AppDelegate.swift in Sources */,
+				C147BCF21F32606C00A17760 /* ProfileViewController.swift in Sources */,
 				22E6141D1F2A2A38000B7D50 /* RangeSlider.swift in Sources */,
 				3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */,
+				35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */,
+				35BC4F5F1F2E93130039749B /* DetailWebViewController.swift in Sources */,
+				350F6CE11F36030400B924F8 /* TripsModel.swift in Sources */,
 				22963F1C1F23CF25002E6A64 /* PlaceDetailsViewController.swift in Sources */,
 				22963F1A1F23CDE5002E6A64 /* TripScheduledEvent.swift in Sources */,
 				3582B7A51F22ADE300827A98 /* PlaceCoordsVO.swift in Sources */,
@@ -433,11 +578,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2K7D2CJX45;
+				DEVELOPMENT_TEAM = 3398483R66;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = vladhamilton.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -447,11 +592,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2K7D2CJX45;
+				DEVELOPMENT_TEAM = 3398483R66;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = vladhamilton.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
