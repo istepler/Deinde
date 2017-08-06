@@ -11,6 +11,6 @@ import UIKit
 
 class RangeSliderDayMarkerColors {
     
-     static var colorsArray = [UIColor.blue.cgColor, UIColor.brown.cgColor, UIColor.purple.cgColor, UIColor.gray.cgColor, UIColor.green.cgColor, UIColor.orange.cgColor]
+     static var colorsArray = [UIColor.blue.cgColor, UIColor.brown.cgColor, UIColor.purple.cgColor, UIColor.gray.cgColor, UIColor.green.cgColor, UIColor.orange.cgColor, UIColor.blue.cgColor, UIColor.brown.cgColor, UIColor.purple.cgColor, UIColor.gray.cgColor, UIColor.green.cgColor, UIColor.orange.cgColor]
     
 }

@@ -14,23 +14,33 @@ import GooglePlaces
 
 class MyTourViewController: UIViewController, GMSMapViewDelegate  {
     
-    let tripDays = 5//temp
+    let tripDays = 10//temp
     var rangeSlider: RangeSlider? = nil
 
     var markerArray = [MapMarker]()
     
     @IBOutlet weak var viewWithMap: GMSMapView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rangeSlider = RangeSlider(frame: CGRect.zero, tripDays: tripDays)
-        //rangeSlider?.setMarkers()
-        view.addSubview(rangeSlider!)
+        
+        let margin: CGFloat = 10.0
+        let width: CGFloat = 30.0 
+        let height: CGFloat = 200
+        rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays ) + 4.0*margin), tripDays: tripDays)
+        
+        scrollView.addSubview(rangeSlider!)
+      
+
+        scrollView.contentSize = (rangeSlider?.layer.frame.size)!
         
         
         rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
+        
+        rangeSlider?.addTarget(self, action: #selector(MyTourViewController.thumbTouchedDown(rangeSlider:)), for: .touchDownRepeat)
         
 
         
@@ -88,13 +98,30 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate  {
     
     override func viewDidLayoutSubviews() {
         let margin: CGFloat = 10.0
-        let width: CGFloat = 30.0 //view.bounds.width - 2.0*margin
-        let height: CGFloat = view.bounds.height - 3.0*margin//wtf 3?
-        rangeSlider?.frame = CGRect(x: margin, y: margin + topLayoutGuide.length, width: width, height: height)
+        let width: CGFloat = 30.0
+        let height: CGFloat = 200
+        print(scrollView.bounds.height)
+        print(view.bounds.height)
+        rangeSlider?.frame = CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays) )
     }
 
     func rangeSliderValueChanged(rangeSlider: RangeSlider) {
         print("Range slider value changed: \(rangeSlider.lowerValue) \(rangeSlider.upperValue)")
+        
+        
+        if rangeSlider.upperValue >= 68.0 && (scrollView.contentOffset.y + scrollView.frame.size.height <= scrollView.contentSize.height ){
+            scrollView.contentOffset = CGPoint(x: 0.0, y: scrollView.contentOffset.y + 10.0)
+            
+           
+        }
+        
+        
+    }
+    
+    func thumbTouchedDown(rangeSlider: RangeSlider) {
+        print("touchDown")
+        
+        
     }
 
 }

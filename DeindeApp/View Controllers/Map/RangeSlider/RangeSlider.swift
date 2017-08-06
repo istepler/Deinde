@@ -62,7 +62,7 @@ class RangeSlider: UIControl {
     }
 
 
-
+    
     var tripDays: Int = 0
     var dayLabelLayers = [CATextLayer]()
     var dayMarkerLayers = [RangeSliderDayMarkerLayer]()
@@ -123,6 +123,11 @@ class RangeSlider: UIControl {
         
     }
     
+    func onPress()
+    {
+        sendActions(for: .touchDown)
+    }
+    
     func setMarkers() {
         //marker created
         if dayMarkerLayers.count == 0 {
@@ -144,7 +149,7 @@ class RangeSlider: UIControl {
             dayMarkerLayer.frame = CGRect(x: round((bounds.width - markerWidth) / 2), y: round(dayMarkerCenter - markerWidth/2.0), width: round(markerWidth), height: round(markerWidth))
             
             dayMarkerLayer.setNeedsDisplay()
-            
+            if i != tripDays {
             let dayLabelLayer = dayLabelLayers[i]
             dayLabelLayer.font = UIFont(name: "Arial", size: 16)
             dayLabelLayer.fontSize = 16
@@ -154,7 +159,7 @@ class RangeSlider: UIControl {
             dayLabelLayer.alignmentMode = "center"
             
             layer.addSublayer(dayLabelLayer)
-            
+            }
         }
         
         CATransaction.commit()
@@ -173,6 +178,7 @@ class RangeSlider: UIControl {
         
         trackLayer.frame = bounds.insetBy(dx: bounds.width / 2.2, dy: 0.0)
         trackLayer.setNeedsDisplay()
+      
         
         let lowerThumbCenter = CGFloat(positionForValue(value: lowerValue))
         
@@ -236,6 +242,7 @@ class RangeSlider: UIControl {
         
         sendActions(for: .valueChanged)
         
+        
         return true
         
     }
@@ -244,8 +251,6 @@ class RangeSlider: UIControl {
         lowerThumbLayer.highlighted = false
         upperThumbLayer.highlighted = false
     }
-    
-    
     
     
     

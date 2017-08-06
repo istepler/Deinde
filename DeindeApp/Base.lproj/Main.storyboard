@@ -42,7 +42,7 @@
                                 <rect key="frame" x="50" y="64" width="325" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFz-ed-XZr">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFz-ed-XZr">
                                 <rect key="frame" x="0.0" y="64" width="50" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -56,13 +56,14 @@
                             <constraint firstItem="TFz-ed-XZr" firstAttribute="bottom" secondItem="cI1-U5-tz4" secondAttribute="top" id="5EI-hc-mzm"/>
                             <constraint firstAttribute="trailing" secondItem="Us8-XD-8qH" secondAttribute="trailing" id="KkQ-7b-h7v"/>
                             <constraint firstItem="cI1-U5-tz4" firstAttribute="top" secondItem="Us8-XD-8qH" secondAttribute="bottom" id="M73-Go-ybm"/>
-                            <constraint firstItem="TFz-ed-XZr" firstAttribute="leading" secondItem="6mO-QZ-Lys" secondAttribute="leading" id="Txj-4y-qdv"/>
                             <constraint firstItem="Us8-XD-8qH" firstAttribute="leading" secondItem="TFz-ed-XZr" secondAttribute="trailing" id="hNU-KH-4Td"/>
                             <constraint firstItem="TFz-ed-XZr" firstAttribute="top" secondItem="SUy-rf-iAt" secondAttribute="bottom" id="uS4-IQ-hWN"/>
+                            <constraint firstItem="TFz-ed-XZr" firstAttribute="leading" secondItem="6mO-QZ-Lys" secondAttribute="leading" id="umL-5s-d3K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cIX-qx-ukA"/>
                     <connections>
+                        <outlet property="scrollView" destination="TFz-ed-XZr" id="m1z-XI-FWd"/>
                         <outlet property="viewWithMap" destination="Us8-XD-8qH" id="qAC-K5-yYm"/>
                     </connections>
                 </viewController>
