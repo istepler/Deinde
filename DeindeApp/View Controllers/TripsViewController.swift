@@ -43,7 +43,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tripsTableView.delegate = self
         state = .allTrips(trips: nil)
         
-        model.loadTrips { [weak self]( trips, error) in
+        model.loadAllTrips { [weak self]( trips, error) in
             if let error = error {
                 self?.showError()
             } else {
@@ -52,6 +52,20 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
         }
+        
+        model.loadFreeTrips { [weak self]( trips, error) in
+            if let error = error {
+                self?.showError()
+            } else {
+                if let trips = trips {
+                    for trip in trips {
+                        print("-----")
+                        print(trip)
+                    }
+                }
+            }
+        }
+
         
     }
     
