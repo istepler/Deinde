@@ -12,21 +12,68 @@ import GooglePlaces
 
 
 
-class MyTourViewController: UIViewController, GMSMapViewDelegate  {
+class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDelegate, UITableViewDataSource  {
+    
+    @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var cotravellersButton: UIButton!
+    @IBOutlet weak var viewWithMap: GMSMapView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var cotravellersTableView: UITableView!
+    @IBOutlet weak var infoWebView: UIWebView!
+    
+    
+    
     
     let tripDays = 10//temp
     var rangeSlider: RangeSlider? = nil
-
+    
     var markerArray = [MapMarker]()
     
-    @IBOutlet weak var viewWithMap: GMSMapView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    enum MuToutViewControllerButtonState {
+        case map
+        case cotravellers
+        case info
+    }
     
+    var state: MuToutViewControllerButtonState? {
+        didSet {
+            if let state = state {
+                switch state {
+                    case .map:
+                        mapButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
+                        cotravellersButton.backgroundColor = UIColor.clear
+                        infoButton.backgroundColor = UIColor.clear
+                        cotravellersTableView.isHidden = true
+                        scrollView.isHidden = false
+                        viewWithMap.isHidden = false
+                        infoWebView.isHidden = true
+                    case .cotravellers:
+                        cotravellersButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
+                        mapButton.backgroundColor = UIColor.clear
+                        infoButton.backgroundColor = UIColor.clear
+                    case .info:
+                        infoButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
+                        mapButton.backgroundColor = UIColor.clear
+                        cotravellersButton.backgroundColor = UIColor.clear
+                
+                }
+            }
+        }
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        state = .map
+        cotravellersTableView.dataSource = self
+        cotravellersTableView.delegate = self
+        
+        let url = URL(string: "http://deinde.com.ua/tours/suntrip_camp/")
+        infoWebView.loadRequest(URLRequest(url: url!))
+        
+
         let margin: CGFloat = 10.0
         let width: CGFloat = 30.0 
         let height: CGFloat = 200
@@ -73,10 +120,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate  {
         
         viewWithMap?.delegate = self
 
-        self.navigationController?.isNavigationBarHidden = false
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
+       
 
     }
    
@@ -123,6 +167,51 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate  {
         
         
     }
+    
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    @IBAction func mapButtonPressed(_ sender: UIButton) {
+        state = .map
+        cotravellersTableView.isHidden = true
+        scrollView.isHidden = false
+        viewWithMap.isHidden = false
+        infoWebView.isHidden = true
+    }
+    
+    @IBAction func infoButtonPressed(_ sender: UIButton) {
+        state = .info
+        infoWebView.isHidden = false
+    }
+    
+    @IBAction func cotravellersButtonPressed(_ sender: UIButton) {
+        state = .cotravellers
+        cotravellersTableView.isHidden = false
+        scrollView.isHidden = true
+        viewWithMap.isHidden = true
+        infoWebView.isHidden = true
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = cotravellersTableView.dequeueReusableCell(withIdentifier: "MyTourCotravellersCell") as! MyTourTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
+    
 
 }
 
