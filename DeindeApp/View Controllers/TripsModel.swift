@@ -17,16 +17,17 @@ class TripsModel {
     
     
     
-    func loadTrips(callback: @escaping () -> ()) {
+    func loadTrips(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let dataLoader = DataLoader()
-        dataLoader.allTripsRequest {[weak self] (trips, error) in
+        dataLoader.allTripsRequest {(trips, error) in
             if let error = error {
                 print("Error occured")
                 print(error)
+                callback(nil, error)
             } else if let trips = trips {
-                self?.allTrips = trips
-                callback()
-            }
+                self.allTrips = trips
+                }
+            callback(trips, nil)
         }
     }
     

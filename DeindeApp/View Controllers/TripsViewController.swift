@@ -42,8 +42,27 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tripsTableView.dataSource = self
         tripsTableView.delegate = self
         state = .allTrips(trips: nil)
-      
+        
+        model.loadTrips { [weak self]( trips, error) in
+            if let error = error {
+                self?.showError()
+            } else {
+                if let trips = trips {
+                    print("GOOD")
+                }
+            }
+        }
+        
     }
+    
+    
+    func showError() {
+        print("Error while loading data")
+    }
+    
+    
+    
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
