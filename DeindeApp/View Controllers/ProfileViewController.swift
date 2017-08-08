@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class ProfileViewController: UIViewController {
 
@@ -23,6 +24,7 @@ class ProfileViewController: UIViewController {
         
         
     }
+    
     
     
 }

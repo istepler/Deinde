@@ -335,7 +335,7 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2K7D2CJX45;
+						DevelopmentTeam = X3LC26ANLH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -590,11 +590,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2K7D2CJX45;
+				DEVELOPMENT_TEAM = X3LC26ANLH;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = julia.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = roman.antonuik.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -604,11 +604,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2K7D2CJX45;
+				DEVELOPMENT_TEAM = X3LC26ANLH;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = julia.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = roman.antonuik.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

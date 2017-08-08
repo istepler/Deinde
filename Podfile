@@ -13,7 +13,9 @@ pod 'SDWebImage', '4.0.0'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'Parse'
-
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'SwiftyJSON'
 
 end
 
