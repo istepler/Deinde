@@ -26,7 +26,7 @@ class TripsModel {
                 callback(nil, error)
             } else if let trips = trips {
                 self.allTrips = trips
-                }
+            }
             callback(trips, nil)
         }
     }
@@ -44,6 +44,21 @@ class TripsModel {
             callback(trips, nil)
         }
     }
+    
+    func loadPlacesForTrip(trip: TripVO, callback: @escaping (_ places: [PlaceVO]?, _ error: Error?) -> ()) {
+        let dataLoader = DataLoader()
+        dataLoader.placesForTripRequest(trip: trip) { (places, error) in
+            if let error = error {
+                print("Error occured")
+                print(error)
+                callback(nil, error)
+            }
+            callback(places, nil)
+        }
+        
+    }
+    
+    
     
     
     

@@ -11,7 +11,8 @@ import ObjectMapper
 
 
 struct TripVO {
-    var tourId: String?
+    
+    var id: String?
     var title: String?
     var fullTitle: String?
     var tripDate: Date?
@@ -19,7 +20,10 @@ struct TripVO {
     var imagebBackground: [Int]?
     var tripFeatures: [String]?
     var duration: Int?
+    var places: [PlaceVO]?
     
-    
-    
+    mutating func setPlaces(places: [PlaceVO]) {
+        self.places = places
+    }
+
 }
