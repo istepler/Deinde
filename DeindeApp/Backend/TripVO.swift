@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Parse
 
 
 struct TripVO {
@@ -17,7 +17,7 @@ struct TripVO {
     var fullTitle: String?
     var tripDate: Date?
     var tripImage: URL?
-    var imagebBackground: [Int]?
+    var imageBackground: [Int]?
     var tripFeatures: [String]?
     var duration: Int?
     var places: [PlaceVO]?

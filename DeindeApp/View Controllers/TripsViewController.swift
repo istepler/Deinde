@@ -46,46 +46,28 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tripsTableView.delegate = self
         state = .allTrips(trips: nil)
         
-                model.loadAllTrips { [weak self]( trips, error) in
-                    if let error = error {
-                        self?.showError()
-                    } else {
-                        if let trips = trips {
-                            print("GOOD")
-                        }
-                    }
+        model.loadAllTrips { [weak self]( trips, error) in
+            if let error = error {
+                self?.showError()
+            } else {
+                if let trips = trips {
+                    print("GOOD")
                 }
-        
-                model.loadFreeTrips { [weak self]( trips, error) in
-                    if let error = error {
-                        self?.showError()
-                    } else {
-                        if let trips = trips {
-                            for trip in trips {
-                                print("-----")
-                                print(trip)
-                            }
-                        }
-                    }
-                }
-        
-        let dataLoader = DataLoader()
-        let trip = TripVO(id: "q1kjbpsNKw", title: nil, fullTitle: nil, tripDate: nil, tripImage: nil, imagebBackground: nil, tripFeatures: nil, duration: nil, places: nil)
-        dataLoader.usersForTripRequest(trip: trip) { (users, nil) in
-            print(users)
+            }
         }
         
-//      let pointer = PFObject(withoutDataWithClassName: "TripVO", objectId: "q1kjbpsNKw")
-//    
-//       
-//        let query = PFQuery(className: "PlaceVO").whereKey("inTrip", equalTo: pointer )
-//        query.findObjectsInBackground { (object, error) in
-//            print(object!.count)
-//            }
-        
-        
-        
-        
+        model.loadFreeTrips { [weak self]( trips, error) in
+            if let error = error {
+                self?.showError()
+            } else {
+                if let trips = trips {
+                    for trip in trips {
+                        print("-----")
+                        print(trip)
+                    }
+                }
+            }
+        }
     }
     
     

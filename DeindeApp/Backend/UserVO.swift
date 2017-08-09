@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 
 struct UserVO {
@@ -16,9 +17,11 @@ struct UserVO {
     var firstName: String?
     var secondName: String?
     //var email: String?
-    //var facebook: String?
+    var facebook: URL?
+    var telNumber: String?
     //var avatar: URL?
     var description: String?
+    var avatar: PFFile?
     //var userTours: [TripVO]?
     
 }

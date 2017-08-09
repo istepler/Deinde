@@ -11,6 +11,9 @@ import Parse
 
 class DataLoader {
     
+    
+    
+    
     func allTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: false)
         query.findObjectsInBackground { (objects, error) in
@@ -24,8 +27,8 @@ class DataLoader {
                         title:            object.value(forKey: "title") as? String,
                         fullTitle:        object.value(forKey: "fullTitle") as? String,
                         tripDate:         object.value(forKey: "date") as? Date,
-                        tripImage:        object.value(forKey: "imageTrip") as? URL,
-                        imagebBackground: object.value(forKey: "backgroundTrip") as? [Int],
+                        tripImage:        URL(string:((object.value(forKey: "imageTrip") as! String))),
+                        imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
                         tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
                         duration:         object.value(forKey: "duration")  as? Int,
                         places: object.value(forKey: "places")  as? [PlaceVO])
@@ -50,8 +53,8 @@ class DataLoader {
                         title:            object.value(forKey: "title") as? String,
                         fullTitle:        object.value(forKey: "fullTitle") as? String,
                         tripDate:         object.value(forKey: "date") as? Date,
-                        tripImage:        object.value(forKey: "imageTrip") as? URL,
-                        imagebBackground: object.value(forKey: "backgroundTrip") as? [Int],
+                        tripImage:        URL(string:((object.value(forKey: "imageTrip") as! String))),
+                        imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
                         tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
                         duration:         object.value(forKey: "duration")  as? Int,
                         places: object.value(forKey: "places")  as? [PlaceVO])
@@ -71,19 +74,20 @@ class DataLoader {
                 } else if let objects = objects {
                     let places = objects.map { object -> PlaceVO in
                         PlaceVO(
-                            id: object.value(forKey: "objectId") as? String,
-                            title:  object.value(forKey: "title") as? String,
-                            time: object.value(forKey: "time") as? Int,
-                            day: object.value(forKey: "day") as? Int,
-                            description: object.value(forKey: "description") as? String,
-                            coords: object.value(forKey: "coords") as? CoordsVO,
-                            placeImage: URL(string:object.value(forKey: "placeImage") as! String))
-                    }
+                            id:            object.value(forKey: "objectId") as? String,
+                            title:         object.value(forKey: "title") as? String,
+                            time:          object.value(forKey: "Time") as? Int,
+                            day:           object.value(forKey: "day") as? Int,
+                            description:   object.value(forKey: "description") as? String,
+                            coords:        object.value(forKey: "coords") as? PFGeoPoint,
+                            placeImage: URL(string:((object.value(forKey: "place_image_url") as! String)))
+                        )}
                     callback(places, nil)
                 }
             }
         }
     }
+    
     
     func usersForTripRequest(trip: TripVO, callback: @escaping (_ places: [UserVO]?, _ error: Error?) -> ()) {
         if let tripId = trip.id {
@@ -95,10 +99,14 @@ class DataLoader {
                     callback(nil, error)
                 } else if let objects = objects {
                     let users = objects.map { object -> UserVO in
-                        UserVO(id: object.value(forKey: "objectId") as? String,
-                               firstName: object.value(forKey: "firstName") as? String,
-                               secondName: object.value(forKey: "secondName") as? String,
-                               description: object.value(forKey: "description") as? String)
+                        UserVO(
+                            id:             object.value(forKey: "objectId") as? String,
+                            firstName:      object.value(forKey: "firstName") as? String,
+                            secondName:     object.value(forKey: "secondName") as? String,
+                            facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
+                            telNumber:      object.value(forKey: "telNumber") as? String,
+                            description:    object.value(forKey: "description") as? String,
+                            avatar:         object.value(forKey: "avatar") as? PFFile)
                     }
                     callback(users, nil)
                 }
@@ -106,5 +114,63 @@ class DataLoader {
         }
         
     }
-
+    
+    func userTripsRequest(user: UserVO, callback: @escaping (_ places: [TripVO]?, _ error: Error?) -> ()) {
+        if let userId = user.id {
+            let userObject = PFObject(withoutDataWithClassName: "User", objectId: userId)
+            let query = PFQuery(className: "TripVO").whereKey("usersOnTrip", equalTo: userObject)
+            query.findObjectsInBackground { (objects, error) in
+                if let error = error {
+                    callback(nil, error)
+                } else if let objects = objects {
+                    let trips = objects.map { object -> TripVO in
+                        TripVO(
+                            id:               object.value(forKey: "objectId") as? String,
+                            title:            object.value(forKey: "title") as? String,
+                            fullTitle:        object.value(forKey: "fullTitle") as? String,
+                            tripDate:         object.value(forKey: "date") as? Date,
+                            tripImage:        URL(string:((object.value(forKey: "imageTrip") as! String))),
+                            imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
+                            tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
+                            duration:         object.value(forKey: "duration")  as? Int,
+                            places:           object.value(forKey: "places")  as? [PlaceVO])
+                    }
+                    callback(trips, nil)
+                }
+                
+            }
+        } else {
+            print("Error! User id = nil")
+        }
+        
+    }
+    
+    func userDataRequest(user: UserVO, callback: @escaping (_ user: UserVO?, _ error: Error?) -> ()) {
+        if let userId = user.id {
+            let query = PFQuery(className: "_User")
+            query.getObjectInBackground(withId: userId) { (object, error) in
+                if let error = error {
+                    callback(nil, error)
+                } else {
+                    let user = object.map { object -> UserVO in
+                        UserVO(
+                            id:             object.value(forKey: "objectId") as? String,
+                            firstName:      object.value(forKey: "firstName") as? String,
+                            secondName:     object.value(forKey: "secondName") as? String,
+                            facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
+                            telNumber:      object.value(forKey: "telNumber") as? String,
+                            description:    object.value(forKey: "description") as? String,
+                            avatar:         object.value(forKey: "avatar") as? PFFile)
+                    }
+                    callback(user, nil)
+                    
+                }
+                
+            }
+        } else {
+            print("Error! User id = nil")
+        }
+    }
+    
+    
 }

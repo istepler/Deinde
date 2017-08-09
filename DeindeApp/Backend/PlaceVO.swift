@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import CoreLocation
 
 struct PlaceVO {
     
@@ -16,7 +16,16 @@ struct PlaceVO {
     var time: Int? // ???????????????
     var day: Int?
     var description: String?
-    var coords: CoordsVO?
+    var coords: PFGeoPoint?
     var placeImage: URL? // or Image????
    
+}
+
+import Parse
+
+extension PFGeoPoint {
+    
+    func location() -> CLLocation {
+        return CLLocation(latitude: self.latitude, longitude: self.longitude)
+    }
 }

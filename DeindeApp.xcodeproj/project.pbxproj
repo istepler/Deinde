@@ -28,6 +28,7 @@
 		359222381F224F4200C64D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359222361F224F4200C64D6C /* Main.storyboard */; };
 		3592223A1F224F4200C64D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359222391F224F4200C64D6C /* Assets.xcassets */; };
 		3592223D1F224F4200C64D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3592223B1F224F4200C64D6C /* LaunchScreen.storyboard */; };
+		359D63DE1F3BCF6C00E1DB26 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D63DD1F3BCF6C00E1DB26 /* UserModel.swift */; };
 		35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F591F2DF6850039749B /* TripsViewController.swift */; };
 		35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */; };
 		35BC4F5F1F2E93130039749B /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */; };
@@ -77,6 +78,7 @@
 		359222391F224F4200C64D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DeindeApp/Assets.xcassets; sourceTree = "<group>"; };
 		3592223C1F224F4200C64D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3592223E1F224F4200C64D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = DeindeApp/Info.plist; sourceTree = "<group>"; };
+		359D63DD1F3BCF6C00E1DB26 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		35BC4F591F2DF6850039749B /* TripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				350F6CE01F36030400B924F8 /* TripsModel.swift */,
+				359D63DD1F3BCF6C00E1DB26 /* UserModel.swift */,
 			);
 			name = Models;
 			path = "View Controllers";
@@ -450,6 +453,7 @@
 				3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */,
 				22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */,
 				22D5E0EA1F3741CB004673C4 /* MyTourTableViewCell.swift in Sources */,
+				359D63DE1F3BCF6C00E1DB26 /* UserModel.swift in Sources */,
 				22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */,
 				35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */,
 				359222331F224F4200C64D6C /* AppDelegate.swift in Sources */,

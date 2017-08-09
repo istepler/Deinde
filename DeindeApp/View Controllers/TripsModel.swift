@@ -17,6 +17,8 @@ class TripsModel {
     
     
     
+    
+    
     func loadAllTrips(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let dataLoader = DataLoader()
         dataLoader.allTripsRequest {(trips, error) in
