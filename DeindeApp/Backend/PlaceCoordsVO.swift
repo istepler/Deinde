@@ -7,19 +7,9 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct CoordsVO: Mappable {
+struct CoordsVO {
     var latitude: Double?
     var longtitude: Double?
     
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        latitude <- map["latitude"]
-        longtitude <- map["longtitude"]
-        
-    }
 }

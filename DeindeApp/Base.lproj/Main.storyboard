@@ -252,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lti-kU-tYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4882.3999999999996" y="-356.67166416791605"/>
+            <point key="canvasLocation" x="5002" y="-370"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lh4-y1-aTF">
@@ -354,7 +354,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="330"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ZN-Tl-DYe" id="YNq-91-lnj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="329.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4co-jU-ZoL">
@@ -525,10 +525,6 @@
                                                 <rect key="frame" x="309" y="237" width="30" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fb" translatesAutoresizingMaskIntoConstraints="NO" id="qGJ-l5-MnR">
-                                                <rect key="frame" x="167" y="249" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="face" translatesAutoresizingMaskIntoConstraints="NO" id="QqX-mH-bue">
                                                 <rect key="frame" x="127" y="64" width="120" height="120"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -544,6 +540,17 @@
                                                 <rect key="frame" x="289" y="205" width="14" height="13"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evg-3T-8Q0">
+                                                <rect key="frame" x="167" y="249" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                <state key="normal" image="facebookLogin"/>
+                                                <state key="disabled" title="loginFacebook"/>
+                                                <state key="highlighted" title="loginFacebook"/>
+                                                <connections>
+                                                    <action selector="loginButtonClicked:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="Ow9-CW-bKa"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94708508253097534" green="0.25140425562858582" blue="0.16514763236045837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -615,12 +622,15 @@
                     <tabBarItem key="tabBarItem" title="Профіль" image="profile_icon" selectedImage="profile_icon" id="NAD-Qx-Xqj"/>
                     <navigationItem key="navigationItem" title="Профіль" id="HZp-m4-Ief"/>
                     <connections>
-                        <outlet property="descriptionTextView" destination="5Hs-Gr-vsU" id="N1f-Xv-I0d"/>
+                        <outlet property="descriptionTextView" destination="5Hs-Gr-vsU" id="Rxj-Ur-d91"/>
+                        <outlet property="facebookLoginButtom" destination="evg-3T-8Q0" id="bp3-ns-4HW"/>
+                        <outlet property="nameFacebook" destination="dvJ-Hz-yBT" id="Uy2-36-epJ"/>
+                        <outlet property="photoFB" destination="QqX-mH-bue" id="29E-hF-3ow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZB-ar-cq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2252" y="1295.8020989505249"/>
+            <point key="canvasLocation" x="2331" y="1189"/>
         </scene>
         <!--Мої тури-->
         <scene sceneID="6b1-Jq-Q3H">
@@ -630,7 +640,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="VpJ-ct-ZtI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="VpJ-ct-ZtI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -652,7 +662,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="a5y-EV-p3H">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="a5y-EV-p3H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -677,7 +687,7 @@
         <image name="deinde_logo_small" width="89" height="38"/>
         <image name="face" width="120" height="120"/>
         <image name="faceForCotravellersTable" width="120" height="120"/>
-        <image name="fb" width="168" height="160"/>
+        <image name="facebookLogin" width="34" height="34"/>
         <image name="folder" width="120" height="141"/>
         <image name="heart" width="184" height="168"/>
         <image name="my_tours_icon" width="23" height="28"/>

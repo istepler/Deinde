@@ -8,7 +8,6 @@ target ‘DeindeApp’ do
   # Pods for DeindeApp 
 
 pod 'Alamofire', '4.5.0'
-pod 'AlamofireObjectMapper', '4.1.0'
 pod 'SDWebImage', '4.0.0'
 pod 'GoogleMaps'
 pod 'GooglePlaces'

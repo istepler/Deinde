@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import ObjectMapper
 
-struct PlaceVO: Mappable {
+struct PlaceVO {
     var title: String?
     var time: String? // ???????????????
     var description: String?
@@ -17,16 +16,5 @@ struct PlaceVO: Mappable {
     var placeImage: URL? // or Image????
    
     
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        title <- map["title"]
-        time <- map["time"]
-        description <- map["description"]
-        coords <- map ["coords"]
-        placeImage <- map ["placeImage"]
-    }
     
 }

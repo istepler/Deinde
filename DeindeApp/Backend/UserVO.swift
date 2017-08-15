@@ -7,34 +7,23 @@
 //
 
 import Foundation
-import ObjectMapper
+import SwiftyJSON
 
-struct UserVO: Mappable {
+struct UserVO {
     
     var token: String? // what comes from firebaase
     var id: Int?
-    var firstName: String?
-    var secondName: String?
+    var name: String?
+    //var firstName: String?
+    //var secondName: String?
     var email: String?
     var facebook: String?
     var avatar: URL?
     var description: String?
     var userTours: [TripVO]?
     
-    init?(map: Map) {
-        
-    }
     
-    mutating func mapping(map: Map) {
-        //id <- map["id"]
-        firstName <- map ["firstName"]
-        secondName <- map["secondName"]
-        email <- map["email"]
-        facebook <- map["facebook"]
-        avatar <- map["avatar"]
-        description <- map["description"]
-        userTours <- map["userTours"]
-        
-    }
+    static let currentUser = UserVO()
+    
     
 }
