@@ -24,17 +24,11 @@ class UserModel {
                     callback(nil, error)
                 } else {
                     self?.userTrips = trips
+                    callback(trips, nil)
                 }
-                
             }
         } else {
             print("Current user is indefined")
         }
     }
-    
-    
-    
-    
-    
-    
 }

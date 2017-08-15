@@ -23,6 +23,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     let model = TripsModel()
+    let userModel = UserModel()
     
     var state: TripsViewControllerState? {
         didSet {
@@ -46,6 +47,15 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tripsTableView.delegate = self
         state = .allTrips(trips: nil)
         
+       // UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, description: nil, avatar: nil)
+        
+        
+        UserModel.instance.loadUserTrips { (trips, error) in
+            print(UserModel.instance.userTrips)
+        }
+        
+      
+        
         model.loadAllTrips { [weak self]( trips, error) in
             if let error = error {
                 self?.showError()
@@ -68,12 +78,39 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
         }
-    }
+        
+        
+        // MARK: HARDCODE FOR TESTING
+        
+//        let  trip = TripVO(id: "RL4t8WTnGL", title: nil, fullTitle: nil, tripDate: nil, tripImage: nil, imageBackground: nil, tripFeatures: nil, duration: nil, places: nil)
+//        
+//        model.loadPlacesForTrip(trip: trip) { (result, error) in
+//            print("--------")
+//            for r in result! {
+//                print(r.details)
+//            }
+//        }
+//        
+//        let dataLoader = DataLoader()
+//        dataLoader.userLoginRequest(user: UserModel.instance.currentUser!) { (user, error ) in
+//            print("-------")
+//            print(user)
+//        }
+//        
+//        
+//        let image = UIImage(named: "deinde_logo")!
+//        dataLoader.updateUserImageRequest(user: UserModel.instance.currentUser!, image: image) { (success, error) in
+//            if success {
+//                print("OH yeah")
+//            } else if let error = error {
+//                print("OH NO")
+//            }
+//        }
+        
+        
     
-    
-    
-    
-    
+
+}
     func showError() {
         print("Error while loading data")
     }

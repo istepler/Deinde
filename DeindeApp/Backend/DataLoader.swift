@@ -78,7 +78,7 @@ class DataLoader {
                             title:         object.value(forKey: "title") as? String,
                             time:          object.value(forKey: "Time") as? Int,
                             day:           object.value(forKey: "day") as? Int,
-                            description:   object.value(forKey: "description") as? String,
+                            details:   object.value(forKey: "details") as? String,
                             coords:        object.value(forKey: "coords") as? PFGeoPoint,
                             placeImage: URL(string:((object.value(forKey: "place_image_url") as! String)))
                         )}
@@ -106,7 +106,8 @@ class DataLoader {
                             facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
                             description:    object.value(forKey: "description") as? String,
-                            avatar:         object.value(forKey: "avatar") as? PFFile)
+                            avatar:         object.value(forKey: "avatar") as? PFFile,
+                            activationCode: nil)
                     }
                     callback(users, nil)
                 }
@@ -122,6 +123,7 @@ class DataLoader {
             query.findObjectsInBackground { (objects, error) in
                 if let error = error {
                     callback(nil, error)
+                    print(error)
                 } else if let objects = objects {
                     let trips = objects.map { object -> TripVO in
                         TripVO(
@@ -160,8 +162,8 @@ class DataLoader {
                             facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
                             description:    object.value(forKey: "description") as? String,
-                            avatar:         object.value(forKey: "avatar") as? PFFile)
-                    }
+                            avatar:         object.value(forKey: "avatar") as? PFFile,
+                            activationCode:     nil)}
                     callback(user, nil)
                     
                 }
@@ -172,5 +174,40 @@ class DataLoader {
         }
     }
     
+    func updateUserImageRequest(user: UserVO, image: UIImage, callback: @escaping (_ success: Bool, _ error: Error?) ->()) {
+        guard let imageData = UIImageJPEGRepresentation(image, 1.0) else {
+            print("Image data is nil")
+            return
+        }
+        let imageName = "pic\(user.id!).jpg"
+        print(imageName)
+        let imageFile = PFFile(name: imageName, data: imageData)
+        if let picture = imageFile {
+            picture.saveInBackground(block: { (true, false) in
+            })
+            let currentUser = PFObject(withoutDataWithClassName: "User", objectId: user.id)
+            currentUser.setObject(picture, forKey: "avatar")
+            currentUser.saveInBackground(block: { (success, error) in
+                if success {
+                    print("Image is saved")
+                    callback(true, nil)
+                }
+                if error != nil {
+                    print("Error occured while uploading a photo")
+                    callback(false, error)
+                }
+                
+            })
+        }
+    }
     
+    func userLoginRequest(user: UserVO, callback: @escaping (_ success: Bool, _ error: Error?) ->()) {
+        if let code = user.activationCode, let pass = user.activationCode {
+            PFUser.logInWithUsername(inBackground: code, password: pass) { (loggedUser, error) in
+                if error == nil {
+                    print("Ready to go")
+                }
+            }
+        }
+    }
 }
