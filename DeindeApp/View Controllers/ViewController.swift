@@ -13,6 +13,7 @@ import Parse
 
 class ViewController: UIViewController {
     
+    let model = UserModel()
     
     
     override func viewDidLoad() {
@@ -23,15 +24,8 @@ class ViewController: UIViewController {
         testObject.saveInBackground { (success: Bool, error: Error?) -> Void in
             print("Object has been saved.")
         }
-
-       
-    }
         
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 

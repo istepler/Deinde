@@ -26,16 +26,9 @@ class UserModel {
                     self?.userTrips = trips
                     callback(trips, nil)
                 }
-                
             }
         } else {
             print("Current user is indefined")
         }
     }
-    
-    
-    
-    
-    
-    
 }

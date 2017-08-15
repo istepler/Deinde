@@ -936,11 +936,138 @@
             </objects>
             <point key="canvasLocation" x="4880.8000000000002" y="348.57571214392806"/>
         </scene>
+        <!--Code View Controller-->
+        <scene sceneID="gUf-7k-Uzz">
+            <objects>
+                <viewController id="g7b-MZ-ZAa" customClass="CodeViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FQs-jE-zav"/>
+                        <viewControllerLayoutGuide type="bottom" id="omB-jP-zS9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cfV-MR-Cj0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deinde_logo" translatesAutoresizingMaskIntoConstraints="NO" id="cpx-tz-aeZ">
+                                <rect key="frame" x="67" y="77" width="240" height="174"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-JG-aLw">
+                                <rect key="frame" x="56.5" y="305" width="262" height="58"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-bY-2Ai">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="58"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GN6-AL-o1f">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx4-24-X1n">
+                                                <rect key="frame" x="0.0" y="56" width="60" height="2"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="1" green="0.99699645039999996" blue="0.98402655559999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="2" id="cLd-Yq-H4o"/>
+                                                    <constraint firstAttribute="width" constant="60" id="rxs-4F-qJ0"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-1a-W1W">
+                                        <rect key="frame" x="101" y="0.0" width="60" height="58"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ihj-NM-39o">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-3Y-c8B">
+                                                <rect key="frame" x="0.0" y="56" width="60" height="2"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="1" green="0.99699645039999996" blue="0.98402655559999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="2" id="O0o-Tf-E8r"/>
+                                                    <constraint firstAttribute="width" constant="60" id="r2h-xO-ZEn"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ebl-u1-lwP">
+                                        <rect key="frame" x="202" y="0.0" width="60" height="58"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="eRv-bS-6fr">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="54"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Td4-2Y-FYi">
+                                                <rect key="frame" x="0.0" y="56" width="60" height="2"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="1" green="0.99699645039999996" blue="0.98402655559999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="0A5-mj-mQY"/>
+                                                    <constraint firstAttribute="height" constant="2" id="pdq-YQ-BYn"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="367" placeholderIntrinsicHeight="60" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPv-mI-Mu3">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="od7-gN-H1u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="22"/>
+                                <state key="normal" title="ПОЧАТИ ПОДОРОЖУВАТИ"/>
+                                <connections>
+                                    <action selector="login:" destination="g7b-MZ-ZAa" eventType="touchUpInside" id="DJy-pD-b1H"/>
+                                    <action selector="loginButton:" destination="g7b-MZ-ZAa" eventType="touchUpInside" id="UoH-Xv-mg9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9119997621" green="0.18182963129999999" blue="0.14378869529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cpx-tz-aeZ" firstAttribute="top" secondItem="FQs-jE-zav" secondAttribute="bottom" constant="57" id="0kV-Bg-gXZ"/>
+                            <constraint firstItem="cpx-tz-aeZ" firstAttribute="leading" secondItem="cfV-MR-Cj0" secondAttribute="leadingMargin" constant="51" id="2zu-FN-9Iw"/>
+                            <constraint firstAttribute="trailing" secondItem="kPv-mI-Mu3" secondAttribute="trailing" id="6Fh-7U-ciK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cpx-tz-aeZ" secondAttribute="trailing" constant="52" id="AbZ-nD-o4h"/>
+                            <constraint firstItem="Dhb-JG-aLw" firstAttribute="centerX" secondItem="cfV-MR-Cj0" secondAttribute="centerX" id="RsJ-vT-jjE"/>
+                            <constraint firstItem="Dhb-JG-aLw" firstAttribute="top" secondItem="cpx-tz-aeZ" secondAttribute="bottom" constant="53.5" id="SoR-AA-SZq"/>
+                            <constraint firstItem="kPv-mI-Mu3" firstAttribute="leading" secondItem="cfV-MR-Cj0" secondAttribute="leading" id="al4-c6-Zie"/>
+                            <constraint firstItem="omB-jP-zS9" firstAttribute="top" secondItem="kPv-mI-Mu3" secondAttribute="bottom" id="djE-I6-PXN"/>
+                            <constraint firstItem="cpx-tz-aeZ" firstAttribute="centerX" secondItem="cfV-MR-Cj0" secondAttribute="centerX" id="gjh-fO-vfa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="codeInput1" destination="GN6-AL-o1f" id="AcP-j3-0vN"/>
+                        <outlet property="codeInput2" destination="Ihj-NM-39o" id="LZH-yt-IQN"/>
+                        <outlet property="codeInput3" destination="eRv-bS-6fr" id="3Tn-f8-IuR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7uk-sn-qoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2415" y="-674"/>
+        </scene>
     </scenes>
     <resources>
         <image name="all_tours_icon" width="34" height="27"/>
         <image name="backArrow" width="10" height="16"/>
         <image name="deindeLogo" width="97" height="35"/>
+        <image name="deinde_logo" width="157" height="174"/>
         <image name="deinde_logo_small" width="89" height="38"/>
         <image name="face" width="120" height="120"/>
         <image name="faceForCotravellersTable" width="120" height="120"/>
