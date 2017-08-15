@@ -18,6 +18,11 @@ struct PlaceVO {
     var description: String?
     var coords: PFGeoPoint?
     var placeImage: URL? // or Image????
+    var totalHoursNumber: Int? {
+        get {
+            return (day! - 1)*24 + time!
+        }
+    }
    
 }
 

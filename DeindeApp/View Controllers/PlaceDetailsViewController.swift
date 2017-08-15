@@ -10,7 +10,16 @@ import UIKit
 
 class PlaceDetailsViewController: UIViewController {
     
+    var place = PlaceVO()
+    var tripName: String = ""
+    
     @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var tripNameLabel: UILabel!
+    
+    @IBOutlet weak var placeTitleTextView: UITextView!
+    
+    @IBOutlet weak var placeDescriptionTaxtView: UITextView!
     
     @IBAction func closeButtonClicked(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -19,10 +28,26 @@ class PlaceDetailsViewController: UIViewController {
         self.present(nextViewController, animated:true, completion:nil)
 
     }
+    
+    
+    
+    
+    
+    
      override func viewDidLoad() {
         super.viewDidLoad()
-
+        let timeString = String(describing: place.time!) + ":00"
+        timeLabel.text = timeString
+        placeTitleTextView.text = place.title
+        tripNameLabel.text = tripName
+        //navigationController?.isNavigationBarHidden = false
+        
+        
       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //navigationController?.navigationBar.isHidden = true
     }
     //pegevcn
 

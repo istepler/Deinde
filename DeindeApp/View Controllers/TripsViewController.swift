@@ -51,7 +51,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self?.showError()
             } else {
                 if let trips = trips {
-                    print("GOOD")
+                    //print("GOOD")
                 }
             }
         }
@@ -62,8 +62,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             } else {
                 if let trips = trips {
                     for trip in trips {
-                        print("-----")
-                        print(trip)
+                        //print("-----")
+                        //print(trip)
                     }
                 }
             }

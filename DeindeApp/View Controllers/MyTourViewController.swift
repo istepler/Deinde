@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import CoreLocation
+import Parse
 
 
 
@@ -21,14 +23,21 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var cotravellersTableView: UITableView!
     @IBOutlet weak var infoWebView: UIWebView!
+    @IBOutlet weak var tripNameLabel: UILabel!
     
+    var trip = TripVO()
+    var tripPlaces: [PlaceVO]? = [] {
+        didSet {
+            //viewWithMap.reloadInputViews()
+        }
+    }
     
-    
-    
-    let tripDays = 10//temp
+    var tripDays = 0
     var rangeSlider: RangeSlider? = nil
     
     var markerArray = [MapMarker]()
+    var passingPlace = PlaceVO()
+    
     
     enum MuToutViewControllerButtonState {
         case map
@@ -66,6 +75,47 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        tripNameLabel.text = trip.title
+        
+        TripsModel.instance.loadPlacesForTrip(trip: trip, callback:  { [weak self] ( places, error) in
+            if let error = error {
+                self?.showError()
+            } else {
+                if let places = places {
+                    for place in places {
+                        self?.trip.setPlaces(places: places)
+                        self?.tripPlaces?.append(place)
+                        
+                        
+                        self?.setMarkers(coordinates: place.coords!, time: place.time!, totalTime: place.totalHoursNumber!)
+                        print(place)
+                        
+                        var sortedPlaces: [PlaceVO] = []
+                        let range = Int((self?.rangeSlider?.lowerValue)!)...Int((self?.rangeSlider?.upperValue)!)
+                        sortedPlaces = (self?.tripPlaces?.filter { range ~= $0.totalHoursNumber! })!
+                        
+                        self?.hideAllMarkers()
+                        
+                        for place in sortedPlaces {
+                            let markers = self?.markerArray.filter { $0.totalTime == place.totalHoursNumber }
+                            
+                            for marker in markers! {
+                                marker.showMarker(map: (self?.viewWithMap)!)
+                            }
+                        }
+                        
+                        
+
+                        
+                    }
+                    self?.tripPlaces = self?.tripPlaces?.sorted(by: { $0.totalHoursNumber! < $1.totalHoursNumber!})
+                    self?.setCamera(position: (self?.tripPlaces?[0].coords?.location().coordinate)!)
+                }
+            }   
+        })
+                
+        
         state = .map
         cotravellersTableView.dataSource = self
         cotravellersTableView.delegate = self
@@ -77,7 +127,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         let margin: CGFloat = 10.0
         let width: CGFloat = 30.0 
         let height: CGFloat = 200
-        rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays ) + 4.0*margin), tripDays: tripDays)
+        rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays ) + 6.0*margin), tripDays: tripDays)
         
         scrollView.addSubview(rangeSlider!)
       
@@ -87,65 +137,68 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         
         rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
         
-        rangeSlider?.addTarget(self, action: #selector(MyTourViewController.thumbTouchedDown(rangeSlider:)), for: .touchDownRepeat)
         
-
-        
-        //temp struct fill
-        var eventArray = [TripScheduledEvent]()
-        var tripEvent = TripScheduledEvent(time: "10:00", latitude: 50.388573, longitude: 30.364974)
-        eventArray.append(tripEvent)
-        tripEvent = TripScheduledEvent(time: "12:00", latitude: 50.390755, longitude: 30.368890)
-        eventArray.append(tripEvent)
-        tripEvent = TripScheduledEvent(time: "14:00", latitude: 50.395082, longitude:  30.370599)
-        eventArray.append(tripEvent)
-        tripEvent = TripScheduledEvent(time: "16:00", latitude: 50.392259, longitude: 30.373192)
-        eventArray.append(tripEvent)
-        tripEvent = TripScheduledEvent(time: "18:00", latitude: 50.388422, longitude: 30.370306)
-        eventArray.append(tripEvent)
-
-        
-        let camera = GMSCameraPosition.camera(withLatitude: eventArray[0].latitude, longitude: eventArray[0].longitude, zoom: 15)
-        self.viewWithMap.camera = camera
-        
-        for i in eventArray {
-            let marker = MapMarker(position: CLLocationCoordinate2D(latitude: i.latitude, longitude: i.longitude), time: i.time, map: viewWithMap!)
-            markerArray.append(marker)
-            
-        }
-        
-        
-      
-        
+                
         
         viewWithMap?.delegate = self
-
+        
+        
+        
+        }
        
 
+    func setMarkers(coordinates: PFGeoPoint, time: Int, totalTime: Int) {
+        let marker = MapMarker(position: CLLocationCoordinate2D(latitude: coordinates.location().coordinate.latitude, longitude: coordinates.location().coordinate.longitude ) , time: String(time), map: viewWithMap, totalTimeOfPlace: totalTime)
+        markerArray.append(marker)
+    
     }
-   
+    
+    func setCamera(position: CLLocationCoordinate2D) {
+        let camera = GMSCameraPosition.camera(withLatitude: position.latitude, longitude: position.longitude, zoom: 15)
+        self.viewWithMap.camera = camera
+        
+
+    }
+    
+    
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print("yes")
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+       
         
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MyTourDetailView") as! PlaceDetailsViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        //let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        //let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MyTourDetailView") as! PlaceDetailsViewController
+        
+        
         for markers in markerArray {
             if marker == markers.marker {
-                nextViewController.timeLabel.text = markers.timeGl
+                for place in tripPlaces! {
+                    if markers.totalTime == place.totalHoursNumber {
+                        passingPlace = place
+                       
+                    }
+                }
             }
         }
+        performSegue(withIdentifier: "markerToMyTourDetailsVCSegue", sender: marker)
+
+        
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! PlaceDetailsViewController
+        destination.place = passingPlace
+        destination.tripName = trip.title!
+        
     }
     
     
     override func viewDidLayoutSubviews() {
         let margin: CGFloat = 10.0
         let width: CGFloat = 30.0
+        
         let height: CGFloat = 200
-        print(scrollView.bounds.height)
-        print(view.bounds.height)
         rangeSlider?.frame = CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays) )
     }
 
@@ -159,17 +212,28 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
            
         }
         
+        var sortedPlaces: [PlaceVO] = []
+        let range = Int(rangeSlider.lowerValue)...Int(rangeSlider.upperValue)
+        sortedPlaces = (self.tripPlaces?.filter { range ~= $0.totalHoursNumber! })!
+        
+        hideAllMarkers()
+        
+        for place in sortedPlaces {
+            let markers = markerArray.filter { $0.totalTime == place.totalHoursNumber }
+            
+            for marker in markers {
+                marker.showMarker(map: viewWithMap)
+            }
+        }
+        
         
     }
     
-    func thumbTouchedDown(rangeSlider: RangeSlider) {
-        print("touchDown")
-        
-        
+    func hideAllMarkers() {
+        for marker in markerArray {
+            marker.hideMarker()
+        }
     }
-    
-    
-    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -210,6 +274,10 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         return 3
     }
     
+    func showError() {
+        print("Error while loading data")
+    }
+
     
     
 

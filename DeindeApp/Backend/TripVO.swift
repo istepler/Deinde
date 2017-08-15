@@ -24,6 +24,7 @@ struct TripVO {
     
     mutating func setPlaces(places: [PlaceVO]) {
         self.places = places
+        
     }
 
 }

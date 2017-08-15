@@ -24,6 +24,7 @@ class UserModel {
                     callback(nil, error)
                 } else {
                     self?.userTrips = trips
+                    callback(trips, nil)
                 }
                 
             }

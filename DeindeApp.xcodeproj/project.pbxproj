@@ -12,6 +12,8 @@
 		22963F1A1F23CDE5002E6A64 /* TripScheduledEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F191F23CDE5002E6A64 /* TripScheduledEvent.swift */; };
 		22963F1C1F23CF25002E6A64 /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */; };
 		22D5E0EA1F3741CB004673C4 /* MyTourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D5E0E91F3741CB004673C4 /* MyTourTableViewCell.swift */; };
+		22D5E0EC1F3C8185004673C4 /* MyToursListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D5E0EB1F3C8185004673C4 /* MyToursListViewController.swift */; };
+		22D5E0EF1F3C855E004673C4 /* MyToursListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D5E0EE1F3C855E004673C4 /* MyToursListTableViewCell.swift */; };
 		22E6141D1F2A2A38000B7D50 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6141C1F2A2A38000B7D50 /* RangeSlider.swift */; };
 		22E6141F1F2A2A40000B7D50 /* RangeSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E6141E1F2A2A40000B7D50 /* RangeSliderThumbLayer.swift */; };
 		22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614201F2A2A47000B7D50 /* RangeSliderTrackLayer.swift */; };
@@ -60,6 +62,8 @@
 		22963F191F23CDE5002E6A64 /* TripScheduledEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripScheduledEvent.swift; sourceTree = "<group>"; };
 		22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
 		22D5E0E91F3741CB004673C4 /* MyTourTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTourTableViewCell.swift; sourceTree = "<group>"; };
+		22D5E0EB1F3C8185004673C4 /* MyToursListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyToursListViewController.swift; sourceTree = "<group>"; };
+		22D5E0EE1F3C855E004673C4 /* MyToursListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyToursListTableViewCell.swift; sourceTree = "<group>"; };
 		22E6141C1F2A2A38000B7D50 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		22E6141E1F2A2A40000B7D50 /* RangeSliderThumbLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderThumbLayer.swift; sourceTree = "<group>"; };
 		22E614201F2A2A47000B7D50 /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
@@ -137,6 +141,15 @@
 			name = MyTourViewController;
 			sourceTree = "<group>";
 		};
+		22D5E0ED1F3C8529004673C4 /* MyToursListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22D5E0EB1F3C8185004673C4 /* MyToursListViewController.swift */,
+				22D5E0EE1F3C855E004673C4 /* MyToursListTableViewCell.swift */,
+			);
+			name = MyToursListViewController;
+			sourceTree = "<group>";
+		};
 		22E6141B1F2A2938000B7D50 /* RangeSlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +224,7 @@
 		3582B79B1F22A71900827A98 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22D5E0ED1F3C8529004673C4 /* MyToursListViewController */,
 				22D5E0E81F37416C004673C4 /* MyTourViewController */,
 				350F6CE41F361CA600B924F8 /* LoadingViewController */,
 				C147BCF01F325FF600A17760 /* ProfileViewController */,
@@ -453,6 +467,7 @@
 				3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */,
 				22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */,
 				22D5E0EA1F3741CB004673C4 /* MyTourTableViewCell.swift in Sources */,
+				22D5E0EC1F3C8185004673C4 /* MyToursListViewController.swift in Sources */,
 				359D63DE1F3BCF6C00E1DB26 /* UserModel.swift in Sources */,
 				22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */,
 				35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */,
@@ -462,6 +477,7 @@
 				3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */,
 				35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */,
 				35BC4F5F1F2E93130039749B /* DetailWebViewController.swift in Sources */,
+				22D5E0EF1F3C855E004673C4 /* MyToursListTableViewCell.swift in Sources */,
 				350F6CE11F36030400B924F8 /* TripsModel.swift in Sources */,
 				22963F1C1F23CF25002E6A64 /* PlaceDetailsViewController.swift in Sources */,
 				22963F1A1F23CDE5002E6A64 /* TripScheduledEvent.swift in Sources */,
