@@ -21,6 +21,8 @@ class PlaceDetailsViewController: UIViewController {
     
     @IBOutlet weak var placeDescriptionTaxtView: UITextView!
     
+    @IBOutlet weak var placeImageView: UIImageView!
+    
     @IBAction func closeButtonClicked(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
@@ -40,6 +42,8 @@ class PlaceDetailsViewController: UIViewController {
         timeLabel.text = timeString
         placeTitleTextView.text = place.title
         tripNameLabel.text = tripName
+        placeDescriptionTaxtView.text = place.details
+        placeImageView.sd_setImage(with: place.placeImage)
         //navigationController?.isNavigationBarHidden = false
         
         

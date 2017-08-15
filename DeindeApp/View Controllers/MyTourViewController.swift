@@ -164,12 +164,6 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
        
-        
-        //let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        //let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MyTourDetailView") as! PlaceDetailsViewController
-        
-        
         for markers in markerArray {
             if marker == markers.marker {
                 for place in tripPlaces! {
@@ -197,7 +191,6 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     override func viewDidLayoutSubviews() {
         let margin: CGFloat = 10.0
         let width: CGFloat = 30.0
-        
         let height: CGFloat = 200
         rangeSlider?.frame = CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays) )
     }
@@ -205,12 +198,21 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     func rangeSliderValueChanged(rangeSlider: RangeSlider) {
         print("Range slider value changed: \(rangeSlider.lowerValue) \(rangeSlider.upperValue)")
         
+        let touch = UITouch()
+        let locationY = touch.location(in: scrollView).y
+        let lowerLocationY: CGFloat = CGPoint(x: 20, y: scrollView.bounds.height - 50).y
+        print(lowerLocationY)
+        print(locationY)
         
-        if rangeSlider.upperValue >= 68.0 && (scrollView.contentOffset.y + scrollView.frame.size.height <= scrollView.contentSize.height ){
-            scrollView.contentOffset = CGPoint(x: 0.0, y: scrollView.contentOffset.y + 10.0)
-            
-           
+        if locationY == lowerLocationY {
+             scrollView.contentOffset = CGPoint(x: 0.0, y: scrollView.contentOffset.y + 10.0)
         }
+        
+//        if rangeSlider.upperValue >= 68.0 && (scrollView.contentOffset.y + scrollView.frame.size.height <= scrollView.contentSize.height ){
+//            scrollView.contentOffset = CGPoint(x: 0.0, y: scrollView.contentOffset.y + 10.0)
+//            
+//           
+//        }
         
         var sortedPlaces: [PlaceVO] = []
         let range = Int(rangeSlider.lowerValue)...Int(rangeSlider.upperValue)

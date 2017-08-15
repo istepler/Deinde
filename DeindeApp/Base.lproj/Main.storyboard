@@ -56,7 +56,7 @@
                                                     <rect key="frame" x="8" y="10" width="359" height="319"/>
                                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AtC-df-l1r">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AtC-df-l1r">
                                                     <rect key="frame" x="8" y="216" width="359" height="114"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хочу в Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjV-n9-RPe">
@@ -487,6 +487,7 @@
                     <navigationItem key="navigationItem" id="rgE-q8-8JJ"/>
                     <connections>
                         <outlet property="placeDescriptionTaxtView" destination="ABp-hF-XL1" id="7lV-KZ-ke8"/>
+                        <outlet property="placeImageView" destination="bx1-mI-foz" id="fLu-29-eaD"/>
                         <outlet property="placeTitleTextView" destination="jgk-3f-qAU" id="NHl-9k-nY5"/>
                         <outlet property="timeLabel" destination="iN8-Jg-S7E" id="v8j-xN-Bwr"/>
                         <outlet property="tripNameLabel" destination="0BJ-KG-7gi" id="Cdp-f4-F35"/>

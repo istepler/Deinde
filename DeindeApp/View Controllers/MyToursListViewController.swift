@@ -26,28 +26,20 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         //navigationController?.isNavigationBarHidden = true
         
         
-        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, description: nil, avatar: nil)
+        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, description: nil, avatar: nil, activationCode: nil)
         
         
-     UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
+        UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
             if let error = error {
                 self?.showError()
             } else {
                 if let trips = trips {
                     for trip in trips {
                         self?.userTrips?.append(trip)
-                        //print(trip)
-                        
                     }
                 }
             }
-
-
-        
         }
-
-   
- 
     }
 
     
@@ -78,7 +70,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.benefitsLabel.text = benefitsStr
         
-        //cell.cellBackgroundView.backgroundColor = UIColor.blue
+        cell.cellBackgroundView.backgroundColor = UIColor.blue
         cell.tripImageView.sd_setImage(with: trip?.tripImage)
         
         
