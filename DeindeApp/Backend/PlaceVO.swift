@@ -7,26 +7,30 @@
 //
 
 import Foundation
-import ObjectMapper
+import CoreLocation
 
-struct PlaceVO: Mappable {
+struct PlaceVO {
+    
+    var id: String?
     var title: String?
-    var time: String? // ???????????????
-    var description: String?
-    var coords: CoordsVO?
+    var time: Int? // ???????????????
+    var day: Int?
+    var details: String?
+    var coords: PFGeoPoint?
     var placeImage: URL? // or Image????
+    var totalHoursNumber: Int? {
+        get {
+            return (day! - 1)*24 + time!
+        }
+    }
    
+}
+
+import Parse
+
+extension PFGeoPoint {
     
-    init?(map: Map) {
-        
+    func location() -> CLLocation {
+        return CLLocation(latitude: self.latitude, longitude: self.longitude)
     }
-    
-    mutating func mapping(map: Map) {
-        title <- map["title"]
-        time <- map["time"]
-        description <- map["description"]
-        coords <- map ["coords"]
-        placeImage <- map ["placeImage"]
-    }
-    
 }

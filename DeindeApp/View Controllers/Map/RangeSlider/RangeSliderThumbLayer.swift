@@ -28,8 +28,9 @@ class RangeSliderThumbLayer: CALayer {
             ctx.addPath(thumbPath.cgPath)
             ctx.fillPath()
             
-            
         }
+        
+        
     }
     
 }

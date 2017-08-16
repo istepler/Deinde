@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,7 +20,11 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case freeTrips(trips: [TripVO]?)
     }
     
-    let model = TripsModel()
+    var trips: [TripVO] = [] {
+        didSet {
+            tripsTableView.reloadData()
+        }
+    }
     
     var state: TripsViewControllerState? {
         didSet {
@@ -28,47 +33,57 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 case .allTrips:
                     allTripsButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
                     freeTripsButton.backgroundColor = UIColor.clear
+                    self.trips = TripsModel.instance.allTrips
                 case .freeTrips:
                     freeTripsButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
                     allTripsButton.backgroundColor = UIColor.clear
+                    self.trips = TripsModel.instance.freeTrips
+                    
                 }
             }
-            tripsTableView.reloadData()
+            //tripsTableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadAllTrips()
+        loadFreeTrips()
         tripsTableView.dataSource = self
         tripsTableView.delegate = self
         state = .allTrips(trips: nil)
         
-        model.loadTrips { [weak self]( trips, error) in
-            if let error = error {
-                self?.showError()
-            } else {
-                if let trips = trips {
-                    print("GOOD")
-                }
-            }
-        }
         
     }
     
-    
-    func showError() {
-        print("Error while loading data")
+    func showError(error: Error) {
+        print("Error while loading data \(error)")
     }
     
+    func loadAllTrips() {
+        TripsModel.instance.loadAllTrips { (_, error) in
+            if let error = error {
+                self.showError(error: error)
+            } else {
+                self.trips = TripsModel.instance.allTrips
+                print(self.trips)
+            }
+        }
+    }
     
-    
-    
+    func loadFreeTrips() {
+        TripsModel.instance.loadFreeTrips { (_, error) in
+            if let error = error {
+                self.showError(error: error)
+            }
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    // MARK: - Actions
+    // MARK: Actions
     
     @IBAction func allTripsButtonPressed(_ sender: UIButton) {
         state = .allTrips(trips: nil)
@@ -77,20 +92,25 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         state = .freeTrips(trips: nil)
     }
     
-    // MARK: - TableViewDataSource & TableViewDelegate
+    // MARK: TableViewDataSource & TableViewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return trips.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tripsTableView.dequeueReusableCell(withIdentifier: "TripTableViewCell") as! TripTableViewCell
-        cell.configureCell()
+        let trip = trips[indexPath.row]
+        cell.configureCell(trip: trip)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailTripSeuge", sender: tableView.cellForRow(at: indexPath))
     }
     
     

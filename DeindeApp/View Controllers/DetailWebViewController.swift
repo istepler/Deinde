@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailWebViewController: UIViewController {
+    
     @IBOutlet weak var tripDetailsWebView: UIWebView!
 
     override func viewDidLoad() {

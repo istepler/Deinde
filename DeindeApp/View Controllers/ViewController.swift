@@ -18,11 +18,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // test Parse from tuturial
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackground { (success: Bool, error: Error?) -> Void in
-            print("Object has been saved.")
-        }
+        //let testObject = PFObject(className: "TestObject")
+      //  testObject["foo"] = "bar"
+      //  testObject.saveInBackground { (success: Bool, error: Error?) -> Void in
+      //      print("Object has been saved.")
+      //  }
 
        
     }

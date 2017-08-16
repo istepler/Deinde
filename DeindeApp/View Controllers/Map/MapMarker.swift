@@ -12,13 +12,15 @@ import GoogleMaps
 class MapMarker {
     let marker: GMSMarker
     var timeGl = ""
+    var totalTime: Int?
     
-    init(position: CLLocationCoordinate2D, time: String, map: GMSMapView) {
+    init(position: CLLocationCoordinate2D, time: String, map: GMSMapView, totalTimeOfPlace: Int) {
         marker = GMSMarker(position: position)
         let markerImage = UIImage(named: "marker")
-        marker.iconView = UIImageView(image: drawText(text: time, inImage: markerImage!))
+        marker.iconView = UIImageView(image: drawText(text: time + ":00", inImage: markerImage!))
         marker.map = map
         timeGl = time
+        totalTime = totalTimeOfPlace
     }
     
     func drawText(text: String, inImage: UIImage) -> UIImage? {
@@ -44,7 +46,13 @@ class MapMarker {
         return resultImage
     }
     
+    func hideMarker() {
+        marker.map = nil
+    }
     
-    
+    func showMarker(map: GMSMapView) {
+        marker.map = map
+    }
+ 
     
 }

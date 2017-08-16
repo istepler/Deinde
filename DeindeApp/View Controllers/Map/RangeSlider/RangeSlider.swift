@@ -60,9 +60,23 @@ class RangeSlider: UIControl {
             
         }
     }
+    
+    override var frame: CGRect {
+        didSet {
+            updateLayerFrames()
+            
+        }
+    }
 
-
-
+    var thumbWidth: CGFloat {
+        return CGFloat(bounds.width/1.5)
+    }
+    var markerWidth: CGFloat {
+        return CGFloat(bounds.width/2.2)
+    }
+    
+    
+    var ifSet = false
     var tripDays: Int = 0
     var dayLabelLayers = [CATextLayer]()
     var dayMarkerLayers = [RangeSliderDayMarkerLayer]()
@@ -72,27 +86,9 @@ class RangeSlider: UIControl {
     
     var previousLocation = CGPoint()
     
-    
 
-    
-    var thumbWidth: CGFloat {
-        return CGFloat(bounds.width/1.5)
-    }
-    var markerWidth: CGFloat {
-        return CGFloat(bounds.width/2.2)
-    }
-    
-    
-    override var frame: CGRect {
-        didSet {
-            updateLayerFrames()
-            
-        }
-    }
-
-       
-    init (frame: CGRect, tripDays: Int)
-    {
+   
+    init (frame: CGRect, tripDays: Int) {
         self.tripDays = tripDays
         
         super.init(frame: frame)
@@ -116,11 +112,15 @@ class RangeSlider: UIControl {
         
     }
     
-    
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+    }
+    
+    func onPress()
+    {
+        sendActions(for: .touchDown)
     }
     
     func setMarkers() {
@@ -137,14 +137,12 @@ class RangeSlider: UIControl {
             dayMarkerLayer.rangeSlider = self
             dayMarkerLayer.contentsScale = UIScreen.main.scale
             layer.addSublayer(dayMarkerLayer)
-            
-            
-            
+
             let dayMarkerCenter = CGFloat(round(positionForValueOfMarker(value: 0.0 + Double(i) * maximumValue)))
             dayMarkerLayer.frame = CGRect(x: round((bounds.width - markerWidth) / 2), y: round(dayMarkerCenter - markerWidth/2.0), width: round(markerWidth), height: round(markerWidth))
             
             dayMarkerLayer.setNeedsDisplay()
-            
+            if i != tripDays {
             let dayLabelLayer = dayLabelLayers[i]
             dayLabelLayer.font = UIFont(name: "Arial", size: 16)
             dayLabelLayer.fontSize = 16
@@ -154,26 +152,21 @@ class RangeSlider: UIControl {
             dayLabelLayer.alignmentMode = "center"
             
             layer.addSublayer(dayLabelLayer)
-            
+            }
         }
         
         CATransaction.commit()
-
-    
     }
     
-    var ifSet = false
-    
+   
     func updateLayerFrames() {
         
         CATransaction.begin()
         CATransaction.setDisableActions(true)
-        
-        
-        
+
         trackLayer.frame = bounds.insetBy(dx: bounds.width / 2.2, dy: 0.0)
         trackLayer.setNeedsDisplay()
-        
+
         let lowerThumbCenter = CGFloat(positionForValue(value: lowerValue))
         
         lowerThumbLayer.frame = CGRect(x: (bounds.width - thumbWidth) / 2, y: lowerThumbCenter - thumbWidth / 2.0, width: thumbWidth, height: thumbWidth)
@@ -188,14 +181,6 @@ class RangeSlider: UIControl {
         CATransaction.commit()
     }
     
-    func positionForValueOfMarker(value: Double) -> Double {
-        return Double(bounds.height - markerWidth) * (value - minimumValue) / (maximumValue * Double(tripDays) - minimumValue) + Double(markerWidth / 2.0)
-    }
-    
-    func positionForValue(value: Double) -> Double {
-        return Double(bounds.height - thumbWidth) * (value - minimumValue) / (maximumValue * Double(tripDays) - minimumValue) + Double(thumbWidth / 2.0)
-    }
-    
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         previousLocation = touch.location(in: self)
         
@@ -207,9 +192,6 @@ class RangeSlider: UIControl {
         return lowerThumbLayer.highlighted || upperThumbLayer.highlighted
     }
     
-    func boundValue(value: Double, toLowerValue lowerValue: Double, upperValue: Double) -> Double {
-        return min(max(value, lowerValue), upperValue)
-    }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let location = touch.location(in: self)
@@ -236,6 +218,7 @@ class RangeSlider: UIControl {
         
         sendActions(for: .valueChanged)
         
+        
         return true
         
     }
@@ -245,7 +228,17 @@ class RangeSlider: UIControl {
         upperThumbLayer.highlighted = false
     }
     
+    func positionForValueOfMarker(value: Double) -> Double {
+        return Double(bounds.height - markerWidth) * (value - minimumValue) / (maximumValue * Double(tripDays) - minimumValue) + Double(markerWidth / 2.0)
+    }
     
+    func positionForValue(value: Double) -> Double {
+        return Double(bounds.height - thumbWidth) * (value - minimumValue) / (maximumValue * Double(tripDays) - minimumValue) + Double(thumbWidth / 2.0)
+    }
+    
+    func boundValue(value: Double, toLowerValue lowerValue: Double, upperValue: Double) -> Double {
+        return min(max(value, lowerValue), upperValue)
+    }
     
     
     
