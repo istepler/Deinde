@@ -31,4 +31,18 @@ class UserModel {
             print("Current user is indefined")
         }
     }
+    
+    func loadUsersForTrip(trip: TripVO, callback: @escaping (_ users: [UserVO]?, _ error: Error?) -> ()){
+        let dataLoader = DataLoader()
+        dataLoader.usersForTripRequest(trip: trip) { (users, error) in
+            if let error = error {
+                print("Error occured")
+                print(error)
+                callback(nil, error)
+            }
+            callback(users, nil)
+        }
+    }
+
 }
+

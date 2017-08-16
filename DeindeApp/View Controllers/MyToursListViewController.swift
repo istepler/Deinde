@@ -23,11 +23,8 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         myToursTableView.dataSource = self
         myToursTableView.delegate = self
-        //navigationController?.isNavigationBarHidden = true
-        
-        
-        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)
-        
+    
+        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
         
         UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
             if let error = error {
@@ -36,6 +33,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
                 if let trips = trips {
                     for trip in trips {
                         self?.userTrips?.append(trip)
+                        print(trip)
                     }
                 }
             }
@@ -56,23 +54,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myToursTableView.dequeueReusableCell(withIdentifier: "MyToursListTableViewCell") as! MyToursListTableViewCell
         let trip = userTrips?[indexPath.row]
-        var benefitsStr: String = ""
-        
-        cell.tripTitleLabel.text = trip?.title
-        
-        for feature in (trip?.tripFeatures)! {
-            if (trip?.tripFeatures?.index(of: feature))! == (trip?.tripFeatures?.count)! - 1 {
-            benefitsStr += feature
-            } else {
-                benefitsStr += feature + "  ●  "
-            }
-        }
-        
-        cell.benefitsLabel.text = benefitsStr
-        
-        cell.cellBackgroundView.backgroundColor = UIColor.blue
-        cell.tripImageView.sd_setImage(with: trip?.tripImage)
-        
+        cell.configureCell(trip: trip!)
         
         return cell
     }

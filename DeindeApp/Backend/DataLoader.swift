@@ -92,7 +92,7 @@ class DataLoader {
     func usersForTripRequest(trip: TripVO, callback: @escaping (_ places: [UserVO]?, _ error: Error?) -> ()) {
         if let tripId = trip.id {
             let tripObject = PFObject(withoutDataWithClassName: "TripVO", objectId: tripId)
-            let relation = tripObject.relation(forKey: "users")
+            let relation = tripObject.relation(forKey: "usersOnTrip")
             let query = relation.query()
             query.findObjectsInBackground { (objects, error) in
                 if let error = error {
@@ -105,7 +105,7 @@ class DataLoader {
                             secondName:     object.value(forKey: "secondName") as? String,
                             facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
-                            details:    object.value(forKey: "description") as? String,
+                            details:    object.value(forKey: "details") as? String,
                             avatar:         object.value(forKey: "avatar") as? PFFile,
                             activationCode: nil)
                     }
@@ -161,7 +161,7 @@ class DataLoader {
                             secondName:     object.value(forKey: "secondName") as? String,
                             facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
-                            details:    object.value(forKey: "description") as? String,
+                            details:    object.value(forKey: "details") as? String,
                             avatar:         object.value(forKey: "avatar") as? PFFile,
                             activationCode:     nil)}
                     callback(user, nil)

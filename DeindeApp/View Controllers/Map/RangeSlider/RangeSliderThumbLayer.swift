@@ -28,12 +28,6 @@ class RangeSliderThumbLayer: CALayer {
             ctx.addPath(thumbPath.cgPath)
             ctx.fillPath()
             
-//            let image = #imageLiteral(resourceName: "timeLabel")
-//            
-//            UIGraphicsBeginImageContext(image.size)
-//            image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-//            UIGraphicsEndImageContext()
-//            
         }
         
         
