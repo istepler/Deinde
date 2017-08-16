@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,8 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="ProximaNova-Bold.otf">
-
+        <array key="Mark Simonson - Proxima Nova Bold.otf">
             <string>ProximaNova-Bold</string>
         </array>
         <array key="ProximaNova-Regular.otf">
@@ -816,7 +815,7 @@
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-NV-AKD">
                                                                 <rect key="frame" x="0.0" y="57" width="192" height="34"/>
-                                                                <state key="normal" image="fb"/>
+                                                                <state key="normal" image="facebookLogin"/>
                                                                 <connections>
                                                                     <action selector="facebookloginButton:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="Cbb-bJ-URf"/>
                                                                 </connections>
@@ -922,6 +921,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="5Hs-Gr-vsU" id="N1f-Xv-I0d"/>
+                        <outlet property="facebookLoginButton" destination="KuA-NV-AKD" id="tZ4-u5-uOe"/>
                         <outlet property="nameTextField" destination="dcI-7P-8Gb" id="C1q-6y-utq"/>
                         <outlet property="phoneNumberTextField" destination="nY8-n7-PcS" id="kyw-29-lBD"/>
                         <outlet property="userPhotoImage" destination="Esq-wd-jSd" id="HhY-gO-IOy"/>
@@ -939,8 +939,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="VpJ-ct-ZtI">
-
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="VpJ-ct-ZtI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -962,7 +961,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="a5y-EV-p3H">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="a5y-EV-p3H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1125,7 +1124,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIj-CD-d7a">
-                                        <rect key="frame" x="10" y="43" width="355" height="29.5"/>
+                                        <rect key="frame" x="10" y="43.5" width="355" height="29.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="24"/>
                                         <color key="textColor" cyan="0.0" magenta="0.0001772865653" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1165,21 +1164,14 @@
     </scenes>
     <resources>
         <image name="all_tours_icon" width="34" height="27"/>
-
         <image name="backArrow" width="10" height="16"/>
-
         <image name="backgroundProfile" width="375" height="334"/>
-
         <image name="deindeLogo" width="97" height="35"/>
         <image name="deinde_logo" width="157" height="174"/>
         <image name="deinde_logo_small" width="89" height="38"/>
         <image name="face" width="120" height="120"/>
         <image name="faceForCotravellersTable" width="120" height="120"/>
-        <image name="fb" width="168" height="160"/>
-        <image name="folder" width="120" height="141"/>
-        <image name="heart" width="184" height="168"/>
-
-        <image name="fb" width="34" height="34"/>
+        <image name="facebookLogin" width="34" height="34"/>
         <image name="my_tours_icon" width="23" height="28"/>
         <image name="pen" width="13" height="13"/>
         <image name="profile_icon" width="29" height="29"/>
