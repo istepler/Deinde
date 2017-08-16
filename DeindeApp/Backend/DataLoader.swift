@@ -15,7 +15,7 @@ class DataLoader {
     
     
     func allTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
-        let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: false)
+        let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: false).addAscendingOrder("date")
         query.findObjectsInBackground { (objects, error) in
             if let error = error {
                 // TODO: handle error
@@ -41,7 +41,7 @@ class DataLoader {
     
     
     func freeTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
-        let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: false)
+        let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: true)
         query.findObjectsInBackground { (objects, error) in
             if let error = error {
                 // TODO: handle error
@@ -105,7 +105,7 @@ class DataLoader {
                             secondName:     object.value(forKey: "secondName") as? String,
                             facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
-                            description:    object.value(forKey: "description") as? String,
+                            details:    object.value(forKey: "description") as? String,
                             avatar:         object.value(forKey: "avatar") as? PFFile,
                             activationCode: nil)
                     }
@@ -161,7 +161,7 @@ class DataLoader {
                             secondName:     object.value(forKey: "secondName") as? String,
                             facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
-                            description:    object.value(forKey: "description") as? String,
+                            details:    object.value(forKey: "description") as? String,
                             avatar:         object.value(forKey: "avatar") as? PFFile,
                             activationCode:     nil)}
                     callback(user, nil)

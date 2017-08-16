@@ -20,7 +20,7 @@ struct UserVO {
     var facebook: URL?
     var telNumber: String?
     //var avatar: URL?
-    var description: String?
+    var details: String?
     var avatar: PFFile?
     var activationCode: String?
     //var userTours: [TripVO]?

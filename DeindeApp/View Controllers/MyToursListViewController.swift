@@ -26,7 +26,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         //navigationController?.isNavigationBarHidden = true
         
         
-        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, description: nil, avatar: nil, activationCode: nil)
+        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)
         
         
         UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
@@ -91,9 +91,6 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         destination.tripDays = (trip?.duration)!
         
     }
-
-    
-
 
 }
 
