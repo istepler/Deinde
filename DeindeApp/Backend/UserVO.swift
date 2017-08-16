@@ -24,5 +24,7 @@ struct UserVO {
     var avatar: PFFile?
     var activationCode: String?
     //var userTours: [TripVO]?
+ 
+    
     
 }
