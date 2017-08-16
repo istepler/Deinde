@@ -27,8 +27,6 @@ class RangeSliderDayMarkerLayer: CALayer {
     
     override func draw(in ctx: CGContext) {
         if let slider = rangeSlider {
-            
-           
             let markerFrame = bounds.insetBy(dx: 2.0, dy: 2.0)
             let cornerRadius = markerFrame.height * slider.curvaceousness / 2.0
             let thumbPath = UIBezierPath(roundedRect: markerFrame, cornerRadius: cornerRadius)

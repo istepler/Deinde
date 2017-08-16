@@ -10,26 +10,28 @@ import UIKit
 
 class MyToursListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var tripImageView: UIImageView!
-    
+   
+    @IBOutlet weak var tripBackgroundView: UIView!
+    @IBOutlet weak var tripImage: UIImageView!
+    @IBOutlet weak var featuresLabel: UILabel!
     @IBOutlet weak var tripTitleLabel: UILabel!
-    
-    @IBOutlet weak var benefitsLabel: UILabel!
-    
     @IBOutlet weak var dateLabel: UILabel!
-    
-    @IBOutlet weak var cellBackgroundView: UIView!
    
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(trip: TripVO) {
+        var featuresString = ""
+        guard let features = trip.tripFeatures else {
+            return
+        }
+        for feature in features {
+            featuresString += feature + "  ● "
+        }
+        featuresLabel.text = featuresString
+        tripTitleLabel.text = trip.fullTitle
+        dateLabel.text = Date.stringFrom(date: trip.tripDate)
+        tripImage.sd_setImage(with: trip.tripImage)
+        tripBackgroundView.backgroundColor = setBackgroundColor(arrayRGB: trip.imageBackground)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
+

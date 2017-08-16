@@ -26,17 +26,16 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     @IBOutlet weak var tripNameLabel: UILabel!
     
     var trip = TripVO()
-    var tripPlaces: [PlaceVO]? = [] {
-        didSet {
-            //viewWithMap.reloadInputViews()
-        }
-    }
-    
+    var tripPlaces: [PlaceVO]? = []
     var tripDays = 0
     var rangeSlider: RangeSlider? = nil
-    
     var markerArray = [MapMarker]()
     var passingPlace = PlaceVO()
+    var usersCotravelling: [UserVO] = []{
+        didSet {
+            cotravellersTableView.reloadData()
+        }
+    }
     
     
     enum MuToutViewControllerButtonState {
@@ -76,8 +75,6 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         super.viewDidLoad()
         
         
-        tripNameLabel.text = trip.title
-        
         TripsModel.instance.loadPlacesForTrip(trip: trip, callback:  { [weak self] ( places, error) in
             if let error = error {
                 self?.showError()
@@ -89,7 +86,6 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                         
                         
                         self?.setMarkers(coordinates: place.coords!, time: place.time!, totalTime: place.totalHoursNumber!)
-                        print(place)
                         
                         var sortedPlaces: [PlaceVO] = []
                         let range = Int((self?.rangeSlider?.lowerValue)!)...Int((self?.rangeSlider?.upperValue)!)
@@ -98,53 +94,57 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                         self?.hideAllMarkers()
                         
                         for place in sortedPlaces {
-                            let markers = self?.markerArray.filter { $0.totalTime == place.totalHoursNumber }
-                            
+                            let markers = self?.markerArray.filter { $0.totalTime == place.totalHoursNumber
+                            }
                             for marker in markers! {
                                 marker.showMarker(map: (self?.viewWithMap)!)
                             }
                         }
-                        
-                        
-
-                        
                     }
                     self?.tripPlaces = self?.tripPlaces?.sorted(by: { $0.totalHoursNumber! < $1.totalHoursNumber!})
                     self?.setCamera(position: (self?.tripPlaces?[0].coords?.location().coordinate)!)
                 }
             }   
         })
-                
         
+        UserModel.instance.loadUsersForTrip(trip: trip, callback: { [weak self] (users, error) in
+            if let error = error {
+                self?.showError()
+            } else {
+                if let users = users {
+                    for user in users {
+                        //print(user)
+                        self?.usersCotravelling.append(user)
+                    }
+                }
+            }
+            
+        })
+        
+                
+        tripNameLabel.text = trip.title
         state = .map
         cotravellersTableView.dataSource = self
         cotravellersTableView.delegate = self
         
+        //temp url for infowebview
         let url = URL(string: "http://deinde.com.ua/tours/suntrip_camp/")
         infoWebView.loadRequest(URLRequest(url: url!))
         
-
+        //range slider frame values
         let margin: CGFloat = 10.0
         let width: CGFloat = 30.0 
         let height: CGFloat = 200
-        rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays ) + 6.0*margin), tripDays: tripDays)
         
+        rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays ) + margin), tripDays: tripDays)
         scrollView.addSubview(rangeSlider!)
-      
-
         scrollView.contentSize = (rangeSlider?.layer.frame.size)!
-        
         
         rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
         
-        
-                
-        
         viewWithMap?.delegate = self
         
-        
-        
-        }
+    }
        
 
     func setMarkers(coordinates: PFGeoPoint, time: Int, totalTime: Int) {
@@ -156,12 +156,11 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     func setCamera(position: CLLocationCoordinate2D) {
         let camera = GMSCameraPosition.camera(withLatitude: position.latitude, longitude: position.longitude, zoom: 15)
         self.viewWithMap.camera = camera
-        
 
     }
     
     
-    
+    //passing place and performing segue to placedetailsVC
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
        
         for markers in markerArray {
@@ -176,7 +175,6 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         }
         performSegue(withIdentifier: "markerToMyTourDetailsVCSegue", sender: marker)
 
-        
         return true
     }
     
@@ -184,7 +182,6 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         let destination = segue.destination as! PlaceDetailsViewController
         destination.place = passingPlace
         destination.tripName = trip.title!
-        
     }
     
     
@@ -201,18 +198,10 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         let touch = UITouch()
         let locationY = touch.location(in: scrollView).y
         let lowerLocationY: CGFloat = CGPoint(x: 20, y: scrollView.bounds.height - 50).y
-        print(lowerLocationY)
-        print(locationY)
         
         if locationY == lowerLocationY {
              scrollView.contentOffset = CGPoint(x: 0.0, y: scrollView.contentOffset.y + 10.0)
         }
-        
-//        if rangeSlider.upperValue >= 68.0 && (scrollView.contentOffset.y + scrollView.frame.size.height <= scrollView.contentSize.height ){
-//            scrollView.contentOffset = CGPoint(x: 0.0, y: scrollView.contentOffset.y + 10.0)
-//            
-//           
-//        }
         
         var sortedPlaces: [PlaceVO] = []
         let range = Int(rangeSlider.lowerValue)...Int(rangeSlider.upperValue)
@@ -227,8 +216,6 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                 marker.showMarker(map: viewWithMap)
             }
         }
-        
-        
     }
     
     func hideAllMarkers() {
@@ -262,18 +249,28 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         infoWebView.isHidden = true
     }
     
+    
+    //TableViewDelegate&DataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cotravellersTableView.dequeueReusableCell(withIdentifier: "MyTourCotravellersCell") as! MyTourTableViewCell
+        let user = usersCotravelling[indexPath.row]
+        cell.userNameLabel.text = user.firstName!
+        cell.userInfoTextView.text = user.details
+        
+        if let urlStr = user.avatar?.url {
+            let url = URL(string: urlStr)
+            cell.userPhotoImageView.sd_setImage(with: url)
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return usersCotravelling.count
     }
     
     func showError() {

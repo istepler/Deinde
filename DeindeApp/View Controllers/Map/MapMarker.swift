@@ -53,8 +53,6 @@ class MapMarker {
     func showMarker(map: GMSMapView) {
         marker.map = map
     }
-    
-    
-    
+ 
     
 }
