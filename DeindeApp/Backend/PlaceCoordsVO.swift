@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ObjectMapper
+//import ObjectMapper
 
 struct CoordsVO: Mappable {
     var latitude: Double?

@@ -35,6 +35,7 @@
 		35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F591F2DF6850039749B /* TripsViewController.swift */; };
 		35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */; };
 		35BC4F5F1F2E93130039749B /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */; };
+		6F1209951F44888200B084F2 /* PromoCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1209941F44888200B084F2 /* PromoCodeViewController.swift */; };
 		B797F56FCF4E74EE584CCCAC /* Pods_DeindeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */; };
 		C147BCDE1F32566700A17760 /* Proxima Nova Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */; };
 		C147BCDF1F32566700A17760 /* Proxima Nova Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */; };
@@ -89,6 +90,7 @@
 		35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
 		6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeindeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F1209941F44888200B084F2 /* PromoCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoCodeViewController.swift; sourceTree = "<group>"; };
 		934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black Italic.otf"; sourceTree = "<group>"; };
 		C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold Italic.otf"; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		3582B79B1F22A71900827A98 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6F1209911F44745B00B084F2 /*  PromoCodeViewController */,
 				22D5E0ED1F3C8529004673C4 /* MyToursListViewController */,
 				22D5E0E81F37416C004673C4 /* MyTourViewController */,
 				350F6CE41F361CA600B924F8 /* LoadingViewController */,
@@ -277,6 +280,14 @@
 				35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */,
 			);
 			name = TripsViewController;
+			sourceTree = "<group>";
+		};
+		6F1209911F44745B00B084F2 /*  PromoCodeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6F1209941F44888200B084F2 /* PromoCodeViewController.swift */,
+			);
+			name = " PromoCodeViewController";
 			sourceTree = "<group>";
 		};
 		C147BCCB1F3254CD00A17760 /* Fonts */ = {
@@ -485,6 +496,7 @@
 				350F6CE11F36030400B924F8 /* TripsModel.swift in Sources */,
 				22963F1C1F23CF25002E6A64 /* PlaceDetailsViewController.swift in Sources */,
 				22963F1A1F23CDE5002E6A64 /* TripScheduledEvent.swift in Sources */,
+				6F1209951F44888200B084F2 /* PromoCodeViewController.swift in Sources */,
 				3582B7A51F22ADE300827A98 /* PlaceCoordsVO.swift in Sources */,
 				3582B7A11F22AB9600827A98 /* TripVO.swift in Sources */,
 				22E6141F1F2A2A40000B7D50 /* RangeSliderThumbLayer.swift in Sources */,
