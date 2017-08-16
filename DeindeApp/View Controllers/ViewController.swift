@@ -13,19 +13,25 @@ import Parse
 
 class ViewController: UIViewController {
     
-    let model = UserModel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // test Parse from tuturial
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackground { (success: Bool, error: Error?) -> Void in
-            print("Object has been saved.")
-        }
-        
+        //let testObject = PFObject(className: "TestObject")
+      //  testObject["foo"] = "bar"
+      //  testObject.saveInBackground { (success: Bool, error: Error?) -> Void in
+      //      print("Object has been saved.")
+      //  }
+
+       
     }
-    
+        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
 }
 

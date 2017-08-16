@@ -71,6 +71,7 @@
 		22E614201F2A2A47000B7D50 /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
 		22E614221F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderDayMarkerLayer.swift; sourceTree = "<group>"; };
 		22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderDayMarkerColors.swift; sourceTree = "<group>"; };
+		2813DDCD1F3A0D32008EC382 /* DeindeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeindeApp.entitlements; sourceTree = "<group>"; };
 		350F6CE01F36030400B924F8 /* TripsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModel.swift; sourceTree = "<group>"; };
 		350F6CE21F3604CA00B924F8 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		3582B79E1F22AA4900827A98 /* UserVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
@@ -262,6 +263,7 @@
 		359222311F224F4200C64D6C /* DeindeApp */ = {
 			isa = PBXGroup;
 			children = (
+				2813DDCD1F3A0D32008EC382 /* DeindeApp.entitlements */,
 				350F6CDF1F3602E700B924F8 /* Models */,
 				3582B79B1F22A71900827A98 /* View Controllers */,
 				3582B79A1F22A67800827A98 /* Backend */,
@@ -355,8 +357,13 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2K7D2CJX45;
+						DevelopmentTeam = X3LC26ANLH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -614,11 +621,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2K7D2CJX45;
+				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
+				DEVELOPMENT_TEAM = X3LC26ANLH;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = julia.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = roman.antonuik.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -628,11 +636,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 2K7D2CJX45;
+				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
+				DEVELOPMENT_TEAM = X3LC26ANLH;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = julia.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = roman.antonuik.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
