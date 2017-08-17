@@ -41,7 +41,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
-    
+    // Anton test
     // MARK: - TableViewDataSource & TableViewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {
