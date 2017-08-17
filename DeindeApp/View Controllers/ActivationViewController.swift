@@ -8,40 +8,54 @@
 
 import UIKit
 
-class ActivationViewController: UIViewController, UITextFieldDelegate {
+class ActivationViewController: UIViewController {
     @IBOutlet weak var firstCodePartTextField: UITextField!
     @IBOutlet weak var secondCodePartTextField: UITextField!
     @IBOutlet weak var thirdCodePartTextField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstCodePartTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        addTargets()
         
     }
     
     
-    func textFieldDidChange(_ textField: UITextField) {
-        if textField.text?.characters.count == 2 {
+    func firstPartTextFieldDidChange(_ textField: UITextField) {
+        if firstCodePartTextField.text?.characters.count == 2 {
             secondCodePartTextField.becomeFirstResponder()
+            if secondCodePartTextField.text?.characters.count == 2 {
+                thirdCodePartTextField.becomeFirstResponder()
+                if thirdCodePartTextField.text?.characters.count == 2 {
+                    self.view.endEditing(true)
+                }
+            }
         }
-    
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func secondPartTextFieldDidChange(_ textField: UITextField) {
+        if secondCodePartTextField.text?.characters.count == 2 {
+            thirdCodePartTextField.becomeFirstResponder()
+            if thirdCodePartTextField.text?.characters.count == 2 {
+                self.view.endEditing(true)
+            }
+        }
     }
-    */
+    
+    func thirdPartTextFieldDidChange(_ textField: UITextField) {
+        if thirdCodePartTextField.text?.characters.count == 2 {
+            self.view.endEditing(true)
+        }
+        
+    }
+    
+    func addTargets() {
+        firstCodePartTextField.addTarget(self, action: #selector(firstPartTextFieldDidChange(_:)), for: .editingChanged)
+        secondCodePartTextField.addTarget(self, action: #selector(secondPartTextFieldDidChange(_:)), for: .editingChanged)
+        thirdCodePartTextField.addTarget(self, action: #selector(thirdPartTextFieldDidChange(_:)), for: .editingChanged)
 
+    }
+    @IBOutlet weak var beginTravelButtonPressed: UIButton!
+    
+    
 }
+

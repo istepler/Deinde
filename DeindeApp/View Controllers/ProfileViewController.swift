@@ -10,6 +10,7 @@ import UIKit
 import FacebookLogin
 import FacebookCore
 import SwiftyJSON
+import Parse
 
 class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -55,6 +56,12 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if PFUser.current() == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
         
         self.descriptionTextView.delegate = self
         self.phoneNumberTextField.delegate = self
