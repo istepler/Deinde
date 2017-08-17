@@ -943,8 +943,12 @@
                     <tabBarItem key="tabBarItem" title="Мої тури" image="my_tours_icon" selectedImage="my_tours_icon" id="EwN-NT-0KF"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+<<<<<<< HEAD
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VpJ-ct-ZtI">
+=======
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="VpJ-ct-ZtI">
+>>>>>>> origin/master
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
