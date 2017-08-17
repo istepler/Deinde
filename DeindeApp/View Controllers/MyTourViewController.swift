@@ -137,9 +137,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         let width: CGFloat = 30.0 
         let height: CGFloat = rangeSliderView.bounds.height - 2.0*margin
         
-        rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height  + margin), tripDays: tripDays)
+        rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: 0.0, width: width, height: height  + margin), tripDays: tripDays)
         rangeSliderView.addSubview(rangeSlider!)
-        //rangeSliderView.contentSize = (rangeSlider?.layer.frame.size)!
         
         rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
         
@@ -190,7 +189,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         let margin: CGFloat = 10.0
         let width: CGFloat = 30.0
         let height: CGFloat = rangeSliderView.bounds.height - 2.0*margin
-        rangeSlider?.frame = CGRect(x: margin, y: margin, width: width, height: height  )
+        rangeSlider?.frame = CGRect(x: margin, y: 0.0, width: width, height: height  )
     }
 
     func rangeSliderValueChanged(rangeSlider: RangeSlider) {

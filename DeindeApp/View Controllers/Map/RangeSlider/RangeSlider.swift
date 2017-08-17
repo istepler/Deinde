@@ -113,13 +113,13 @@ class RangeSlider: UIControl {
         
         if let topTimeThumb = Bundle.main.loadNibNamed("TimeThumbView", owner: nil, options: nil)?.first as? TimeThumbView {
             upperTimeThumb = topTimeThumb
-            upperTimeThumb.timeLabel.text = String(Int(upperValue)) + ":00"
+            upperTimeThumb.timeLabel.text = String(Int(upperValue)) + ":00 "
             addSubview(upperTimeThumb)
         }
         
         if let bottomTimeTumb = Bundle.main.loadNibNamed("TimeThumbView", owner: nil, options: nil)?.first as? TimeThumbView {
             lowerTimeThumb = bottomTimeTumb
-            lowerTimeThumb.timeLabel.text = String(Int(lowerValue)) + ":00"
+            lowerTimeThumb.timeLabel.text = String(Int(lowerValue)) + ":00 "
             addSubview(lowerTimeThumb)
         }
         
@@ -229,7 +229,7 @@ class RangeSlider: UIControl {
             while timeForLabel >= 24 {
                 timeForLabel -= 24
             }
-            lowerTimeThumb.timeLabel.text = String(timeForLabel) + ":00"
+            lowerTimeThumb.timeLabel.text = String(timeForLabel) + ":00 "
         } else if upperThumbLayer.highlighted {
             upperValue += deltaValue
             upperValue = boundValue(value: upperValue, toLowerValue: lowerValue, upperValue: maximumValue * Double(tripDays))
@@ -237,7 +237,7 @@ class RangeSlider: UIControl {
             while timeForLabel >= 24 {
                 timeForLabel -= 24
             }
-            upperTimeThumb.timeLabel.text = String(timeForLabel) + ":00"
+            upperTimeThumb.timeLabel.text = String(timeForLabel) + ":00 "
         }
         
         CATransaction.begin()
