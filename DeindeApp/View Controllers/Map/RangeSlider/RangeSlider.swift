@@ -83,7 +83,8 @@ class RangeSlider: UIControl {
     let trackLayer = RangeSliderTrackLayer()
     let lowerThumbLayer = RangeSliderThumbLayer()
     let upperThumbLayer = RangeSliderThumbLayer()
-    
+    var lowerTimeThumb = TimeThumbView()
+    var upperTimeThumb = TimeThumbView()
     var previousLocation = CGPoint()
     
 
@@ -108,6 +109,18 @@ class RangeSlider: UIControl {
         for i in 0...tripDays {
             dayMarkerLayers.append(RangeSliderDayMarkerLayer(color: RangeSliderDayMarkerColors.colorsArray[i]))
             dayLabelLayers.append(CATextLayer())
+        }
+        
+        if let topTimeThumb = Bundle.main.loadNibNamed("TimeThumbView", owner: nil, options: nil)?.first as? TimeThumbView {
+            upperTimeThumb = topTimeThumb
+            upperTimeThumb.timeLabel.text = String(Int(upperValue)) + ":00"
+            addSubview(upperTimeThumb)
+        }
+        
+        if let bottomTimeTumb = Bundle.main.loadNibNamed("TimeThumbView", owner: nil, options: nil)?.first as? TimeThumbView {
+            lowerTimeThumb = bottomTimeTumb
+            lowerTimeThumb.timeLabel.text = String(Int(lowerValue)) + ":00"
+            addSubview(lowerTimeThumb)
         }
         
     }
@@ -152,6 +165,8 @@ class RangeSlider: UIControl {
             dayLabelLayer.alignmentMode = "center"
             
             layer.addSublayer(dayLabelLayer)
+                
+                
             }
         }
         
@@ -172,9 +187,15 @@ class RangeSlider: UIControl {
         lowerThumbLayer.frame = CGRect(x: (bounds.width - thumbWidth) / 2, y: lowerThumbCenter - thumbWidth / 2.0, width: thumbWidth, height: thumbWidth)
         lowerThumbLayer.setNeedsDisplay()
         
+        lowerTimeThumb.frame = CGRect(x: lowerThumbLayer.frame.maxX + 3.0, y: lowerThumbLayer.frame.minY + 4.0, width: lowerTimeThumb.bounds.width, height: lowerTimeThumb.bounds.height)
+        lowerTimeThumb.setNeedsDisplay()
+        
         let upperThumbCenter = CGFloat(positionForValue(value: upperValue))
         upperThumbLayer.frame = CGRect(x: (bounds.width - thumbWidth) / 2, y: upperThumbCenter - thumbWidth/2.0, width: thumbWidth, height: thumbWidth)
         upperThumbLayer.setNeedsDisplay()
+        
+        upperTimeThumb.frame = CGRect(x: upperThumbLayer.frame.maxX + 3.0, y: upperThumbLayer.frame.minY + 4.0, width: upperTimeThumb.bounds.width, height: upperTimeThumb.bounds.height)
+        upperTimeThumb.setNeedsDisplay()
         
         setMarkers()
         
@@ -204,9 +225,19 @@ class RangeSlider: UIControl {
         if lowerThumbLayer.highlighted {
             lowerValue += deltaValue
             lowerValue = boundValue(value: lowerValue, toLowerValue: minimumValue, upperValue: upperValue)
+            var timeForLabel = Int(lowerValue)
+            while timeForLabel >= 24 {
+                timeForLabel -= 24
+            }
+            lowerTimeThumb.timeLabel.text = String(timeForLabel) + ":00"
         } else if upperThumbLayer.highlighted {
             upperValue += deltaValue
             upperValue = boundValue(value: upperValue, toLowerValue: lowerValue, upperValue: maximumValue * Double(tripDays))
+            var timeForLabel = Int(upperValue)
+            while timeForLabel >= 24 {
+                timeForLabel -= 24
+            }
+            upperTimeThumb.timeLabel.text = String(timeForLabel) + ":00"
         }
         
         CATransaction.begin()

@@ -24,6 +24,8 @@ class RangeSliderThumbLayer: CALayer {
             let cornerRadius = thumbFrame.height * slider.curvaceousness / 2.0
             let thumbPath = UIBezierPath(roundedRect: thumbFrame, cornerRadius: cornerRadius)
             
+            
+            
             ctx.setFillColor(slider.thumbTintColor.cgColor)
             ctx.addPath(thumbPath.cgPath)
             ctx.fillPath()
