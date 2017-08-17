@@ -35,6 +35,7 @@
 		35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F591F2DF6850039749B /* TripsViewController.swift */; };
 		35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */; };
 		35BC4F5F1F2E93130039749B /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */; };
+		35E586691F45675200952C41 /* ActivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E586681F45675200952C41 /* ActivationViewController.swift */; };
 		B797F56FCF4E74EE584CCCAC /* Pods_DeindeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */; };
 		C147BCDE1F32566700A17760 /* Proxima Nova Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */; };
 		C147BCDF1F32566700A17760 /* Proxima Nova Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C147BCCD1F3254EA00A17760 /* Proxima Nova Bold Italic.otf */; };
@@ -89,6 +90,7 @@
 		35BC4F591F2DF6850039749B /* TripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
+		35E586681F45675200952C41 /* ActivationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewController.swift; sourceTree = "<group>"; };
 		6B00ACE1A14FE425CC3934CD /* Pods_DeindeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeindeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeindeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C147BCCC1F3254EA00A17760 /* Proxima Nova Black Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black Italic.otf"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				350F6CE41F361CA600B924F8 /* LoadingViewController */,
 				C147BCF01F325FF600A17760 /* ProfileViewController */,
 				35BC4F5B1F2E77190039749B /* TripsViewController */,
+				35E586671F45671800952C41 /* ActivationViewController */,
 				359222341F224F4200C64D6C /* ViewController.swift */,
 				35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */,
 				22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */,
@@ -279,6 +282,14 @@
 				35BC4F5C1F2E777D0039749B /* TripTableViewCell.swift */,
 			);
 			name = TripsViewController;
+			sourceTree = "<group>";
+		};
+		35E586671F45671800952C41 /* ActivationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				35E586681F45675200952C41 /* ActivationViewController.swift */,
+			);
+			name = ActivationViewController;
 			sourceTree = "<group>";
 		};
 		C147BCCB1F3254CD00A17760 /* Fonts */ = {
@@ -471,6 +482,7 @@
 			files = (
 				22963F101F23B665002E6A64 /* MyTourViewController.swift in Sources */,
 				359222351F224F4200C64D6C /* ViewController.swift in Sources */,
+				35E586691F45675200952C41 /* ActivationViewController.swift in Sources */,
 				350F6CE31F3604CA00B924F8 /* DataLoader.swift in Sources */,
 				22963F181F23CD9F002E6A64 /* MapMarker.swift in Sources */,
 				22E614231F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift in Sources */,
