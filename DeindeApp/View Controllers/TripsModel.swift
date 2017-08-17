@@ -20,7 +20,7 @@ class TripsModel {
         let dataLoader = DataLoader()
         dataLoader.allTripsRequest {(trips, error) in
             if let error = error {
-                AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController: MyTourViewController())
+                AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController:  TripsViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)
@@ -35,6 +35,7 @@ class TripsModel {
         let dataLoader = DataLoader()
         dataLoader.freeTripsRequest {(trips, error) in
             if let error = error {
+                AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController:  TripsViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)
@@ -49,6 +50,7 @@ class TripsModel {
         let dataLoader = DataLoader()
         dataLoader.placesForTripRequest(trip: trip) { (places, error) in
             if let error = error {
+                AlertDialog.showAlert("Error", message: "Sorry, plases of current trip are not laoded", viewController:  TripsViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)
