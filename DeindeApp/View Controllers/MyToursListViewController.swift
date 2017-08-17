@@ -12,6 +12,7 @@ import Parse
 import SystemConfiguration
 
 
+
 class MyToursListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var myToursTableView: UITableView!
@@ -26,7 +27,6 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         myToursTableView.dataSource = self
         myToursTableView.delegate = self
-    
         UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
             if Reachability.isConnectedToNetwork() == true {
             UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
@@ -40,13 +40,13 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
                         }
                     }
                 }
+                SwiftSpinner.hide()
             }
             } else {
                 AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
         }
     }
 
-    
     // MARK: - TableViewDataSource & TableViewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {

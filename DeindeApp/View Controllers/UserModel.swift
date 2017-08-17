@@ -18,6 +18,8 @@ class UserModel {
     
     func loadUserTrips(callback: @escaping (_ places: [TripVO]?, _ error: Error?) -> ()){
         let dataLoader = DataLoader()
+        SwiftSpinner.show("loading my trips")
+
         if let user = currentUser {
             dataLoader.userTripsRequest(user: user) {[weak self] (trips, error) in
                 if let error = error {
@@ -35,6 +37,8 @@ class UserModel {
     
     func loadUsersForTrip(trip: TripVO, callback: @escaping (_ users: [UserVO]?, _ error: Error?) -> ()){
         let dataLoader = DataLoader()
+        SwiftSpinner.show("loading info for trips")
+
         dataLoader.usersForTripRequest(trip: trip) { (users, error) in
             if let error = error {
                 AlertDialog.showAlert("Error", message: "Sorry, problems with loading users", viewController: MyTourViewController())

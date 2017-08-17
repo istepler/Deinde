@@ -104,7 +104,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                         self?.tripPlaces = self?.tripPlaces?.sorted(by: { $0.totalHoursNumber! < $1.totalHoursNumber!})
                         self?.setCamera(position: (self?.tripPlaces?[0].coords?.location().coordinate)!)
                     }
-                }   
+                }
+                SwiftSpinner.hide()
             })
             
             UserModel.instance.loadUsersForTrip(trip: trip, callback: { [weak self] (users, error) in
@@ -118,7 +119,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                         }
                     }
                 }
-                
+                SwiftSpinner.hide()
             })
             
                     
