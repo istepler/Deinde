@@ -167,6 +167,7 @@ class DataLoader {
             }
         } else {
             print("Error! User id = nil")
+            AlertDialog.showAlert("Error", message: "Error occured while uploading a photo", viewController: ProfileViewController())
         }
     }
     
@@ -191,6 +192,7 @@ class DataLoader {
                 if error != nil {
                     print("Error occured while uploading a photo")
                     callback(false, error)
+                    AlertDialog.showAlert("Error", message: "Error occured while uploading a photo", viewController: ProfileViewController())
                 }
                 
             })
