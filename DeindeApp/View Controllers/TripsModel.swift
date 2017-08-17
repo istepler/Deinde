@@ -20,6 +20,7 @@ class TripsModel {
         let dataLoader = DataLoader()
         dataLoader.allTripsRequest {(trips, error) in
             if let error = error {
+                AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController: MyTourViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)

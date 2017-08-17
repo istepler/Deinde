@@ -11,9 +11,6 @@ import Parse
 
 class DataLoader {
     
-    
-    
-    
     func allTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: false).addAscendingOrder("date")
         query.findObjectsInBackground { (objects, error) in
@@ -35,7 +32,6 @@ class DataLoader {
                 }
                 callback(trips, nil)
             }
-            
         }
     }
     
@@ -210,6 +206,4 @@ class DataLoader {
             }
         }
     }
-    
-    
 }
