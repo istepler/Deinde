@@ -66,7 +66,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if AccessToken.current != nil {
+        if AccessToken.current == nil {
             facebookLoginButton.alpha = 0.25
         }
     }

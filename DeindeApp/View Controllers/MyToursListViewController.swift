@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Parse
 
 class MyToursListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
