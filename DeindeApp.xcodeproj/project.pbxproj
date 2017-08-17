@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		220D1F251F42FA1500D01324 /* RangeSliderTimeLabelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220D1F241F42FA1500D01324 /* RangeSliderTimeLabelLayer.swift */; };
+		2278D9411F45890D00C7064B /* TimeThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278D93F1F45890D00C7064B /* TimeThumbView.swift */; };
+		2278D9421F45890D00C7064B /* TimeThumbView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2278D9401F45890D00C7064B /* TimeThumbView.xib */; };
 		22963F101F23B665002E6A64 /* MyTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F0F1F23B665002E6A64 /* MyTourViewController.swift */; };
 		22963F181F23CD9F002E6A64 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F171F23CD9F002E6A64 /* MapMarker.swift */; };
 		22963F1A1F23CDE5002E6A64 /* TripScheduledEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963F191F23CDE5002E6A64 /* TripScheduledEvent.swift */; };
@@ -59,7 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		220D1F241F42FA1500D01324 /* RangeSliderTimeLabelLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderTimeLabelLayer.swift; sourceTree = "<group>"; };
+		2278D93F1F45890D00C7064B /* TimeThumbView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeThumbView.swift; sourceTree = "<group>"; };
+		2278D9401F45890D00C7064B /* TimeThumbView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeThumbView.xib; sourceTree = "<group>"; };
 		22963F0F1F23B665002E6A64 /* MyTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTourViewController.swift; sourceTree = "<group>"; };
 		22963F171F23CD9F002E6A64 /* MapMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
 		22963F191F23CDE5002E6A64 /* TripScheduledEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripScheduledEvent.swift; sourceTree = "<group>"; };
@@ -160,7 +162,8 @@
 			children = (
 				22E6141C1F2A2A38000B7D50 /* RangeSlider.swift */,
 				22E6141E1F2A2A40000B7D50 /* RangeSliderThumbLayer.swift */,
-				220D1F241F42FA1500D01324 /* RangeSliderTimeLabelLayer.swift */,
+				2278D93F1F45890D00C7064B /* TimeThumbView.swift */,
+				2278D9401F45890D00C7064B /* TimeThumbView.xib */,
 				22E614201F2A2A47000B7D50 /* RangeSliderTrackLayer.swift */,
 				22E614221F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift */,
 				22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */,
@@ -368,7 +371,7 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3398483R66;
+						DevelopmentTeam = 2K7D2CJX45;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -407,6 +410,7 @@
 				C147BCE11F32566700A17760 /* Proxima Nova Extrabold.otf in Resources */,
 				C147BCE21F32566700A17760 /* Proxima Nova Semibold Italic.otf in Resources */,
 				C147BCE31F32566700A17760 /* Proxima Nova Semibold.otf in Resources */,
+				2278D9421F45890D00C7064B /* TimeThumbView.xib in Resources */,
 				C147BCE41F32566700A17760 /* Proxima Nova Thin Italic.otf in Resources */,
 				C147BCE51F32566700A17760 /* Proxima Nova Thin.otf in Resources */,
 				C147BCE61F32566700A17760 /* ProximaNova-Black.otf in Resources */,
@@ -495,9 +499,9 @@
 				35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */,
 				359222331F224F4200C64D6C /* AppDelegate.swift in Sources */,
 				C147BCF21F32606C00A17760 /* ProfileViewController.swift in Sources */,
+				2278D9411F45890D00C7064B /* TimeThumbView.swift in Sources */,
 				22E6141D1F2A2A38000B7D50 /* RangeSlider.swift in Sources */,
 				3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */,
-				220D1F251F42FA1500D01324 /* RangeSliderTimeLabelLayer.swift in Sources */,
 				35BC4F5A1F2DF6850039749B /* TripsViewController.swift in Sources */,
 				35BC4F5F1F2E93130039749B /* DetailWebViewController.swift in Sources */,
 				22D5E0EF1F3C855E004673C4 /* MyToursListTableViewCell.swift in Sources */,
@@ -634,11 +638,11 @@
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
-				DEVELOPMENT_TEAM = 3398483R66;
+				DEVELOPMENT_TEAM = 2K7D2CJX45;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = roman.antonuik.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = roman.antonuik.DeindeApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -649,11 +653,11 @@
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
-				DEVELOPMENT_TEAM = 3398483R66;
+				DEVELOPMENT_TEAM = 2K7D2CJX45;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = roman.antonuik.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = roman.antonuik.DeindeApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
