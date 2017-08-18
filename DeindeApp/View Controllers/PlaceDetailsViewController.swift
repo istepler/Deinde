@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PlaceDetailsViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -28,6 +29,29 @@ class PlaceDetailsViewController: UIViewController, UINavigationControllerDelega
         
     }
     
+    @IBAction func goToGoogleMapsAppButtonPressed(_ sender: UIButton) {
+        
+        let placeCoords = CLLocationCoordinate2D(latitude: (place.coords?.latitude)!, longitude: (place.coords?.longitude)!)
+        
+        let testURL = URL(string: "comgooglemaps-x-callback://")!
+        let nextTestURL = URL(string: "https://")!
+        if UIApplication.shared.canOpenURL(testURL) {  //goes to google maps фзз
+            let directionsRequest = "comgooglemaps-x-callback://" +
+                "?daddr=\(placeCoords.latitude),\(placeCoords.longitude)&zoom=14" +
+            "&x-success=sourceapp://?resume=true&x-source=AirApp"
+            
+            let directionsURL = URL(string: directionsRequest)!
+            UIApplication.shared.openURL(directionsURL)
+        } else if UIApplication.shared.canOpenURL(nextTestURL){ // goes to safari google maps
+            let directionsRequest = "https://maps.google.com/maps?f=d&" +
+                "daddr=\(placeCoords.latitude),\(placeCoords.longitude)&zoom=14" +
+            "&x-success=sourceapp://?resume=true&x-source=AirApp"
+            let directionsURL = URL(string: directionsRequest)!
+            UIApplication.shared.openURL(directionsURL)
+
+        }
+
+    }
 
      override func viewDidLoad() {
         super.viewDidLoad()

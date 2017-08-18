@@ -14,7 +14,7 @@ import Parse
 
 
 
-class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDelegate, UITableViewDataSource  {
+class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate  {
     
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
@@ -32,6 +32,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     var rangeSlider: RangeSlider? = nil
     var markerArray = [MapMarker]()
     var passingPlace = PlaceVO()
+    var sortedPlaces: [PlaceVO] = []
+    var locationManager = CLLocationManager()
     var usersCotravelling: [UserVO] = []{
         didSet {
             cotravellersTableView.reloadData()
@@ -207,6 +209,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         
         hideAllMarkers()
         
+
         for place in sortedPlaces {
             let markers = markerArray.filter { $0.totalTime == place.totalHoursNumber }
             
@@ -215,6 +218,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
             }
         }
     }
+    
     
     func hideAllMarkers() {
         for marker in markerArray {

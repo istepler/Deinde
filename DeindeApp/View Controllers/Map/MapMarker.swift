@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMaps
+import CoreGraphics
 
 class MapMarker {
     let marker: GMSMarker
@@ -25,11 +26,12 @@ class MapMarker {
     
     func drawText(text: String, inImage: UIImage) -> UIImage? {
         
-        let font = UIFont.systemFont(ofSize: 11)
+        let font = UIFont.systemFont(ofSize: 12)
         let size = inImage.size
         
         UIGraphicsBeginImageContext(size)
-        
+        let context = UIGraphicsGetCurrentContext()
+        context?.setShouldAntialias(true)
         inImage.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         let style : NSMutableParagraphStyle = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         style.alignment = .center
@@ -38,8 +40,11 @@ class MapMarker {
         let textSize = text.size(attributes: attributes as? [String : Any])
         let rect = CGRect(x: 0, y: 0, width: inImage.size.width, height: inImage.size.height)
         let textRect = CGRect(x: (rect.size.width - textSize.width)/2, y: (rect.size.height - textSize.height)/2 - 4, width: textSize.width, height: textSize.height)
+        
+        
         text.draw(in: textRect.integral, withAttributes: attributes as? [String : Any])
         let resultImage = UIGraphicsGetImageFromCurrentImageContext()
+        
         
         UIGraphicsEndImageContext()
         

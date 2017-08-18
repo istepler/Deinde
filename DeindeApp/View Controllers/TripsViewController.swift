@@ -132,6 +132,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let index = indexPath?.row
         let destinationVC = segue.destination as! DetailWebViewController
         let detailTripUrl = trips[index!].detailsUrl
+        let tripTitle = trips[index!].title
+        destinationVC.tripTitle = tripTitle
         destinationVC.url = detailTripUrl
     }
 }
