@@ -67,11 +67,11 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if PFUser.current() == nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
-            navigationController?.pushViewController(vc, animated: false)
-        }
+//        if PFUser.current() == nil {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
+//            navigationController?.pushViewController(vc, animated: false)
+//        }
         
         if AccessToken.current == nil {
             facebookLoginButton.alpha = 0.5

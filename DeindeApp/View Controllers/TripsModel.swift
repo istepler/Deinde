@@ -22,7 +22,7 @@ class TripsModel {
         dataLoader.allTripsRequest {[weak self] (trips, error) in
 
             if let error = error {
-                AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController:  TripsViewController())
+                //AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController:  TripsViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)
@@ -30,7 +30,7 @@ class TripsModel {
                 self?.allTrips = trips
             }
             callback(trips, nil)
-            SwiftSpinner.hide()
+            //SwiftSpinner.hide()
             
         }
         
@@ -42,7 +42,7 @@ class TripsModel {
         dataLoader.freeTripsRequest {[weak self] (trips, error) in
 
             if let error = error {
-                AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController:  TripsViewController())
+                //AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController:  TripsViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)

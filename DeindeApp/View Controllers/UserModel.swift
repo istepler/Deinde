@@ -20,7 +20,7 @@ class UserModel {
     
     func loadUserTrips(callback: @escaping (_ places: [TripVO]?, _ error: Error?) -> ()){
         let dataLoader = DataLoader()
-        SwiftSpinner.show("loading my trips")
+        //SwiftSpinner.show("loading my trips")
 
         if let user = currentUser {
             dataLoader.userTripsRequest(user: user) {[weak self] (trips, error) in
