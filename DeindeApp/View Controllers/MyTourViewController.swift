@@ -179,9 +179,34 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! PlaceDetailsViewController
-        destination.place = passingPlace
-        destination.tripName = trip.title!
+        if segue.identifier == "markerToMyTourDetailsVCSegue" {
+            let destination = segue.destination as! PlaceDetailsViewController
+            destination.place = passingPlace
+            destination.tripName = trip.title!
+        }
+        if segue.identifier == "detailUserInfo" {
+            if let indexPath = cotravellersTableView.indexPathForSelectedRow {
+                let destination = segue.destination as! MyTourCotravellersViewController
+                let userSegue = usersCotravelling[indexPath.row]
+                if userSegue.firstName != nil {
+                    destination.userNameVar = userSegue.firstName!
+                }
+                if userSegue.details != nil {
+                    destination.userAboutVar = userSegue.details!
+                }
+                if userSegue.avatar?.url != nil {
+                    destination.userFotoVar = (userSegue.avatar?.url)!
+                }
+                if userSegue.facebook != nil {
+                    destination.userLinkFacebookVar = userSegue.facebook!
+                }
+                if userSegue.telNumber != nil {
+                    destination.userPhoneNumberVar = userSegue.telNumber!
+                }
+                
+            }
+            
+        }
     }
     
     

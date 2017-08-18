@@ -64,8 +64,8 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         descriptionTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if AccessToken.current == nil {
             facebookLoginButton.alpha = 0.25
         }
