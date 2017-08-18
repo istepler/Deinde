@@ -14,6 +14,7 @@ pod 'Parse'
 pod 'FacebookCore'
 pod 'FacebookLogin'
 pod 'SwiftyJSON'
+pod 'IQKeyboardManagerSwift'
 
 end
 

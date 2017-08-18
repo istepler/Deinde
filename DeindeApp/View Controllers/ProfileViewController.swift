@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var userPhotoImage: UIImageView!
+    @IBOutlet weak var userPhotoImage: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
 
     @IBAction func facebookLoginButtonPressed(_ sender: UIButton!) {
@@ -67,14 +67,13 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.phoneNumberTextField.delegate = self
         self.nameTextField.delegate = self
         
-
         descriptionTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if AccessToken.current == nil {
-            facebookLoginButton.alpha = 0.25
+            facebookLoginButton.alpha = 0.5
         }
     }
     
@@ -95,10 +94,28 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        userPhotoImage.image = image.circleMasked
+        userPhotoImage.setImage(image, for: .normal)
         
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidLayoutSubviews() {
         
+        userPhotoImage.layer.cornerRadius = userPhotoImage.frame.size.width/2
+    
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        
+        let newLength = text.utf16.count + string.utf16.count - range.length
+        return newLength <= 20 // Bool
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.characters.count
+        return numberOfChars < 70
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -156,25 +173,25 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         nameTextField.inputView?.isUserInteractionEnabled = true
         nameTextField.becomeFirstResponder()
     }
-    
-    
+
 }
+
 // MARK: - UIImage extension
-extension UIImage {
-    var isPortrait:  Bool    { return size.height > size.width }
-    var isLandscape: Bool    { return size.width > size.height }
-    var breadth:     CGFloat { return min(size.width, size.height) }
-    var breadthSize: CGSize  { return CGSize(width: breadth, height: breadth) }
-    var breadthRect: CGRect  { return CGRect(origin: .zero, size: breadthSize) }
-    var circleMasked: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
-        defer { UIGraphicsEndImageContext() }
-        guard let cgImage = cgImage?.cropping(to: CGRect(origin: CGPoint(x: isLandscape ? floor((size.width - size.height) / 2) : 0, y: isPortrait  ? floor((size.height - size.width) / 2) : 0), size: breadthSize)) else { return nil }
-        UIBezierPath(ovalIn: breadthRect).addClip()
-        UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation).draw(in: breadthRect)
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-}
+//extension UIImage {
+//    var isPortrait:  Bool    { return size.height > size.width }
+//    var isLandscape: Bool    { return size.width > size.height }
+//    var breadth:     CGFloat { return min(size.width, size.height) }
+//    var breadthSize: CGSize  { return CGSize(width: breadth, height: breadth) }
+//    var breadthRect: CGRect  { return CGRect(origin: .zero, size: breadthSize) }
+//    var circleMasked: UIImage? {
+//        UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
+//        defer { UIGraphicsEndImageContext() }
+//        guard let cgImage = cgImage?.cropping(to: CGRect(origin: CGPoint(x: isLandscape ? floor((size.width - size.height) / 2) : 0, y: isPortrait  ? floor((size.height - size.width) / 2) : 0), size: breadthSize)) else { return nil }
+//        UIBezierPath(ovalIn: breadthRect).addClip()
+//        UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation).draw(in: breadthRect)
+//        return UIGraphicsGetImageFromCurrentImageContext()
+//    }
+//}
 
 
 
