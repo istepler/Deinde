@@ -14,7 +14,7 @@ import Parse
 
 
 
-class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDelegate, UITableViewDataSource  {
+class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate  {
     
     @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
@@ -33,6 +33,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     var markerArray = [MapMarker]()
     var passingPlace = PlaceVO()
     var sortedPlaces: [PlaceVO] = []
+    var locationManager = CLLocationManager()
     var usersCotravelling: [UserVO] = []{
         didSet {
             cotravellersTableView.reloadData()
@@ -100,6 +101,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                             }
                             for marker in markers! {
                                 marker.showMarker(map: (self?.viewWithMap)!)
+                                
                             }
                         }
                     }
@@ -144,8 +146,13 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
         
         
-        
+        viewWithMap.settings.compassButton = true
+        viewWithMap.isMyLocationEnabled = true
+        viewWithMap.settings.myLocationButton = true
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
         viewWithMap?.delegate = self
+               
         
     }
     
@@ -205,6 +212,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         
         hideAllMarkers()
         
+
         for place in sortedPlaces {
             let markers = markerArray.filter { $0.totalTime == place.totalHoursNumber }
             
@@ -213,6 +221,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
             }
         }
     }
+    
     
     func hideAllMarkers() {
         for marker in markerArray {
@@ -230,7 +239,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         rangeSliderView.isHidden = false
         viewWithMap.isHidden = false
         infoWebView.isHidden = true
-    }
+        
+            }
     
     @IBAction func infoButtonPressed(_ sender: UIButton) {
         state = .info
