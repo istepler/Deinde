@@ -145,6 +145,12 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
             
             rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
             
+            viewWithMap.settings.compassButton = true
+            viewWithMap.isMyLocationEnabled = true
+            viewWithMap.settings.myLocationButton = true
+            self.locationManager.delegate = self
+            self.locationManager.startUpdatingLocation()
+
             viewWithMap?.delegate = self
             
         } else {
