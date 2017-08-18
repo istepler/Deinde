@@ -11,12 +11,9 @@ import Parse
 
 class DataLoader {
     
-    
-    
-    
     func allTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: false).addAscendingOrder("date")
-        query.findObjectsInBackground { (objects, error) in
+        query.findObjectsInBackground { [weak self] (objects, error) in
             if let error = error {
                 // TODO: handle error
                 callback(nil, error)
@@ -36,14 +33,13 @@ class DataLoader {
                     )}
                 callback(trips, nil)
             }
-            
         }
     }
     
     
     func freeTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: true)
-        query.findObjectsInBackground { (objects, error) in
+        query.findObjectsInBackground { [weak self] (objects, error) in
             if let error = error {
                 // TODO: handle error
                 callback(nil, error)
@@ -70,7 +66,7 @@ class DataLoader {
         if let tripId = trip.id {
             let tripPointer = PFObject(withoutDataWithClassName: "TripVO", objectId: tripId)
             let query = PFQuery(className: "PlaceVO").whereKey("inTrip", equalTo: tripPointer)
-            query.findObjectsInBackground { (objects, error) in
+            query.findObjectsInBackground { [weak self] (objects, error) in
                 if let error = error {
                     callback(nil, error)
                 } else if let objects = objects {
@@ -96,7 +92,7 @@ class DataLoader {
             let tripObject = PFObject(withoutDataWithClassName: "TripVO", objectId: tripId)
             let relation = tripObject.relation(forKey: "usersOnTrip")
             let query = relation.query()
-            query.findObjectsInBackground { (objects, error) in
+            query.findObjectsInBackground { [weak self] (objects, error) in
                 if let error = error {
                     callback(nil, error)
                 } else if let objects = objects {
@@ -122,7 +118,7 @@ class DataLoader {
         if let userId = user.id {
             let userObject = PFObject(withoutDataWithClassName: "User", objectId: userId)
             let query = PFQuery(className: "TripVO").whereKey("usersOnTrip", equalTo: userObject)
-            query.findObjectsInBackground { (objects, error) in
+            query.findObjectsInBackground { [weak self] (objects, error) in
                 if let error = error {
                     callback(nil, error)
                     print(error)
@@ -153,7 +149,7 @@ class DataLoader {
     func userDataRequest(user: UserVO, callback: @escaping (_ user: UserVO?, _ error: Error?) -> ()) {
         if let userId = user.id {
             let query = PFQuery(className: "_User")
-            query.getObjectInBackground(withId: userId) { (object, error) in
+            query.getObjectInBackground(withId: userId) { [weak self] (object, error) in
                 if let error = error {
                     callback(nil, error)
                 } else {
@@ -174,6 +170,7 @@ class DataLoader {
             }
         } else {
             print("Error! User id = nil")
+            AlertDialog.showAlert("Error", message: "Error occured while uploading a photo", viewController: ProfileViewController())
         }
     }
     
@@ -186,11 +183,11 @@ class DataLoader {
         print(imageName)
         let imageFile = PFFile(name: imageName, data: imageData)
         if let picture = imageFile {
-            picture.saveInBackground(block: { (true, false) in
+            picture.saveInBackground(block: { [weak self] (true, false) in
             })
             let currentUser = PFObject(withoutDataWithClassName: "User", objectId: user.id)
             currentUser.setObject(picture, forKey: "avatar")
-            currentUser.saveInBackground(block: { (success, error) in
+            currentUser.saveInBackground(block: { [weak self] (success, error) in
                 if success {
                     print("Image is saved")
                     callback(true, nil)
@@ -198,6 +195,7 @@ class DataLoader {
                 if error != nil {
                     print("Error occured while uploading a photo")
                     callback(false, error)
+                    AlertDialog.showAlert("Error", message: "Error occured while uploading a photo", viewController: ProfileViewController())
                 }
                 
             })
@@ -206,7 +204,7 @@ class DataLoader {
     
     func userLoginRequest(user: UserVO, callback: @escaping (_ loggedIn: PFUser, _ error: Error?) ->()) {
         if let code = user.activationCode, let pass = user.activationCode {
-            PFUser.logInWithUsername(inBackground: code, password: pass) { (loggedUser, error) in
+            PFUser.logInWithUsername(inBackground: code, password: pass) { [weak self] (loggedUser, error) in
                 if error != nil {
                     print("Login error")
                     

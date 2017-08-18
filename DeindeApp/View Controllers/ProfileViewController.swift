@@ -151,7 +151,6 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
-        
     }
     
     //    func maskRoundedImage(image: UIImage, radius: Float) -> UIImage {

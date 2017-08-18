@@ -28,6 +28,11 @@ class DetailWebViewController: UIViewController {
             tripTitleLabel.text = title
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tripDetailsWebView.stopLoading()
+    }
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
