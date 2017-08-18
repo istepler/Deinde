@@ -11,6 +11,7 @@ import Parse
 import GoogleMaps
 import GooglePlaces
 import FBSDKCoreKit
+import IQKeyboardManagerSwift
 
 
 @UIApplicationMain
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
         
