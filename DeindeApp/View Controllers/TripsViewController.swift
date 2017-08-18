@@ -58,6 +58,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         state = .allTrips(trips: nil)
         } else {
             AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
+            SwiftSpinner.hide()
         }
         
     }

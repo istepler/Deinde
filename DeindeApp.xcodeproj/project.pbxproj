@@ -505,7 +505,6 @@
 				35BC4F5D1F2E777D0039749B /* TripTableViewCell.swift in Sources */,
 				359222331F224F4200C64D6C /* AppDelegate.swift in Sources */,
 				C147BCF21F32606C00A17760 /* ProfileViewController.swift in Sources */,
-
 				293F507B1F45E373005D4A3B /* Alert Message.swift in Sources */,
 				293F507D1F45E992005D4A3B /* loading + sheckingForConnection.swift in Sources */,
 				2278D9411F45890D00C7064B /* TimeThumbView.swift in Sources */,

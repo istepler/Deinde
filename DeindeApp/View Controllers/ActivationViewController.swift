@@ -12,6 +12,7 @@ class ActivationViewController: UIViewController {
     @IBOutlet weak var firstCodePartTextField: UITextField!
     @IBOutlet weak var secondCodePartTextField: UITextField!
     @IBOutlet weak var thirdCodePartTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +50,9 @@ class ActivationViewController: UIViewController {
     }
     
     func addTargets() {
-        firstCodePartTextField.addTarget(self, action: #selector(firstPartTextFieldDidChange(_:)), for: .editingChanged)
-        secondCodePartTextField.addTarget(self, action: #selector(secondPartTextFieldDidChange(_:)), for: .editingChanged)
-        thirdCodePartTextField.addTarget(self, action: #selector(thirdPartTextFieldDidChange(_:)), for: .editingChanged)
+//        firstCodePartTextField.addTarget(self, action: #selector(firstPartTextFieldDidChange(_:)), for: .editingChanged)
+//        secondCodePartTextField.addTarget(self, action: #selector(secondPartTextFieldDidChange(_:)), for: .editingChanged)
+//        thirdCodePartTextField.addTarget(self, action: #selector(thirdPartTextFieldDidChange(_:)), for: .editingChanged)
 
     }
     
@@ -64,10 +65,13 @@ class ActivationViewController: UIViewController {
         UserModel.instance.currentUser?.activationCode = activationCode
         UserModel.instance.login { (user, error) in
             if error != nil {
+//                self.firstCodePartTextField.text = ""
+//                self.secondCodePartTextField.text = ""
+//                self.thirdCodePartTextField.text = ""
                 print("Error")
             } else {
             self.navigationController?.popViewController(animated: true)
-            print(user)
+            print(user ?? "")
             }
             
         }

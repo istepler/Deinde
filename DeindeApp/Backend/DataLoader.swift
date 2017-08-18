@@ -206,6 +206,7 @@ class DataLoader {
         if let code = user.activationCode, let pass = user.activationCode {
             PFUser.logInWithUsername(inBackground: code, password: pass) { [weak self] (loggedUser, error) in
                 if error != nil {
+                    AlertDialog.showAlert("Error", message: "Invalid password :( Try again", viewController: ActivationViewController())
                     print("Login error")
                     
                 } else if let loggedUser = loggedUser {

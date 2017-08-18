@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <array key="ProximaNova-Bold.otf">
             <string>ProximaNova-Bold</string>
         </array>
-        <array key="ProximaNova-Reg.otf">
+        <array key="ProximaNova-Regular.otf">
             <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
@@ -1106,6 +1106,15 @@
                                     <action selector="beginTravelButtonPressed:" destination="g7b-MZ-ZAa" eventType="touchUpInside" id="jxS-OY-za0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrP-0U-1VB">
+                                <rect key="frame" x="20" y="391" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7Wr-0l-kbw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.9119997621" green="0.18182963129999999" blue="0.14378869529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1115,12 +1124,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="cpx-tz-aeZ" secondAttribute="trailing" constant="52" id="AbZ-nD-o4h"/>
                             <constraint firstItem="Dhb-JG-aLw" firstAttribute="centerX" secondItem="cfV-MR-Cj0" secondAttribute="centerX" id="RsJ-vT-jjE"/>
                             <constraint firstItem="Dhb-JG-aLw" firstAttribute="top" secondItem="cpx-tz-aeZ" secondAttribute="bottom" constant="53.5" id="SoR-AA-SZq"/>
+                            <constraint firstItem="ZrP-0U-1VB" firstAttribute="leading" secondItem="cfV-MR-Cj0" secondAttribute="leading" constant="20" id="WSp-5Z-jVR"/>
                             <constraint firstItem="kPv-mI-Mu3" firstAttribute="leading" secondItem="cfV-MR-Cj0" secondAttribute="leading" id="al4-c6-Zie"/>
                             <constraint firstItem="omB-jP-zS9" firstAttribute="top" secondItem="kPv-mI-Mu3" secondAttribute="bottom" id="djE-I6-PXN"/>
+                            <constraint firstItem="ZrP-0U-1VB" firstAttribute="top" secondItem="Dhb-JG-aLw" secondAttribute="bottom" constant="40" id="evw-Qh-abB"/>
                             <constraint firstItem="cpx-tz-aeZ" firstAttribute="centerX" secondItem="cfV-MR-Cj0" secondAttribute="centerX" id="gjh-fO-vfa"/>
+                            <constraint firstAttribute="trailing" secondItem="ZrP-0U-1VB" secondAttribute="trailing" constant="20" id="ivd-ic-JIJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="ZrP-0U-1VB" id="gFC-pK-bBu"/>
                         <outlet property="firstCodePartTextField" destination="GN6-AL-o1f" id="sjD-8i-ZSz"/>
                         <outlet property="secondCodePartTextField" destination="Ihj-NM-39o" id="yo8-IR-a3L"/>
                         <outlet property="thirdCodePartTextField" destination="eRv-bS-6fr" id="FMC-uP-whd"/>

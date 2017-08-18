@@ -25,7 +25,7 @@ class UserModel {
         if let user = currentUser {
             dataLoader.userTripsRequest(user: user) {[weak self] (trips, error) in
                 if let error = error {
-                    AlertDialog.showAlert("Error", message: "Sorry, your trips are not laoded", viewController: MyTourViewController())
+//                    AlertDialog.showAlert("Error", message: "Sorry, your trips are not laoded", viewController: MyTourViewController())
                     callback(nil, error)
                 } else {
                     self?.userTrips = trips
@@ -43,7 +43,7 @@ class UserModel {
 
         dataLoader.usersForTripRequest(trip: trip) { (users, error) in
             if let error = error {
-                AlertDialog.showAlert("Error", message: "Sorry, problems with loading users", viewController: MyTourViewController())
+//                AlertDialog.showAlert("Error", message: "Sorry, problems with loading users", viewController: MyTourViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)
@@ -58,7 +58,6 @@ class UserModel {
             dataloader.userLoginRequest(user: currentUser) { (loggedIn, error) in
                 if error != nil {
                     print("Error ocured while login)")
-                    callback(nil, error)
                 } else {
                     self.loggedIn = loggedIn
                     callback(nil, nil)
