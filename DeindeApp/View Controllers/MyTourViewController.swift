@@ -141,7 +141,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
             let height: CGFloat = rangeSliderView.bounds.height - 2.0*margin
             
             rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height  + margin), tripDays: tripDays)
-            scrollView.addSubview(rangeSlider!)
+            rangeSliderView.addSubview(rangeSlider!)
             
             rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
             
