@@ -31,8 +31,9 @@ class DataLoader {
                         imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
                         tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
                         duration:         object.value(forKey: "duration")  as? Int,
-                        places: object.value(forKey: "places")  as? [PlaceVO])
-                }
+                        places:           object.value(forKey: "places")  as? [PlaceVO],
+                        detailsUrl:       URL(string:((object.value(forKey: "details_url") as! String)))
+                    )}
                 callback(trips, nil)
             }
             
@@ -57,8 +58,9 @@ class DataLoader {
                         imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
                         tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
                         duration:         object.value(forKey: "duration")  as? Int,
-                        places: object.value(forKey: "places")  as? [PlaceVO])
-                }
+                        places:           object.value(forKey: "places")  as? [PlaceVO],
+                        detailsUrl:       URL(string:((object.value(forKey: "details_url") as! String)))
+                    )}
                 callback(trips, nil)
             }
         }
@@ -135,8 +137,9 @@ class DataLoader {
                             imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
                             tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
                             duration:         object.value(forKey: "duration")  as? Int,
-                            places:           object.value(forKey: "places")  as? [PlaceVO])
-                    }
+                            places:           object.value(forKey: "places")  as? [PlaceVO],
+                            detailsUrl:       URL(string:((object.value(forKey: "details_url") as! String)))
+                        )}
                     callback(trips, nil)
                 }
                 

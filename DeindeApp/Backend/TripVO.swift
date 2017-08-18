@@ -21,6 +21,7 @@ struct TripVO {
     var tripFeatures: [String]?
     var duration: Int?
     var places: [PlaceVO]?
+    var detailsUrl: URL?
     
     mutating func setPlaces(places: [PlaceVO]) {
         self.places = places

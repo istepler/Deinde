@@ -56,10 +56,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9X-vq-wsp">
-                                                    <rect key="frame" x="8" y="10" width="359" height="319.66666666666669"/>
+                                                    <rect key="frame" x="8" y="10" width="398" height="319.66666666666669"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xmi-9N-Tma">
-                                                            <rect key="frame" x="0.0" y="176.66666666666669" width="359" height="138.00000000000006"/>
+                                                            <rect key="frame" x="0.0" y="176.66666666666669" width="398" height="138.00000000000006"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="138" id="hGM-8F-EF2"/>
                                                             </constraints>
@@ -73,19 +73,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хочу в Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KI-nw-XET">
-                                                    <rect key="frame" x="28" y="23" width="319" height="62"/>
+                                                    <rect key="frame" x="28" y="23" width="358" height="62"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35 нових друзів  ● Батут ● SUP surfing ● Wakeboarding ● Windsurfing ● Kitesurfing " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anC-ip-YZI">
-                                                    <rect key="frame" x="48" y="105.00000000000001" width="279" height="57.333333333333357"/>
+                                                    <rect key="frame" x="48" y="105.00000000000001" width="318" height="57.333333333333357"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gj6-uF-EPm">
-                                                    <rect key="frame" x="152.66666666666666" y="177.33333333333334" width="70" height="30"/>
+                                                    <rect key="frame" x="172" y="177.33333333333334" width="70" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="● " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh7-vv-flv">
                                                             <rect key="frame" x="3" y="4" width="16.333333333333343" height="21"/>
@@ -216,20 +216,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faceForCotravellersTable" translatesAutoresizingMaskIntoConstraints="NO" id="Slu-9l-cd6">
-                                                    <rect key="frame" x="127.66666666666666" y="8" width="119.99999999999997" height="120"/>
+                                                    <rect key="frame" x="147" y="8" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="RsE-KD-lHg"/>
                                                         <constraint firstAttribute="height" constant="120" id="tvF-l3-ncW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ірина Мельниченко" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouu-77-naK">
-                                                    <rect key="frame" x="87" y="138" width="201" height="26.666666666666657"/>
+                                                    <rect key="frame" x="106.66666666666669" y="138" width="201" height="26.666666666666657"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Про себе: гори, море, сереневенький. Мрію про мир у всьому світі, а із реальнішого - підкорити Еверест." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dUJ-XJ-zEh">
-                                                    <rect key="frame" x="80" y="174.66666666666669" width="215" height="100.00000000000006"/>
+                                                    <rect key="frame" x="99.666666666666686" y="174.66666666666669" width="215" height="100.00000000000006"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="U4B-e5-puk"/>
@@ -631,10 +631,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1y-xK-PZI">
-                                                    <rect key="frame" x="8" y="10" width="359" height="319.66666666666669"/>
+                                                    <rect key="frame" x="8" y="10" width="398" height="319.66666666666669"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-6E-04q">
-                                                            <rect key="frame" x="0.0" y="176.66666666666669" width="359" height="138.00000000000006"/>
+                                                            <rect key="frame" x="0.0" y="176.66666666666669" width="398" height="138.00000000000006"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="138" id="syL-KZ-EhC"/>
                                                             </constraints>
@@ -648,19 +648,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хочу в Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-x9-1Oq">
-                                                    <rect key="frame" x="28" y="23" width="319" height="62"/>
+                                                    <rect key="frame" x="28" y="23" width="358" height="62"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35 нових друзів  ● Батут ● SUP surfing ● Wakeboarding ● Windsurfing ● Kitesurfing " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5d-sU-Xd7">
-                                                    <rect key="frame" x="40" y="105.00000000000001" width="295" height="57.333333333333357"/>
+                                                    <rect key="frame" x="40" y="105" width="334" height="38.333333333333343"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lki-ce-AJ8">
-                                                    <rect key="frame" x="152.66666666666666" y="177.33333333333334" width="70" height="30"/>
+                                                    <rect key="frame" x="172" y="158.33333333333334" width="70" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="● " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9J-xn-cUd">
                                                             <rect key="frame" x="3" y="4" width="16.333333333333343" height="21"/>
@@ -966,7 +966,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="VpJ-ct-ZtI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="VpJ-ct-ZtI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -988,7 +988,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="a5y-EV-p3H">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="a5y-EV-p3H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1194,7 +1194,7 @@
                     <tabBarItem key="tabBarItem" title="Профіль" image="profile_icon" selectedImage="profile_icon" id="NAD-Qx-Xqj"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X2K-Gv-INl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X2K-Gv-INl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -113,7 +113,14 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "detailTripSeuge", sender: tableView.cellForRow(at: indexPath))
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! TripTableViewCell
+        let indexPath = tripsTableView.indexPath(for: cell)
+        let index = indexPath?.row
+        let destinationVC = segue.destination as! DetailWebViewController
+        let detailTripUrl = trips[index!].detailsUrl
+        destinationVC.url = detailTripUrl
+    }
     
     
 }
