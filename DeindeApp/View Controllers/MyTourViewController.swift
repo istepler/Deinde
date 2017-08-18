@@ -32,6 +32,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     var rangeSlider: RangeSlider? = nil
     var markerArray = [MapMarker]()
     var passingPlace = PlaceVO()
+    var sortedPlaces: [PlaceVO] = []
     var usersCotravelling: [UserVO] = []{
         didSet {
             cotravellersTableView.reloadData()
@@ -88,13 +89,13 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                         
                         self?.setMarkers(coordinates: place.coords!, time: place.time!, totalTime: place.totalHoursNumber!)
                         
-                        var sortedPlaces: [PlaceVO] = []
+                        
                         let range = Int((self?.rangeSlider?.lowerValue)!)...Int((self?.rangeSlider?.upperValue)!)
-                        sortedPlaces = (self?.tripPlaces?.filter { range ~= $0.totalHoursNumber! })!
+                        self?.sortedPlaces = (self?.tripPlaces?.filter { range ~= $0.totalHoursNumber! })!
                         
                         self?.hideAllMarkers()
                         
-                        for place in sortedPlaces {
+                        for place in (self?.sortedPlaces)! {
                             let markers = self?.markerArray.filter { $0.totalTime == place.totalHoursNumber
                             }
                             for marker in markers! {
@@ -129,8 +130,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         cotravellersTableView.delegate = self
         
         //temp url for infowebview
-        let url = URL(string: "http://deinde.com.ua/tours/suntrip_camp/")
-        infoWebView.loadRequest(URLRequest(url: url!))
+        let urL = trip.detailsUrl
+        infoWebView.loadRequest(URLRequest(url: urL!))
         
         //range slider frame values
         let margin: CGFloat = 10.0
@@ -142,11 +143,13 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         
         rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
         
+        
+        
         viewWithMap?.delegate = self
         
     }
-       
-
+    
+  
     func setMarkers(coordinates: PFGeoPoint, time: Int, totalTime: Int) {
         let marker = MapMarker(position: CLLocationCoordinate2D(latitude: coordinates.location().coordinate.latitude, longitude: coordinates.location().coordinate.longitude ) , time: String(time), map: viewWithMap, totalTimeOfPlace: totalTime)
         markerArray.append(marker)

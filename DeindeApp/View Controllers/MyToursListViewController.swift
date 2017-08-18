@@ -35,7 +35,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
                 if let trips = trips {
                     for trip in trips {
                         self?.userTrips?.append(trip)
-                        print(trip)
+                        //print(trip)
                     }
                 }
             }

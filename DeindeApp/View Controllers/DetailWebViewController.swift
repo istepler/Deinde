@@ -11,8 +11,10 @@ import UIKit
 class DetailWebViewController: UIViewController {
     
     @IBOutlet weak var tripDetailsWebView: UIWebView!
+    @IBOutlet weak var tripTitleLabel: UILabel!
     
-    var url: URL? 
+    var url: URL?
+    var tripTitle: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,9 @@ class DetailWebViewController: UIViewController {
         tripDetailsWebView.loadRequest(URLRequest(url: url))
         } else {
             print("URL is disabled")
+        }
+        if let title = tripTitle {
+            tripTitleLabel.text = title
         }
     }
     @IBAction func backButtonPressed(_ sender: Any) {
