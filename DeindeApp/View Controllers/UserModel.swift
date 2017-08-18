@@ -14,7 +14,7 @@ class UserModel {
     static var instance = UserModel()
     
     var currentUser: UserVO?
-    var loggedIn: PFUser?
+    //var loggedIn: PFUser?
     
     private(set) var userTrips: [TripVO]?
     
@@ -60,7 +60,7 @@ class UserModel {
                     print("Error ocured while login)")
                     callback(nil, error)
                 } else {
-                    self.loggedIn = loggedIn
+                    //self.loggedIn = loggedIn
                     callback(nil, nil)
                 }
             }
