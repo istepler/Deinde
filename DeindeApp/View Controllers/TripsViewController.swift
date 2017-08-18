@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SystemConfiguration
 
 class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -48,12 +49,16 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SwiftSpinner.show("loading trips")
+        if Reachability.isConnectedToNetwork() == true {
         loadAllTrips()
         loadFreeTrips()
         tripsTableView.dataSource = self
         tripsTableView.delegate = self
         state = .allTrips(trips: nil)
-        
+        } else {
+            AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
+        }
         
     }
     

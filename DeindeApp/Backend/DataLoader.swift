@@ -11,9 +11,6 @@ import Parse
 
 class DataLoader {
     
-    
-    
-    
     func allTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: false).addAscendingOrder("date")
         query.findObjectsInBackground { [weak self] (objects, error) in
@@ -36,7 +33,6 @@ class DataLoader {
                     )}
                 callback(trips, nil)
             }
-            
         }
     }
     
@@ -174,6 +170,7 @@ class DataLoader {
             }
         } else {
             print("Error! User id = nil")
+            AlertDialog.showAlert("Error", message: "Error occured while uploading a photo", viewController: ProfileViewController())
         }
     }
     
@@ -198,6 +195,7 @@ class DataLoader {
                 if error != nil {
                     print("Error occured while uploading a photo")
                     callback(false, error)
+                    AlertDialog.showAlert("Error", message: "Error occured while uploading a photo", viewController: ProfileViewController())
                 }
                 
             })

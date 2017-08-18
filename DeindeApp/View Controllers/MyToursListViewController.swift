@@ -9,6 +9,9 @@
 import UIKit
 import SDWebImage
 import Parse
+import SystemConfiguration
+
+
 
 class MyToursListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -26,20 +29,23 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         
         myToursTableView.dataSource = self
         myToursTableView.delegate = self
-    
         UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
-        
-        UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
-            if let error = error {
-                self?.showError()
-            } else {
-                if let trips = trips {
-                    for trip in trips {
-                        self?.userTrips?.append(trip)
-                        print(trip)
+            if Reachability.isConnectedToNetwork() == true {
+            UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
+                if let error = error {
+                    self?.showError()
+                } else {
+                    if let trips = trips {
+                        for trip in trips {
+                            self?.userTrips?.append(trip)
+                            print(trip)
+                        }
                     }
                 }
+                SwiftSpinner.hide()
             }
+            } else {
+                AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
         }
     }
     
@@ -56,7 +62,6 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
 
     }
 
-    
     // MARK: - TableViewDataSource & TableViewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {

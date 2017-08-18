@@ -18,8 +18,11 @@ class TripsModel {
     
     func loadAllTrips(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let dataLoader = DataLoader()
+
         dataLoader.allTripsRequest {[weak self] (trips, error) in
+
             if let error = error {
+                AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController:  TripsViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)
@@ -27,13 +30,19 @@ class TripsModel {
                 self?.allTrips = trips
             }
             callback(trips, nil)
+            SwiftSpinner.hide()
+            
         }
+        
     }
     
     func loadFreeTrips(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let dataLoader = DataLoader()
+
         dataLoader.freeTripsRequest {[weak self] (trips, error) in
+
             if let error = error {
+                AlertDialog.showAlert("Error", message: "Sorry, trips are not laoded", viewController:  TripsViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)
@@ -46,8 +55,11 @@ class TripsModel {
     
     func loadPlacesForTrip(trip: TripVO, callback: @escaping (_ places: [PlaceVO]?, _ error: Error?) -> ()) {
         let dataLoader = DataLoader()
+        SwiftSpinner.show("loading places for trips")
+
         dataLoader.placesForTripRequest(trip: trip) { [weak self] (places, error) in
             if let error = error {
+                AlertDialog.showAlert("Error", message: "Sorry, plases of current trip are not laoded", viewController:  TripsViewController())
                 print("Error occured")
                 print(error)
                 callback(nil, error)

@@ -76,77 +76,81 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        TripsModel.instance.loadPlacesForTrip(trip: trip, callback:  { [weak self] ( places, error) in
-            if let error = error {
-                self?.showError()
-            } else {
-                if let places = places {
-                    for place in places {
-                        self?.trip.setPlaces(places: places)
-                        self?.tripPlaces?.append(place)
-                        
-                        
-                        self?.setMarkers(coordinates: place.coords!, time: place.time!, totalTime: place.totalHoursNumber!)
-                        
-                        var sortedPlaces: [PlaceVO] = []
-                        let range = Int((self?.rangeSlider?.lowerValue)!)...Int((self?.rangeSlider?.upperValue)!)
-                        sortedPlaces = (self?.tripPlaces?.filter { range ~= $0.totalHoursNumber! })!
-                        
-                        self?.hideAllMarkers()
-                        
-                        for place in sortedPlaces {
-                            let markers = self?.markerArray.filter { $0.totalTime == place.totalHoursNumber
-                            }
-                            for marker in markers! {
-                                marker.showMarker(map: (self?.viewWithMap)!)
+        if Reachability.isConnectedToNetwork() == true {
+            TripsModel.instance.loadPlacesForTrip(trip: trip, callback:  { [weak self] ( places, error) in
+                if let error = error {
+                    self?.showError()
+                } else {
+                    if let places = places {
+                        for place in places {
+                            self?.trip.setPlaces(places: places)
+                            self?.tripPlaces?.append(place)
+                            
+                            
+                            self?.setMarkers(coordinates: place.coords!, time: place.time!, totalTime: place.totalHoursNumber!)
+                            
+                            var sortedPlaces: [PlaceVO] = []
+                            let range = Int((self?.rangeSlider?.lowerValue)!)...Int((self?.rangeSlider?.upperValue)!)
+                            sortedPlaces = (self?.tripPlaces?.filter { range ~= $0.totalHoursNumber! })!
+                            
+                            self?.hideAllMarkers()
+                            
+                            for place in sortedPlaces {
+                                let markers = self?.markerArray.filter { $0.totalTime == place.totalHoursNumber
+                                }
+                                for marker in markers! {
+                                    marker.showMarker(map: (self?.viewWithMap)!)
+                                }
                             }
                         }
-                    }
-                    self?.tripPlaces = self?.tripPlaces?.sorted(by: { $0.totalHoursNumber! < $1.totalHoursNumber!})
-                    self?.setCamera(position: (self?.tripPlaces?[0].coords?.location().coordinate)!)
-                }
-            }   
-        })
-        
-        UserModel.instance.loadUsersForTrip(trip: trip, callback: { [weak self] (users, error) in
-            if let error = error {
-                self?.showError()
-            } else {
-                if let users = users {
-                    for user in users {
-                        //print(user)
-                        self?.usersCotravelling.append(user)
+                        self?.tripPlaces = self?.tripPlaces?.sorted(by: { $0.totalHoursNumber! < $1.totalHoursNumber!})
+                        self?.setCamera(position: (self?.tripPlaces?[0].coords?.location().coordinate)!)
                     }
                 }
-            }
+                SwiftSpinner.hide()
+            })
             
-        })
-        
-                
-        tripNameLabel.text = trip.title
-        state = .map
-        cotravellersTableView.dataSource = self
-        cotravellersTableView.delegate = self
-        
-        //temp url for infowebview
-        let url = URL(string: "http://deinde.com.ua/tours/suntrip_camp/")
-        infoWebView.loadRequest(URLRequest(url: url!))
-        
-        //range slider frame values
-        let margin: CGFloat = 10.0
-        let width: CGFloat = 30.0 
-        let height: CGFloat = rangeSliderView.bounds.height - 2.0*margin
-        
-        rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: 0.0, width: width, height: height  + margin), tripDays: tripDays)
-        rangeSliderView.addSubview(rangeSlider!)
-        
-        rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
-        
-        viewWithMap?.delegate = self
+            UserModel.instance.loadUsersForTrip(trip: trip, callback: { [weak self] (users, error) in
+                if let error = error {
+                    self?.showError()
+                } else {
+                    if let users = users {
+                        for user in users {
+                            //print(user)
+                            self?.usersCotravelling.append(user)
+                        }
+                    }
+                }
+                SwiftSpinner.hide()
+            })
+                     
+            tripNameLabel.text = trip.title
+            state = .map
+            cotravellersTableView.dataSource = self
+            cotravellersTableView.delegate = self
+            
+            //temp url for infowebview
+            let url = URL(string: "http://deinde.com.ua/tours/suntrip_camp/")
+            infoWebView.loadRequest(URLRequest(url: url!))
+            
+            //range slider frame values
+            let margin: CGFloat = 10.0
+            let width: CGFloat = 30.0 
+            let height: CGFloat = rangeSliderView.bounds.height - 2.0*margin
+            
+            rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height  + margin), tripDays: tripDays)
+            scrollView.addSubview(rangeSlider!)
+            
+            rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
+            
+            viewWithMap?.delegate = self
+            
+        } else {
+            AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
+        }
+
         
     }
-       
 
     func setMarkers(coordinates: PFGeoPoint, time: Int, totalTime: Int) {
         let marker = MapMarker(position: CLLocationCoordinate2D(latitude: coordinates.location().coordinate.latitude, longitude: coordinates.location().coordinate.longitude ) , time: String(time), map: viewWithMap, totalTimeOfPlace: totalTime)
