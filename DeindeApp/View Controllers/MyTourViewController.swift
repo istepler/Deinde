@@ -20,7 +20,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var cotravellersButton: UIButton!
     @IBOutlet weak var viewWithMap: GMSMapView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var rangeSliderView: UIView!
+    
     @IBOutlet weak var cotravellersTableView: UITableView!
     @IBOutlet weak var infoWebView: UIWebView!
     @IBOutlet weak var tripNameLabel: UILabel!
@@ -53,7 +54,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                         cotravellersButton.backgroundColor = UIColor.clear
                         infoButton.backgroundColor = UIColor.clear
                         cotravellersTableView.isHidden = true
-                        scrollView.isHidden = false
+                        rangeSliderView.isHidden = false
                         viewWithMap.isHidden = false
                         infoWebView.isHidden = true
                     case .cotravellers:
@@ -121,8 +122,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                 }
                 SwiftSpinner.hide()
             })
-            
-                    
+                     
             tripNameLabel.text = trip.title
             state = .map
             cotravellersTableView.dataSource = self
@@ -135,11 +135,10 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
             //range slider frame values
             let margin: CGFloat = 10.0
             let width: CGFloat = 30.0 
-            let height: CGFloat = 200
+            let height: CGFloat = rangeSliderView.bounds.height - 2.0*margin
             
-            rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays ) + margin), tripDays: tripDays)
+            rangeSlider = RangeSlider(frame:  CGRect(x: margin, y: margin, width: width, height: height  + margin), tripDays: tripDays)
             scrollView.addSubview(rangeSlider!)
-            scrollView.contentSize = (rangeSlider?.layer.frame.size)!
             
             rangeSlider?.addTarget(self, action: #selector(MyTourViewController.rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
             
@@ -148,6 +147,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         } else {
             AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
         }
+
+        
     }
 
     func setMarkers(coordinates: PFGeoPoint, time: Int, totalTime: Int) {
@@ -191,20 +192,13 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     override func viewDidLayoutSubviews() {
         let margin: CGFloat = 10.0
         let width: CGFloat = 30.0
-        let height: CGFloat = 200
-        rangeSlider?.frame = CGRect(x: margin, y: margin, width: width, height: height * CGFloat(tripDays) )
+        let height: CGFloat = rangeSliderView.bounds.height - 2.0*margin
+        rangeSlider?.frame = CGRect(x: margin, y: 0.0, width: width, height: height  )
     }
 
     func rangeSliderValueChanged(rangeSlider: RangeSlider) {
         print("Range slider value changed: \(rangeSlider.lowerValue) \(rangeSlider.upperValue)")
-        
-        let touch = UITouch()
-        let locationY = touch.location(in: scrollView).y
-        let lowerLocationY: CGFloat = CGPoint(x: 20, y: scrollView.bounds.height - 50).y
-        
-        if locationY == lowerLocationY {
-             scrollView.contentOffset = CGPoint(x: 0.0, y: scrollView.contentOffset.y + 10.0)
-        }
+      
         
         var sortedPlaces: [PlaceVO] = []
         let range = Int(rangeSlider.lowerValue)...Int(rangeSlider.upperValue)
@@ -234,7 +228,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     @IBAction func mapButtonPressed(_ sender: UIButton) {
         state = .map
         cotravellersTableView.isHidden = true
-        scrollView.isHidden = false
+        rangeSliderView.isHidden = false
         viewWithMap.isHidden = false
         infoWebView.isHidden = true
     }
@@ -247,7 +241,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     @IBAction func cotravellersButtonPressed(_ sender: UIButton) {
         state = .cotravellers
         cotravellersTableView.isHidden = false
-        scrollView.isHidden = true
+        rangeSliderView.isHidden = true
         viewWithMap.isHidden = true
         infoWebView.isHidden = true
     }

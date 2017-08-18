@@ -10,11 +10,12 @@ import UIKit
 import Parse
 import SystemConfiguration
 
-class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate {
     
     @IBOutlet weak var tripsTableView: UITableView!
     @IBOutlet weak var allTripsButton: UIButton!
     @IBOutlet weak var freeTripsButton: UIButton!
+    
     
     enum TripsViewControllerState {
         case allTrips(trips: [TripVO]?)
@@ -58,6 +59,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else {
             AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
         }
+        
+        tabBarController?.delegate = self
         
     }
     
@@ -118,7 +121,24 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "detailTripSeuge", sender: tableView.cellForRow(at: indexPath))
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! TripTableViewCell
+        let indexPath = tripsTableView.indexPath(for: cell)
+        let index = indexPath?.row
+        let destinationVC = segue.destination as! DetailWebViewController
+        let detailTripUrl = trips[index!].detailsUrl
+        destinationVC.url = detailTripUrl
+    }
     
-    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let tabBarIndex = tabBarController?.selectedIndex
+        if tabBarIndex == 1 {
+            if (UserModel.instance.loggedIn == nil) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
     
 }

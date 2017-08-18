@@ -28,8 +28,9 @@ class DataLoader {
                         imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
                         tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
                         duration:         object.value(forKey: "duration")  as? Int,
-                        places: object.value(forKey: "places")  as? [PlaceVO])
-                }
+                        places:           object.value(forKey: "places")  as? [PlaceVO],
+                        detailsUrl:       URL(string:((object.value(forKey: "details_url") as! String)))
+                    )}
                 callback(trips, nil)
             }
         }
@@ -53,8 +54,9 @@ class DataLoader {
                         imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
                         tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
                         duration:         object.value(forKey: "duration")  as? Int,
-                        places: object.value(forKey: "places")  as? [PlaceVO])
-                }
+                        places:           object.value(forKey: "places")  as? [PlaceVO],
+                        detailsUrl:       URL(string:((object.value(forKey: "details_url") as! String)))
+                    )}
                 callback(trips, nil)
             }
         }
@@ -131,8 +133,9 @@ class DataLoader {
                             imageBackground:  object.value(forKey: "backgroundTrip") as? [Int],
                             tripFeatures:     object.value(forKey: "listFeaturesTrip") as? [String],
                             duration:         object.value(forKey: "duration")  as? Int,
-                            places:           object.value(forKey: "places")  as? [PlaceVO])
-                    }
+                            places:           object.value(forKey: "places")  as? [PlaceVO],
+                            detailsUrl:       URL(string:((object.value(forKey: "details_url") as! String)))
+                        )}
                     callback(trips, nil)
                 }
                 
@@ -199,13 +202,20 @@ class DataLoader {
         }
     }
     
-    func userLoginRequest(user: UserVO, callback: @escaping (_ success: Bool, _ error: Error?) ->()) {
+    func userLoginRequest(user: UserVO, callback: @escaping (_ loggedIn: PFUser, _ error: Error?) ->()) {
         if let code = user.activationCode, let pass = user.activationCode {
             PFUser.logInWithUsername(inBackground: code, password: pass) { (loggedUser, error) in
-                if error == nil {
-                    print("Ready to go")
+                if error != nil {
+                    print("Login error")
+                    
+                } else if let loggedUser = loggedUser {
+                    let loggedIn = loggedUser
+                    callback(loggedIn, nil)
+                    
                 }
             }
         }
+        
+        
     }
 }

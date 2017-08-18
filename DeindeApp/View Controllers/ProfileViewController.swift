@@ -10,6 +10,7 @@ import UIKit
 import FacebookLogin
 import FacebookCore
 import SwiftyJSON
+import Parse
 
 class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -17,10 +18,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var userPhotoImage: UIImageView!
+    @IBOutlet weak var userPhotoImage: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
-
-    @IBAction func loginButtonClicked (_ sender: UIButton!) {
+    
+    @IBAction func facebookLoginButtonPressed(_ sender: UIButton!) {
         let loginManager = LoginManager()
         if AccessToken.current == nil {
             loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
@@ -39,12 +40,12 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
                             //var link = (response.dictionaryValue?["link"] as? String)!
                             //var pictureFB = JSON(response.dictionaryValue?["picture"] as Any)
                             //var pictureFBData = pictureFB["data"].dictionary
-                            //var pictureFBURL = pictureFBData?["url"]?.string
+                        //var pictureFBURL = pictureFBData?["url"]?.string
                         case .failed(let error):
                             print("Graph Request Failed: \(error)")
                         }
                     }
-                fbUserData.start()
+                    fbUserData.start()
                 }
             }
         } else {
@@ -60,14 +61,20 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.phoneNumberTextField.delegate = self
         self.nameTextField.delegate = self
         
-
         descriptionTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if PFUser.current() == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
+            navigationController?.pushViewController(vc, animated: false)
+        }
+        
         if AccessToken.current == nil {
-            facebookLoginButton.alpha = 0.25
+            facebookLoginButton.alpha = 0.5
         }
     }
     
@@ -88,10 +95,28 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        userPhotoImage.image = image.circleMasked
+        userPhotoImage.setImage(image, for: .normal)
         
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidLayoutSubviews() {
         
+        userPhotoImage.layer.cornerRadius = userPhotoImage.frame.size.width/2
+        
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        
+        let newLength = text.utf16.count + string.utf16.count - range.length
+        return newLength <= 20 // Bool
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.characters.count
+        return numberOfChars < 70
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -149,25 +174,24 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         nameTextField.becomeFirstResponder()
     }
     
-    @IBAction func facebookloginButton(_ sender: UIButton) {
-    }
 }
+
 // MARK: - UIImage extension
-extension UIImage {
-    var isPortrait:  Bool    { return size.height > size.width }
-    var isLandscape: Bool    { return size.width > size.height }
-    var breadth:     CGFloat { return min(size.width, size.height) }
-    var breadthSize: CGSize  { return CGSize(width: breadth, height: breadth) }
-    var breadthRect: CGRect  { return CGRect(origin: .zero, size: breadthSize) }
-    var circleMasked: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
-        defer { UIGraphicsEndImageContext() }
-        guard let cgImage = cgImage?.cropping(to: CGRect(origin: CGPoint(x: isLandscape ? floor((size.width - size.height) / 2) : 0, y: isPortrait  ? floor((size.height - size.width) / 2) : 0), size: breadthSize)) else { return nil }
-        UIBezierPath(ovalIn: breadthRect).addClip()
-        UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation).draw(in: breadthRect)
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-}
+//extension UIImage {
+//    var isPortrait:  Bool    { return size.height > size.width }
+//    var isLandscape: Bool    { return size.width > size.height }
+//    var breadth:     CGFloat { return min(size.width, size.height) }
+//    var breadthSize: CGSize  { return CGSize(width: breadth, height: breadth) }
+//    var breadthRect: CGRect  { return CGRect(origin: .zero, size: breadthSize) }
+//    var circleMasked: UIImage? {
+//        UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
+//        defer { UIGraphicsEndImageContext() }
+//        guard let cgImage = cgImage?.cropping(to: CGRect(origin: CGPoint(x: isLandscape ? floor((size.width - size.height) / 2) : 0, y: isPortrait  ? floor((size.height - size.width) / 2) : 0), size: breadthSize)) else { return nil }
+//        UIBezierPath(ovalIn: breadthRect).addClip()
+//        UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation).draw(in: breadthRect)
+//        return UIGraphicsGetImageFromCurrentImageContext()
+//    }
+//}
 
 
 

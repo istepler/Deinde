@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaceDetailsViewController: UIViewController {
+class PlaceDetailsViewController: UIViewController, UINavigationControllerDelegate {
     
     var place = PlaceVO()
     var tripName: String = ""
@@ -31,6 +31,9 @@ class PlaceDetailsViewController: UIViewController {
 
      override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         let timeString = String(describing: place.time!) + ":00"
         timeLabel.text = timeString
         placeTitleTextView.text = place.title
@@ -38,4 +41,5 @@ class PlaceDetailsViewController: UIViewController {
         placeDescriptionTaxtView.text = place.details
         placeImageView.sd_setImage(with: place.placeImage)
     }
+    
 }

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "timeLabel.png",
+      "filename" : "userLogo.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timeLabel@2x.png",
+      "filename" : "userLogo@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timeLabel@3x.png",
+      "filename" : "userLogo@3x.png",
       "scale" : "3x"
     }
   ],

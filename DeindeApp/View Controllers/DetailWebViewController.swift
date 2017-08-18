@@ -11,14 +11,21 @@ import UIKit
 class DetailWebViewController: UIViewController {
     
     @IBOutlet weak var tripDetailsWebView: UIWebView!
+    
+    var url: URL? 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "http://deinde.com.ua/tours/suntrip_camp/") 
-        tripDetailsWebView.loadRequest(URLRequest(url: url!))
-
-            }
+        if let url = url {
+        tripDetailsWebView.loadRequest(URLRequest(url: url))
+        } else {
+            print("URL is disabled")
+        }
+    }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
   
 }
