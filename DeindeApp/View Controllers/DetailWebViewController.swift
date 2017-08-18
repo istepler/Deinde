@@ -23,6 +23,11 @@ class DetailWebViewController: UIViewController {
             print("URL is disabled")
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tripDetailsWebView.stopLoading()
+    }
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

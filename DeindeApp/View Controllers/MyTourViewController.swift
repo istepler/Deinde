@@ -61,6 +61,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
                         cotravellersButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
                         mapButton.backgroundColor = UIColor.clear
                         infoButton.backgroundColor = UIColor.clear
+                    
                     case .info:
                         infoButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
                         mapButton.backgroundColor = UIColor.clear
@@ -227,6 +228,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         rangeSliderView.isHidden = false
         viewWithMap.isHidden = false
         infoWebView.isHidden = true
+        infoWebView.stopLoading()
     }
     
     @IBAction func infoButtonPressed(_ sender: UIButton) {
@@ -240,6 +242,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         rangeSliderView.isHidden = true
         viewWithMap.isHidden = true
         infoWebView.isHidden = true
+        infoWebView.stopLoading()
     }
     
     
