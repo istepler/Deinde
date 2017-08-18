@@ -26,6 +26,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         myToursTableView.dataSource = self
         myToursTableView.delegate = self
         UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
@@ -50,11 +51,14 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if PFUser.current() == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as! ActivationViewController
+            //self.present(vc, animated: false, completion: nil)
             navigationController?.pushViewController(vc, animated: false)
         }
+
 
     }
 
@@ -79,6 +83,8 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     func showError() {
         print("Error while loading data")
     }
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

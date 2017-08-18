@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import SystemConfiguration
 
-class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate {
+class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tripsTableView: UITableView!
     @IBOutlet weak var allTripsButton: UIButton!
@@ -60,29 +60,33 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
         }
         
-        tabBarController?.delegate = self
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
+    
     
     func showError(error: Error) {
         print("Error while loading data \(error)")
     }
     
     func loadAllTrips() {
-        TripsModel.instance.loadAllTrips { (_, error) in
+        TripsModel.instance.loadAllTrips { [weak self] (_, error) in
             if let error = error {
-                self.showError(error: error)
+                self?.showError(error: error)
             } else {
-                self.trips = TripsModel.instance.allTrips
-                print(self.trips)
+                self?.trips = TripsModel.instance.allTrips
+                print(self?.trips)
             }
         }
     }
     
     func loadFreeTrips() {
-        TripsModel.instance.loadFreeTrips { (_, error) in
+        TripsModel.instance.loadFreeTrips { [weak self] (_, error) in
             if let error = error {
-                self.showError(error: error)
+                self?.showError(error: error)
             }
         }
     }
@@ -118,7 +122,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "detailTripSeuge", sender: tableView.cellForRow(at: indexPath))
+        let cell = tripsTableView.cellForRow(at: indexPath) as! TripTableViewCell
+        performSegue(withIdentifier: "detailTripSeuge", sender: cell)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -129,16 +134,4 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let detailTripUrl = trips[index!].detailsUrl
         destinationVC.url = detailTripUrl
     }
-    
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        let tabBarIndex = tabBarController?.selectedIndex
-        if tabBarIndex == 1 {
-            if (UserModel.instance.loggedIn == nil) {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
-                navigationController?.pushViewController(vc, animated: true)
-            }
-        }
-    }
-    
 }
