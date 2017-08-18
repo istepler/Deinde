@@ -201,15 +201,20 @@ class DataLoader {
         }
     }
     
-    func userLoginRequest(user: UserVO, callback: @escaping (_ success: Bool, _ error: Error?) ->()) {
+    func userLoginRequest(user: UserVO, callback: @escaping (_ loggedIn: PFUser, _ error: Error?) ->()) {
         if let code = user.activationCode, let pass = user.activationCode {
             PFUser.logInWithUsername(inBackground: code, password: pass) { (loggedUser, error) in
-                if error == nil {
-                    print("Ready to go")
+                if error != nil {
+                    print("Login error")
+                    
+                } else if let loggedUser = loggedUser {
+                    let loggedIn = loggedUser
+                    callback(loggedIn, nil)
+                    
                 }
             }
         }
+        
+        
     }
-    
-    
 }

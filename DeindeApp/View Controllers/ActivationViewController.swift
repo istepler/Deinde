@@ -54,7 +54,25 @@ class ActivationViewController: UIViewController {
         thirdCodePartTextField.addTarget(self, action: #selector(thirdPartTextFieldDidChange(_:)), for: .editingChanged)
 
     }
-    @IBOutlet weak var beginTravelButtonPressed: UIButton!
+    
+    @IBAction func beginTravelButtonPressed(_ sender: Any) {
+        var activationCode = ""
+        if let firstPart = firstCodePartTextField.text, let  secondPart = secondCodePartTextField.text, let thirdPart = thirdCodePartTextField.text {
+            activationCode = firstPart + secondPart + thirdPart
+        }
+        
+        UserModel.instance.currentUser?.activationCode = activationCode
+        UserModel.instance.login { (user, error) in
+            if error != nil {
+                print("Error")
+            } else {
+            self.navigationController?.popViewController(animated: true)
+            print(user)
+            }
+            
+        }
+    }
+    
     
     
 }

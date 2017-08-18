@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet weak var userPhotoImage: UIImageView!
     @IBOutlet weak var facebookLoginButton: UIButton!
 
-    @IBAction func loginButtonClicked (_ sender: UIButton!) {
+    @IBAction func facebookLoginButtonPressed(_ sender: UIButton!) {
         let loginManager = LoginManager()
         if AccessToken.current == nil {
             loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
@@ -157,8 +157,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         nameTextField.becomeFirstResponder()
     }
     
-    @IBAction func facebookloginButton(_ sender: UIButton) {
-    }
+    
 }
 // MARK: - UIImage extension
 extension UIImage {

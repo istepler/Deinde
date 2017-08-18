@@ -56,10 +56,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9X-vq-wsp">
-                                                    <rect key="frame" x="8" y="10" width="359" height="319.5"/>
+                                                    <rect key="frame" x="8" y="10" width="304" height="319.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xmi-9N-Tma">
-                                                            <rect key="frame" x="0.0" y="176.5" width="359" height="138"/>
+                                                            <rect key="frame" x="0.0" y="176.5" width="304" height="138"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="138" id="hGM-8F-EF2"/>
                                                             </constraints>
@@ -73,19 +73,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хочу в Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KI-nw-XET">
-                                                    <rect key="frame" x="28" y="23" width="319" height="62"/>
+                                                    <rect key="frame" x="28" y="23" width="264" height="62"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35 нових друзів  ● Батут ● SUP surfing ● Wakeboarding ● Windsurfing ● Kitesurfing " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anC-ip-YZI">
-                                                    <rect key="frame" x="48" y="105" width="279" height="57.5"/>
+                                                    <rect key="frame" x="48" y="105" width="224" height="57.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gj6-uF-EPm">
-                                                    <rect key="frame" x="152" y="177.5" width="70" height="30"/>
+                                                    <rect key="frame" x="125" y="177.5" width="70" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="● " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh7-vv-flv">
                                                             <rect key="frame" x="3" y="4" width="16.5" height="21"/>
@@ -216,20 +216,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faceForCotravellersTable" translatesAutoresizingMaskIntoConstraints="NO" id="Slu-9l-cd6">
-                                                    <rect key="frame" x="127.5" y="8" width="120" height="120"/>
+                                                    <rect key="frame" x="100" y="8" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="RsE-KD-lHg"/>
                                                         <constraint firstAttribute="height" constant="120" id="tvF-l3-ncW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ірина Мельниченко" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouu-77-naK">
-                                                    <rect key="frame" x="87" y="138" width="201" height="26.5"/>
+                                                    <rect key="frame" x="59.5" y="138" width="201" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Про себе: гори, море, сереневенький. Мрію про мир у всьому світі, а із реальнішого - підкорити Еверест." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dUJ-XJ-zEh">
-                                                    <rect key="frame" x="80" y="174.5" width="215" height="100"/>
+                                                    <rect key="frame" x="52.5" y="174.5" width="215" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="U4B-e5-puk"/>
@@ -631,10 +631,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M1y-xK-PZI">
-                                                    <rect key="frame" x="8" y="10" width="359" height="319.5"/>
+                                                    <rect key="frame" x="8" y="10" width="304" height="319.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-6E-04q">
-                                                            <rect key="frame" x="0.0" y="176.5" width="359" height="138"/>
+                                                            <rect key="frame" x="0.0" y="176.5" width="304" height="138"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="138" id="syL-KZ-EhC"/>
                                                             </constraints>
@@ -648,19 +648,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хочу в Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEu-x9-1Oq">
-                                                    <rect key="frame" x="28" y="23" width="319" height="62"/>
+                                                    <rect key="frame" x="28" y="23" width="264" height="62"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35 нових друзів  ● Батут ● SUP surfing ● Wakeboarding ● Windsurfing ● Kitesurfing " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5d-sU-Xd7">
-                                                    <rect key="frame" x="40" y="105" width="295" height="57.5"/>
+                                                    <rect key="frame" x="40" y="105" width="240" height="57.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lki-ce-AJ8">
-                                                    <rect key="frame" x="152.5" y="177.5" width="70" height="30"/>
+                                                    <rect key="frame" x="125" y="177.5" width="70" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="● " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9J-xn-cUd">
                                                             <rect key="frame" x="3" y="4" width="16.5" height="21"/>
@@ -843,7 +843,7 @@
                                                                 <rect key="frame" x="0.0" y="57" width="192" height="34"/>
                                                                 <state key="normal" image="facebookLogin"/>
                                                                 <connections>
-                                                                    <action selector="facebookloginButton:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="Cbb-bJ-URf"/>
+                                                                    <action selector="facebookLoginButtonPressed:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="Rfw-9X-bgE"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1090,6 +1090,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="22"/>
                                 <state key="normal" title="ПОЧАТИ ПОДОРОЖУВАТИ"/>
+                                <connections>
+                                    <action selector="beginTravelButtonPressed:" destination="g7b-MZ-ZAa" eventType="touchUpInside" id="jxS-OY-za0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9119997621" green="0.18182963129999999" blue="0.14378869529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1106,7 +1109,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="beginTravelButtonPressed" destination="kPv-mI-Mu3" id="fON-gT-e47"/>
                         <outlet property="firstCodePartTextField" destination="GN6-AL-o1f" id="sjD-8i-ZSz"/>
                         <outlet property="secondCodePartTextField" destination="Ihj-NM-39o" id="yo8-IR-a3L"/>
                         <outlet property="thirdCodePartTextField" destination="eRv-bS-6fr" id="FMC-uP-whd"/>
@@ -1136,7 +1138,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIj-CD-d7a">
-                                        <rect key="frame" x="10" y="43.5" width="300" height="29.5"/>
+                                        <rect key="frame" x="10" y="43" width="300" height="29.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="24"/>
                                         <color key="textColor" cyan="0.0" magenta="0.0001772865653" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <nil key="highlightedColor"/>
