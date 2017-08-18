@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var userPhotoImage: UIButton!
     @IBOutlet weak var facebookLoginButton: UIButton!
-
+    
     @IBAction func facebookLoginButtonPressed(_ sender: UIButton!) {
         let loginManager = LoginManager()
         if AccessToken.current == nil {
@@ -40,12 +40,12 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
                             //var link = (response.dictionaryValue?["link"] as? String)!
                             //var pictureFB = JSON(response.dictionaryValue?["picture"] as Any)
                             //var pictureFBData = pictureFB["data"].dictionary
-                            //var pictureFBURL = pictureFBData?["url"]?.string
+                        //var pictureFBURL = pictureFBData?["url"]?.string
                         case .failed(let error):
                             print("Graph Request Failed: \(error)")
                         }
                     }
-                fbUserData.start()
+                    fbUserData.start()
                 }
             }
         } else {
@@ -57,12 +57,6 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if PFUser.current() == nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
-            navigationController?.pushViewController(vc, animated: true)
-        }
-        
         self.descriptionTextView.delegate = self
         self.phoneNumberTextField.delegate = self
         self.nameTextField.delegate = self
@@ -72,6 +66,13 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if PFUser.current() == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
+            navigationController?.pushViewController(vc, animated: false)
+        }
+        
         if AccessToken.current == nil {
             facebookLoginButton.alpha = 0.5
         }
@@ -102,7 +103,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     override func viewDidLayoutSubviews() {
         
         userPhotoImage.layer.cornerRadius = userPhotoImage.frame.size.width/2
-    
+        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -173,7 +174,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         nameTextField.inputView?.isUserInteractionEnabled = true
         nameTextField.becomeFirstResponder()
     }
-
+    
 }
 
 // MARK: - UIImage extension

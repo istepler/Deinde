@@ -9,11 +9,12 @@
 import UIKit
 import Parse
 
-class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate {
     
     @IBOutlet weak var tripsTableView: UITableView!
     @IBOutlet weak var allTripsButton: UIButton!
     @IBOutlet weak var freeTripsButton: UIButton!
+    
     
     enum TripsViewControllerState {
         case allTrips(trips: [TripVO]?)
@@ -53,6 +54,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tripsTableView.delegate = self
         state = .allTrips(trips: nil)
         
+        
+        tabBarController?.delegate = self
         
     }
     
@@ -122,5 +125,15 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         destinationVC.url = detailTripUrl
     }
     
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let tabBarIndex = tabBarController?.selectedIndex
+        if tabBarIndex == 1 {
+            if (UserModel.instance.loggedIn == nil) {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
     
 }

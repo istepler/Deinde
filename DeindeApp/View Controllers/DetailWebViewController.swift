@@ -23,6 +23,9 @@ class DetailWebViewController: UIViewController {
             print("URL is disabled")
         }
     }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
   
 }
