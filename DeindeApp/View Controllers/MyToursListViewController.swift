@@ -27,6 +27,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         
+        
         myToursTableView.dataSource = self
         myToursTableView.delegate = self
         UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
@@ -51,6 +52,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         
 //        if PFUser.current() == nil {
 //            let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Mark Simonson - Proxima Nova Bold.otf">
-            <string>ProximaNova-Bold</string>
-        </array>
         <array key="Proxima Nova Semibold.otf">
             <string>ProximaNova-Semibold</string>
+        </array>
+        <array key="ProximaNova-Bold.otf">
+            <string>ProximaNova-Bold</string>
         </array>
         <array key="ProximaNova-Reg.otf">
             <string>ProximaNova-Regular</string>
@@ -731,10 +732,14 @@
                                             <outlet property="tripBackgroundView" destination="M1y-xK-PZI" id="PMg-3a-nkr"/>
                                             <outlet property="tripImage" destination="J5i-6E-04q" id="7OA-XX-LQy"/>
                                             <outlet property="tripTitleLabel" destination="aEu-x9-1Oq" id="1zh-YB-Y8H"/>
+                                            <segue destination="6R0-6R-1rF" kind="show" identifier="detailFreeTripSegue" animates="NO" id="iPp-84-4Lx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="k2P-9o-xmV">
+                                <rect key="frame" x="197" y="333" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -743,6 +748,8 @@
                             <constraint firstAttribute="trailing" secondItem="ylL-cy-dAE" secondAttribute="trailing" id="WbP-A5-6bV"/>
                             <constraint firstItem="ylL-cy-dAE" firstAttribute="leading" secondItem="zpm-nW-huM" secondAttribute="leading" id="ZXS-8V-QC3"/>
                             <constraint firstItem="iib-Su-uoJ" firstAttribute="leading" secondItem="zpm-nW-huM" secondAttribute="leading" id="eqR-4L-de7"/>
+                            <constraint firstItem="k2P-9o-xmV" firstAttribute="centerX" secondItem="zpm-nW-huM" secondAttribute="centerX" id="jSB-18-5eo"/>
+                            <constraint firstItem="k2P-9o-xmV" firstAttribute="centerY" secondItem="zpm-nW-huM" secondAttribute="centerY" id="qbJ-mg-a9i"/>
                             <constraint firstAttribute="trailing" secondItem="iib-Su-uoJ" secondAttribute="trailing" id="r9j-da-0ts"/>
                             <constraint firstItem="zzl-TB-kKp" firstAttribute="top" secondItem="ylL-cy-dAE" secondAttribute="bottom" id="sMe-jg-8ra"/>
                         </constraints>
@@ -753,6 +760,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="k2P-9o-xmV" id="i8W-8S-wdL"/>
                         <outlet property="allTripsButton" destination="BBg-MZ-ETj" id="L81-M1-JhC"/>
                         <outlet property="freeTripsButton" destination="198-pt-ipz" id="SiN-pV-m2g"/>
                         <outlet property="tripsTableView" destination="ylL-cy-dAE" id="Cj1-7X-Z4f"/>
@@ -1256,4 +1264,7 @@
         <image name="profile_icon" width="29" height="29"/>
         <image name="userLogo" width="1248" height="1248"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="iPp-84-4Lx"/>
+    </inferredMetricsTieBreakers>
 </document>
