@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,13 +11,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Mark Simonson - Proxima Nova Bold.otf">
-            <string>ProximaNova-Bold</string>
-        </array>
         <array key="Proxima Nova Semibold.otf">
             <string>ProximaNova-Semibold</string>
         </array>
-        <array key="ProximaNova-Regular.otf">
+        <array key="ProximaNova-Bold.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+        <array key="ProximaNova-Reg.otf">
             <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
@@ -25,7 +25,7 @@
         <!--My Tours List View Controller-->
         <scene sceneID="Wfn-94-8jx">
             <objects>
-                <viewController id="PBN-v9-3Wk" customClass="MyToursListViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyToursListViewController" id="PBN-v9-3Wk" customClass="MyToursListViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SwB-BF-Ilz"/>
                         <viewControllerLayoutGuide type="bottom" id="7sT-QI-n78"/>
@@ -146,26 +146,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-WG-wdu">
-                                <rect key="frame" x="197" y="333" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sx4-gk-bWh" secondAttribute="trailing" id="7nC-NZ-XKf"/>
-                            <constraint firstItem="hYY-WG-wdu" firstAttribute="centerY" secondItem="mmB-a5-tOJ" secondAttribute="centerY" id="Bap-TV-CEM"/>
                             <constraint firstItem="sx4-gk-bWh" firstAttribute="top" secondItem="kd3-RS-11r" secondAttribute="bottom" id="EEn-BH-qKO"/>
                             <constraint firstItem="sx4-gk-bWh" firstAttribute="leading" secondItem="mmB-a5-tOJ" secondAttribute="leading" id="HnM-gz-nwa"/>
                             <constraint firstAttribute="trailing" secondItem="kd3-RS-11r" secondAttribute="trailing" id="VNq-M9-j5H"/>
                             <constraint firstItem="kd3-RS-11r" firstAttribute="leading" secondItem="mmB-a5-tOJ" secondAttribute="leading" id="W86-da-UwI"/>
                             <constraint firstItem="kd3-RS-11r" firstAttribute="top" secondItem="mmB-a5-tOJ" secondAttribute="top" id="cI6-0W-RtO"/>
                             <constraint firstAttribute="bottom" secondItem="sx4-gk-bWh" secondAttribute="bottom" id="dY6-dr-AWq"/>
-                            <constraint firstItem="hYY-WG-wdu" firstAttribute="centerX" secondItem="mmB-a5-tOJ" secondAttribute="centerX" id="edb-dy-aU4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WQ9-ok-ez7"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="hYY-WG-wdu" id="nKY-xN-vd8"/>
                         <outlet property="myToursTableView" destination="sx4-gk-bWh" id="4bx-tA-WFW"/>
                     </connections>
                 </viewController>
@@ -738,7 +732,6 @@
                                             <outlet property="tripBackgroundView" destination="M1y-xK-PZI" id="PMg-3a-nkr"/>
                                             <outlet property="tripImage" destination="J5i-6E-04q" id="7OA-XX-LQy"/>
                                             <outlet property="tripTitleLabel" destination="aEu-x9-1Oq" id="1zh-YB-Y8H"/>
-                                            <segue destination="6R0-6R-1rF" kind="show" identifier="detailFreeTripSegue" animates="NO" id="iPp-84-4Lx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -770,7 +763,7 @@
                         <outlet property="allTripsButton" destination="BBg-MZ-ETj" id="L81-M1-JhC"/>
                         <outlet property="freeTripsButton" destination="198-pt-ipz" id="SiN-pV-m2g"/>
                         <outlet property="tripsTableView" destination="ylL-cy-dAE" id="Cj1-7X-Z4f"/>
-                        <segue destination="4uU-Bb-hFo" kind="show" identifier="detailTripSeuge" id="Sa1-9V-lOs"/>
+                        <segue destination="4uU-Bb-hFo" kind="show" identifier="detailTripSegue" id="Sa1-9V-lOs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwD-hf-eHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -812,7 +805,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="yxQ-sy-60U">
             <objects>
-                <viewController id="PRQ-KZ-xGM" userLabel="User Profile View Controller" customClass="ProfileViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="PRQ-KZ-xGM" userLabel="User Profile View Controller" customClass="ProfileViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LXc-vb-BvQ"/>
                         <viewControllerLayoutGuide type="bottom" id="5dn-76-ESO"/>
@@ -831,9 +824,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQr-9s-1z3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="347.66666666666669"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-Vo-HXf">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-Vo-HXf">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="347.66666666666669"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deinde_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="aHz-C6-1Ww">
                                                 <rect key="frame" x="162.66666666666666" y="17" width="89" height="38"/>
@@ -843,26 +835,26 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bGr-de-SxO">
-                                                <rect key="frame" x="124.66666666666669" y="86" width="165.66666666666663" height="232.66666666666669"/>
+                                                <rect key="frame" x="125" y="86" width="165.66666666666669" height="232.66666666666669"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJb-bC-R19">
-                                                        <rect key="frame" x="17.999999999999986" y="0.0" width="130" height="129.66666666666666"/>
+                                                        <rect key="frame" x="18" y="0.0" width="130" height="129.66666666666666"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="LJb-bC-R19" secondAttribute="height" multiplier="1:1" id="Tky-Lr-e2x"/>
                                                         </constraints>
-                                                        <state key="normal" image="userLogo"/>
+                                                        <state key="normal" backgroundImage="userLogo"/>
                                                         <connections>
                                                             <action selector="avatarButton:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="Yzx-gW-bkk"/>
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sh9-ou-wXG">
-                                                        <rect key="frame" x="0.0" y="135.66666666666669" width="165.66666666666663" height="97.000000000000028"/>
+                                                        <rect key="frame" x="0.0" y="135.66666666666669" width="165.66666666666669" height="97.000000000000028"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-Lm-B7j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="165.66666666666663" height="27"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="165.66666666666669" height="27"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Як Вас звати ?" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-7P-8Gb">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="152.66666666666663" height="27"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="152.66666666666669" height="27"/>
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="22"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -873,7 +865,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-OR-Ftk">
-                                                                        <rect key="frame" x="152.66666666666663" y="0.0" width="13" height="27"/>
+                                                                        <rect key="frame" x="152.66666666666669" y="0.0" width="13" height="27"/>
                                                                         <state key="normal" image="pen"/>
                                                                         <connections>
                                                                             <action selector="editButton:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="njo-gA-0RI"/>
@@ -882,7 +874,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-NV-AKD">
-                                                                <rect key="frame" x="0.0" y="57.000000000000028" width="165.66666666666663" height="40"/>
+                                                                <rect key="frame" x="0.0" y="57.000000000000028" width="165.66666666666669" height="40"/>
                                                                 <state key="normal" image="fbLogo"/>
                                                                 <connections>
                                                                     <action selector="facebookLoginButtonPressed:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="Rfw-9X-bgE"/>
@@ -896,11 +888,15 @@
                                         <color key="backgroundColor" red="0.94708508253097534" green="0.25140425562858582" blue="0.16514763236045837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="bGr-de-SxO" firstAttribute="top" secondItem="aHz-C6-1Ww" secondAttribute="bottom" constant="31" id="01U-Ek-qv3"/>
+                                            <constraint firstAttribute="bottom" secondItem="OhV-Vo-HXf" secondAttribute="bottom" id="56C-Xp-30G"/>
                                             <constraint firstItem="aHz-C6-1Ww" firstAttribute="top" secondItem="TQr-9s-1z3" secondAttribute="top" constant="17" id="Cpw-C2-iEJ"/>
                                             <constraint firstAttribute="width" secondItem="TQr-9s-1z3" secondAttribute="height" multiplier="25:21" id="PmR-xK-goW"/>
+                                            <constraint firstAttribute="trailing" secondItem="OhV-Vo-HXf" secondAttribute="trailing" id="StB-me-c1j"/>
                                             <constraint firstItem="aHz-C6-1Ww" firstAttribute="centerX" secondItem="TQr-9s-1z3" secondAttribute="centerX" id="TDV-cy-7G1"/>
                                             <constraint firstItem="bGr-de-SxO" firstAttribute="centerX" secondItem="TQr-9s-1z3" secondAttribute="centerX" id="amZ-oS-qps"/>
+                                            <constraint firstItem="OhV-Vo-HXf" firstAttribute="top" secondItem="TQr-9s-1z3" secondAttribute="top" id="d7d-f2-DdP"/>
                                             <constraint firstAttribute="bottom" secondItem="bGr-de-SxO" secondAttribute="bottom" constant="29" id="isK-dn-pvH"/>
+                                            <constraint firstItem="OhV-Vo-HXf" firstAttribute="leading" secondItem="TQr-9s-1z3" secondAttribute="leading" id="yZ5-zc-EWv"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfG-TB-CbJ">
@@ -989,7 +985,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZB-ar-cq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4023.1999999999998" y="1134.7826086956522"/>
+            <point key="canvasLocation" x="4023.188405797102" y="1134.7826086956522"/>
         </scene>
         <!--Мої тури-->
         <scene sceneID="6b1-Jq-Q3H">
@@ -1161,12 +1157,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uk-sn-qoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4030" y="-1169"/>
+            <point key="canvasLocation" x="3788" y="-1326"/>
         </scene>
         <!--Detail Web View Controller-->
         <scene sceneID="jEu-f3-aiQ">
             <objects>
-                <viewController id="4uU-Bb-hFo" customClass="DetailWebViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uU-Bb-hFo" customClass="DetailWebViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jbL-a8-z6G"/>
                         <viewControllerLayoutGuide type="bottom" id="tUC-83-JVw"/>
@@ -1270,7 +1266,4 @@
         <image name="profile_icon" width="29" height="29"/>
         <image name="userLogo" width="1248" height="1248"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="6XM-eA-beg"/>
-    </inferredMetricsTieBreakers>
 </document>

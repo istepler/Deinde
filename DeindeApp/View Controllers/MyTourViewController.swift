@@ -41,6 +41,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         }
     }
     
+    var buttonHidden = false
+    
     
     enum MuToutViewControllerButtonState {
         case map
@@ -123,6 +125,11 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
 //        }
 
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        buttonHidden = false
+        cotravellersButton.isHidden = buttonHidden
     }
 
     func setMarkers(coordinates: PFGeoPoint, time: Int, totalTime: Int) {

@@ -11,6 +11,8 @@ import FacebookLogin
 import FacebookCore
 import SwiftyJSON
 import Parse
+import SystemConfiguration
+import SDWebImage
 
 class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -56,22 +58,58 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if PFUser.current() == nil {
+            
+            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
+            vc.previousVCIdentifier = "ProfileViewController"
+            navigationController?.setViewControllers([vc], animated: true)
+        } else {
+            navigationController?.setViewControllers([self], animated: true)
+            
+        }
+        
+        if PFUser.current() != nil {
+            UserModel.instance.currentUser = UserVO()
+            UserModel.instance.currentUser?.id = PFUser.current()?.objectId
+            if let user = UserModel.instance.currentUser {
+                UserModel.instance.getUserData(user: user, callback: { (currentUser, error) in
+                    if let error = error {
+                        self.showError(error: error)
+                    } else {
+                        self.descriptionTextView.text = UserModel.instance.currentUser?.details
+                        self.nameTextField.text = UserModel.instance.currentUser?.firstName
+                        self.phoneNumberTextField.text = UserModel.instance.currentUser?.telNumber
+                        self.userPhotoImage.sd_setShowActivityIndicatorView(true)
+                        if let stringUrl = UserModel.instance.currentUser?.avatar?.url {
+                            let url = URL(string: stringUrl)
+                            
+                            if let url = url {
+                                
+                                self.userPhotoImage.sd_setBackgroundImage(with: url, for: .normal)
+                            }
+                            
+                        }
+                        
+                        
+                    }
+                })
+            }
+            
+        }
+        
         
         self.descriptionTextView.delegate = self
         self.phoneNumberTextField.delegate = self
         self.nameTextField.delegate = self
         
         descriptionTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
+        
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-//        if PFUser.current() == nil {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
-//            navigationController?.pushViewController(vc, animated: false)
-//        }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         if AccessToken.current == nil {
             facebookLoginButton.alpha = 0.5
@@ -94,9 +132,25 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        userPhotoImage.setImage(image, for: .normal)
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
         
+        if PFUser.current() != nil {
+            var currentUser = UserVO()
+            currentUser.id = PFUser.current()?.objectId
+            UserModel.instance.currentUser = currentUser
+            if let user = UserModel.instance.currentUser {
+                UserModel.instance.updateUserFoto(user: user, image: image) {(success, error) in
+                    if success {
+                        self.userPhotoImage.imageView?.image = image
+                        
+                    } else {
+                        self.showError(error: error!)
+                    }
+                }
+            }
+        }
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -153,6 +207,11 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.present(actionSheet, animated: true, completion: nil)
     }
     
+    
+    
+    
+    
+    
     //    func maskRoundedImage(image: UIImage, radius: Float) -> UIImage {
     //        var imageView: UIImageView = UIImageView(image: image)
     //        var layer: CALayer = CALayer()
@@ -173,6 +232,12 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         nameTextField.inputView?.isUserInteractionEnabled = true
         nameTextField.becomeFirstResponder()
     }
+    
+    func showError(error: Error) {
+        AlertDialog.showAlert("Неочiкувана помилка", message: "Спробуйте ще раз", viewController: self)
+        print("Error while loading data \(error)")
+    }
+    
     
 }
 

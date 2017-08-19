@@ -34,6 +34,13 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if PFUser.current() == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as! ActivationViewController
+            vc.previousVCIdentifier = "MyToursListViewController"
+            navigationController?.setViewControllers([vc], animated: true)
+            
+        }
         
         
         
