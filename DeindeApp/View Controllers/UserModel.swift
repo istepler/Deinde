@@ -39,7 +39,7 @@ class UserModel {
     
     func loadUsersForTrip(trip: TripVO, callback: @escaping (_ users: [UserVO]?, _ error: Error?) -> ()){
         let dataLoader = DataLoader()
-        SwiftSpinner.show("loading info for trips")
+        //SwiftSpinner.show("loading info for trips")
 
         dataLoader.usersForTripRequest(trip: trip) { (users, error) in
             if let error = error {
