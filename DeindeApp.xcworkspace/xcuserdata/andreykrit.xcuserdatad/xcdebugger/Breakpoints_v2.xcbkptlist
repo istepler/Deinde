@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
-            timestampString = "524737145.787152"
+            timestampString = "524814748.105034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
-            timestampString = "524737145.787152"
+            timestampString = "524814748.105034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
-            timestampString = "524737145.787152"
+            timestampString = "524814748.105034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
-            timestampString = "524737145.787152"
+            timestampString = "524814748.105034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "textView(_:shouldChangeTextIn:replacementText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
-            timestampString = "524737145.787152"
+            timestampString = "524814748.105034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "imagePickerControllerDidCancel(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
-            timestampString = "524737145.787152"
+            timestampString = "524814748.105034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "ProfileViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -105,12 +105,188 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
+            filePath = "DeindeApp/View Controllers/UserModel.swift"
+            timestampString = "524806083.402527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "login(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/UserModel.swift"
+            timestampString = "524806084.031843"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "login(callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeindeApp.UserModel.login (callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DeindeApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/View%20Controllers/UserModel.swift"
+                  timestampString = "524814749.430388"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeindeApp.UserModel.login (callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DeindeApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/View%20Controllers/UserModel.swift"
+                  timestampString = "524814749.431786"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "857">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/UserModel.swift"
+            timestampString = "524806084.527989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "login(callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeindeApp.UserModel.login (callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DeindeApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/View%20Controllers/UserModel.swift"
+                  timestampString = "524814749.435007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1406">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeindeApp.UserModel.(login (callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "DeindeApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/View%20Controllers/UserModel.swift"
+                  timestampString = "524814749.436463"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/UserModel.swift"
+            timestampString = "524806084.977201"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "login(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/UserModel.swift"
+            timestampString = "524806085.407354"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "login(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/UserModel.swift"
+            timestampString = "524806085.953995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "login(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/UserModel.swift"
+            timestampString = "524806086.755925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "login(callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/Backend/DataLoader.swift"
+            timestampString = "524806174.038629"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "userLoginRequest(user:callback:)"
             landmarkType = "7">
             <Locations>
@@ -118,31 +294,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "DeindeApp.DataLoader.userLoginRequest (user : DeindeApp.UserVO, callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "DeindeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.738167"
+                  timestampString = "524814749.450547"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "215"
-                  endingLineNumber = "215"
-                  offsetFromSymbolStart = "462">
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "556">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "DeindeApp.DataLoader.userLoginRequest (user : DeindeApp.UserVO, callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "DeindeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.739612"
+                  timestampString = "524814749.451887"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "215"
-                  endingLineNumber = "215"
-                  offsetFromSymbolStart = "486">
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "745">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -154,103 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "userLoginRequest(user:callback:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "DeindeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.742865"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "315">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "DeindeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.744452"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "320">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "userLoginRequest(user:callback:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "DeindeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.747703"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "215"
-                  endingLineNumber = "215"
-                  offsetFromSymbolStart = "462">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "DeindeApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.74911"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "215"
-                  endingLineNumber = "215"
-                  offsetFromSymbolStart = "486">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
+            timestampString = "524806174.616077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "207"
@@ -262,11 +342,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "DeindeApp.DataLoader.userLoginRequest (user : DeindeApp.UserVO, callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "DeindeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.752293"
+                  timestampString = "524814749.455163"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "207"
@@ -277,11 +357,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "DeindeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.753693"
+                  timestampString = "524814749.456483"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "208"
@@ -298,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
+            timestampString = "524806175.130421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
@@ -314,27 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
+            timestampString = "524806504.944259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "userLoginRequest(user:callback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "userLoginRequest(user:callback:)"
             landmarkType = "7">
             <Locations>
@@ -342,31 +406,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "DeindeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.762431"
+                  timestampString = "524814749.462189"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "315">
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "389">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (__ObjC.PFUser, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "DeindeApp.DataLoader.(userLoginRequest (user : DeindeApp.UserVO, callback : (Swift.Optional&lt;__ObjC.PFUser&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "DeindeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/Backend/DataLoader.swift"
-                  timestampString = "524797863.76388"
+                  timestampString = "524814749.463532"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "320">
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "394">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -378,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
+            timestampString = "524806504.944259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "userLoginRequest(user:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,12 +458,140 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeindeApp/Backend/DataLoader.swift"
-            timestampString = "524713353.5688"
+            timestampString = "524806504.944259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "userLoginRequest(user:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
+            timestampString = "524814748.105034"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
+            timestampString = "524814748.105034"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
+            timestampString = "524814748.105034"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
+            timestampString = "524814787.684665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
+            timestampString = "524814789.789422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeindeApp.ProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "DeindeApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/View%20Controllers/ProfileViewController.swift"
+                  timestampString = "524814789.794543"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "7883">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DeindeApp.ProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "DeindeApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreykrit/Desktop/Develop/DeindeApp/DeindeApp/View%20Controllers/ProfileViewController.swift"
+                  timestampString = "524814789.796758"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "8287">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DeindeApp/View Controllers/ProfileViewController.swift"
+            timestampString = "524814790.873242"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

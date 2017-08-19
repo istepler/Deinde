@@ -25,7 +25,13 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if PFUser.current() == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as! ActivationViewController
+            vc.previousVCIdentifier = "MyToursListViewController"
+            navigationController?.setViewControllers([vc], animated: true)
+            
+        }
         
         
         myToursTableView.dataSource = self
@@ -53,16 +59,10 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-//        if PFUser.current() == nil {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as! ActivationViewController
-//            //self.present(vc, animated: false, completion: nil)
-//            navigationController?.pushViewController(vc, animated: false)
-//        }
-
-
     }
+
+
+
 
     // MARK: - TableViewDataSource & TableViewDelegate
     

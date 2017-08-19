@@ -70,17 +70,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
-        //SwiftSpinner.show("loading trips")
-        //if Reachability.isConnectedToNetwork() == true {
         state = .allTrips
         tripsTableView.refreshControl = refreshControl
-        
-        
-        
-        //state = .allTrips
-        //        } else {
-        //            AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
-        //        }
         
     }
     
@@ -181,43 +172,39 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tripsTableView.cellForRow(at: indexPath) as! TripTableViewCell
+        let indexPath = tripsTableView.indexPath(for: cell)
+        let index = indexPath!.row
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         if state == .allTrips {
-            performSegue(withIdentifier: "detailTripSeuge", sender: cell)
+            performSegue(withIdentifier: "detailTripSegue", sender: cell)
         }
         if state == .freeTrips {
-            performSegue(withIdentifier: "detailFreeTripSegue", sender: cell)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "MyTourViewController") as? MyTourViewController
+            let trip = freeTrips[indexPath!.row]
+            if let vc = destinationVC {
+                vc.trip = trip
+                if let duration = trip.duration {
+                    vc.tripDays = duration
+                    vc.buttonHidden = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
         }
         
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! TripTableViewCell
-        let indexPath = tripsTableView.indexPath(for: cell)
-        let index = indexPath!.row
+        let indexPath = tripsTableView.indexPath(for: cell)!
+        
         if state == .allTrips {
             let destinationVC = segue.destination as! DetailWebViewController
-            let detailTripUrl = allTrips[index].detailsUrl
-            let tripTitle = allTrips[index].title
-            destinationVC.tripTitle = tripTitle
-            destinationVC.url = detailTripUrl
-        }
-        if state == .freeTrips {
-            let cell = sender as! TripTableViewCell
-            let indexPath = tripsTableView.indexPath(for: cell)
-            let trip = freeTrips[indexPath!.row]
-            let destinationVC = segue.destination as? MyTourViewController
-            if let vc = destinationVC {
-            vc.trip = trip
-            if let duration = trip.duration {
-                vc.tripDays = duration
-                vc.cotravellersButton.isHidden = true
-                }
-            }
             
+            let trip = allTrips[indexPath.row]
+            destinationVC.tripTitle = trip.title
+            destinationVC.url = trip.detailsUrl
         }
     }
-    
     
 }

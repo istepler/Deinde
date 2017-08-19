@@ -25,7 +25,7 @@
         <!--My Tours List View Controller-->
         <scene sceneID="Wfn-94-8jx">
             <objects>
-                <viewController id="PBN-v9-3Wk" customClass="MyToursListViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyToursListViewController" id="PBN-v9-3Wk" customClass="MyToursListViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SwB-BF-Ilz"/>
                         <viewControllerLayoutGuide type="bottom" id="7sT-QI-n78"/>
@@ -732,7 +732,6 @@
                                             <outlet property="tripBackgroundView" destination="M1y-xK-PZI" id="PMg-3a-nkr"/>
                                             <outlet property="tripImage" destination="J5i-6E-04q" id="7OA-XX-LQy"/>
                                             <outlet property="tripTitleLabel" destination="aEu-x9-1Oq" id="1zh-YB-Y8H"/>
-                                            <segue destination="6R0-6R-1rF" kind="show" identifier="detailFreeTripSegue" animates="NO" id="iPp-84-4Lx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -764,7 +763,7 @@
                         <outlet property="allTripsButton" destination="BBg-MZ-ETj" id="L81-M1-JhC"/>
                         <outlet property="freeTripsButton" destination="198-pt-ipz" id="SiN-pV-m2g"/>
                         <outlet property="tripsTableView" destination="ylL-cy-dAE" id="Cj1-7X-Z4f"/>
-                        <segue destination="4uU-Bb-hFo" kind="show" identifier="detailTripSeuge" id="Sa1-9V-lOs"/>
+                        <segue destination="4uU-Bb-hFo" kind="show" identifier="detailTripSegue" id="Sa1-9V-lOs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwD-hf-eHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -806,7 +805,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="yxQ-sy-60U">
             <objects>
-                <viewController id="PRQ-KZ-xGM" userLabel="User Profile View Controller" customClass="ProfileViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="PRQ-KZ-xGM" userLabel="User Profile View Controller" customClass="ProfileViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LXc-vb-BvQ"/>
                         <viewControllerLayoutGuide type="bottom" id="5dn-76-ESO"/>
@@ -825,9 +824,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQr-9s-1z3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="347.66666666666669"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-Vo-HXf">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-Vo-HXf">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="347.66666666666669"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deinde_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="aHz-C6-1Ww">
                                                 <rect key="frame" x="162.66666666666666" y="17" width="89" height="38"/>
@@ -890,11 +888,15 @@
                                         <color key="backgroundColor" red="0.94708508253097534" green="0.25140425562858582" blue="0.16514763236045837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="bGr-de-SxO" firstAttribute="top" secondItem="aHz-C6-1Ww" secondAttribute="bottom" constant="31" id="01U-Ek-qv3"/>
+                                            <constraint firstAttribute="bottom" secondItem="OhV-Vo-HXf" secondAttribute="bottom" id="56C-Xp-30G"/>
                                             <constraint firstItem="aHz-C6-1Ww" firstAttribute="top" secondItem="TQr-9s-1z3" secondAttribute="top" constant="17" id="Cpw-C2-iEJ"/>
                                             <constraint firstAttribute="width" secondItem="TQr-9s-1z3" secondAttribute="height" multiplier="25:21" id="PmR-xK-goW"/>
+                                            <constraint firstAttribute="trailing" secondItem="OhV-Vo-HXf" secondAttribute="trailing" id="StB-me-c1j"/>
                                             <constraint firstItem="aHz-C6-1Ww" firstAttribute="centerX" secondItem="TQr-9s-1z3" secondAttribute="centerX" id="TDV-cy-7G1"/>
                                             <constraint firstItem="bGr-de-SxO" firstAttribute="centerX" secondItem="TQr-9s-1z3" secondAttribute="centerX" id="amZ-oS-qps"/>
+                                            <constraint firstItem="OhV-Vo-HXf" firstAttribute="top" secondItem="TQr-9s-1z3" secondAttribute="top" id="d7d-f2-DdP"/>
                                             <constraint firstAttribute="bottom" secondItem="bGr-de-SxO" secondAttribute="bottom" constant="29" id="isK-dn-pvH"/>
+                                            <constraint firstItem="OhV-Vo-HXf" firstAttribute="leading" secondItem="TQr-9s-1z3" secondAttribute="leading" id="yZ5-zc-EWv"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfG-TB-CbJ">
@@ -983,7 +985,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZB-ar-cq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4023.1999999999998" y="1134.7826086956522"/>
+            <point key="canvasLocation" x="4023.188405797102" y="1134.7826086956522"/>
         </scene>
         <!--Мої тури-->
         <scene sceneID="6b1-Jq-Q3H">
@@ -993,7 +995,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="VpJ-ct-ZtI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="VpJ-ct-ZtI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cyan="0.0" magenta="0.0" yellow="0.0" black="1" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -1015,7 +1017,7 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="a5y-EV-p3H">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="a5y-EV-p3H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1155,12 +1157,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uk-sn-qoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4030" y="-1169"/>
+            <point key="canvasLocation" x="3788" y="-1326"/>
         </scene>
         <!--Detail Web View Controller-->
         <scene sceneID="jEu-f3-aiQ">
             <objects>
-                <viewController id="4uU-Bb-hFo" customClass="DetailWebViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uU-Bb-hFo" customClass="DetailWebViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jbL-a8-z6G"/>
                         <viewControllerLayoutGuide type="bottom" id="tUC-83-JVw"/>
@@ -1237,7 +1239,7 @@
                     <tabBarItem key="tabBarItem" title="Профіль" image="profile_icon" selectedImage="profile_icon" id="NAD-Qx-Xqj"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X2K-Gv-INl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X2K-Gv-INl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1264,7 +1266,4 @@
         <image name="profile_icon" width="29" height="29"/>
         <image name="userLogo" width="1248" height="1248"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="iPp-84-4Lx"/>
-    </inferredMetricsTieBreakers>
 </document>

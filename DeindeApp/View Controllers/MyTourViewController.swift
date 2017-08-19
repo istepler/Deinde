@@ -40,6 +40,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         }
     }
     
+    var buttonHidden = false
+    
     
     enum MuToutViewControllerButtonState {
         case map
@@ -77,6 +79,8 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cotravellersButton.isHidden = buttonHidden
         
         if Reachability.isConnectedToNetwork() == true {
             TripsModel.instance.loadPlacesForTrip(trip: trip, callback:  { [weak self] ( places, error) in
@@ -158,6 +162,11 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         }
 
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        buttonHidden = false
+        cotravellersButton.isHidden = buttonHidden
     }
 
     func setMarkers(coordinates: PFGeoPoint, time: Int, totalTime: Int) {
