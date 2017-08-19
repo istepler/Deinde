@@ -6,8 +6,9 @@
 //  Copyright © 2017 Andrey Krit. All rights reserved.
 //
 
-import Foundation
+
 import Parse
+import UIKit
 
 class UserModel {
     
@@ -71,11 +72,23 @@ class UserModel {
         let dataLoader = DataLoader()
         dataLoader.userDataRequest(user: user) { (user, error) in
             if let error = error {
-              print("Error occured while loading userData")
+                print("Error occured while loading userData")
                 callback(nil, error)
             } else {
                 self.currentUser = user
                 callback(user, nil)
+            }
+        }
+    }
+    
+    func  updateUserFoto(user: UserVO, image: UIImage, callback: @escaping (_ success: Bool, _ error: Error?) ->()) {
+        let dataLoader = DataLoader()
+        dataLoader.updateUserImageRequest(user: user, image: image) { (success, error) in
+            if success {
+                callback(true, nil)
+            } else {
+                callback(false, error)
+                print(error)
             }
         }
     }
