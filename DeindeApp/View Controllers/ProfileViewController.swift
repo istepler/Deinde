@@ -144,7 +144,6 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
                 UserModel.instance.updateUserFoto(user: user, image: image) {(success, error) in
                     if success {
                         self.userPhotoImage.imageView?.image = image
-                        self.userPhotoImage.setImage(image, for: .normal)
                         
                     } else {
                         self.showError(error: error!)
@@ -212,7 +211,22 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     
     
-   
+    
+    //    func maskRoundedImage(image: UIImage, radius: Float) -> UIImage {
+    //        var imageView: UIImageView = UIImageView(image: image)
+    //        var layer: CALayer = CALayer()
+    //        layer = imageView.layer
+    //
+    //        layer.masksToBounds = true
+    //        layer.cornerRadius = CGFloat(radius)
+    //
+    //        UIGraphicsBeginImageContext(imageView.bounds.size)
+    //        layer.render(in: UIGraphicsGetCurrentContext()!)
+    //        var roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+    //        UIGraphicsEndImageContext()
+    //
+    //        return roundedImage!
+    //    }
     
     @IBAction func editButton(_ sender: UIButton) {
         nameTextField.inputView?.isUserInteractionEnabled = true
@@ -227,7 +241,22 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
 }
 
-
+// MARK: - UIImage extension
+//extension UIImage {
+//    var isPortrait:  Bool    { return size.height > size.width }
+//    var isLandscape: Bool    { return size.width > size.height }
+//    var breadth:     CGFloat { return min(size.width, size.height) }
+//    var breadthSize: CGSize  { return CGSize(width: breadth, height: breadth) }
+//    var breadthRect: CGRect  { return CGRect(origin: .zero, size: breadthSize) }
+//    var circleMasked: UIImage? {
+//        UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
+//        defer { UIGraphicsEndImageContext() }
+//        guard let cgImage = cgImage?.cropping(to: CGRect(origin: CGPoint(x: isLandscape ? floor((size.width - size.height) / 2) : 0, y: isPortrait  ? floor((size.height - size.width) / 2) : 0), size: breadthSize)) else { return nil }
+//        UIBezierPath(ovalIn: breadthRect).addClip()
+//        UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation).draw(in: breadthRect)
+//        return UIGraphicsGetImageFromCurrentImageContext()
+//    }
+//}
 
 
 
