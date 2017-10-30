@@ -645,6 +645,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
 				DEVELOPMENT_TEAM = 3398483R66;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
@@ -653,6 +655,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = krit.andrey.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -660,6 +663,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
 				DEVELOPMENT_TEAM = 3398483R66;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
@@ -668,6 +673,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = krit.andrey.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
