@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
         <array key="ProximaNova-Bold.otf">
             <string>ProximaNova-Bold</string>
         </array>
-        <array key="ProximaNova-Reg.otf">
+        <array key="ProximaNova-Regular.otf">
             <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
@@ -146,6 +146,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="j0Y-4P-xYb">
+                                <rect key="frame" x="197" y="333" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -156,10 +159,13 @@
                             <constraint firstItem="kd3-RS-11r" firstAttribute="leading" secondItem="mmB-a5-tOJ" secondAttribute="leading" id="W86-da-UwI"/>
                             <constraint firstItem="kd3-RS-11r" firstAttribute="top" secondItem="mmB-a5-tOJ" secondAttribute="top" id="cI6-0W-RtO"/>
                             <constraint firstAttribute="bottom" secondItem="sx4-gk-bWh" secondAttribute="bottom" id="dY6-dr-AWq"/>
+                            <constraint firstItem="j0Y-4P-xYb" firstAttribute="centerY" secondItem="mmB-a5-tOJ" secondAttribute="centerY" id="sDh-z2-OKd"/>
+                            <constraint firstItem="j0Y-4P-xYb" firstAttribute="centerX" secondItem="mmB-a5-tOJ" secondAttribute="centerX" id="zYD-mP-bVZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WQ9-ok-ez7"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="j0Y-4P-xYb" id="QPe-8t-yLh"/>
                         <outlet property="myToursTableView" destination="sx4-gk-bWh" id="4bx-tA-WFW"/>
                     </connections>
                 </viewController>
