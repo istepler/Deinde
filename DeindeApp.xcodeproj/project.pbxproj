@@ -21,6 +21,7 @@
 		22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614201F2A2A47000B7D50 /* RangeSliderTrackLayer.swift */; };
 		22E614231F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614221F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift */; };
 		22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */; };
+		28019DD41F46CD9A00433211 /* MyTourCotravellersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28019DD31F46CD9A00433211 /* MyTourCotravellersViewController.swift */; };
 		293F507B1F45E373005D4A3B /* Alert Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507A1F45E373005D4A3B /* Alert Message.swift */; };
 		293F507D1F45E992005D4A3B /* loading + sheckingForConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507C1F45E992005D4A3B /* loading + sheckingForConnection.swift */; };
 		29D50FA31FA88E1E007C44CE /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D50FA21FA88E1E007C44CE /* StoryboardID.swift */; };
@@ -77,6 +78,7 @@
 		22E614201F2A2A47000B7D50 /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
 		22E614221F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderDayMarkerLayer.swift; sourceTree = "<group>"; };
 		22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderDayMarkerColors.swift; sourceTree = "<group>"; };
+		28019DD31F46CD9A00433211 /* MyTourCotravellersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTourCotravellersViewController.swift; sourceTree = "<group>"; };
 		2813DDCD1F3A0D32008EC382 /* DeindeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeindeApp.entitlements; sourceTree = "<group>"; };
 		293F507A1F45E373005D4A3B /* Alert Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert Message.swift"; sourceTree = "<group>"; };
 		293F507C1F45E992005D4A3B /* loading + sheckingForConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "loading + sheckingForConnection.swift"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				22963F0F1F23B665002E6A64 /* MyTourViewController.swift */,
 				22D5E0E91F3741CB004673C4 /* MyTourTableViewCell.swift */,
+				28019DD31F46CD9A00433211 /* MyTourCotravellersViewController.swift */,
 			);
 			name = MyTourViewController;
 			sourceTree = "<group>";
@@ -380,7 +383,7 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 7ZBZB7WTZS;
+						DevelopmentTeam = X3LC26ANLH;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -447,9 +450,28 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -462,9 +484,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DeindeApp/Pods-DeindeApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -477,13 +503,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeindeApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -499,6 +528,7 @@
 				350F6CE31F3604CA00B924F8 /* DataLoader.swift in Sources */,
 				22963F181F23CD9F002E6A64 /* MapMarker.swift in Sources */,
 				22E614231F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift in Sources */,
+				28019DD41F46CD9A00433211 /* MyTourCotravellersViewController.swift in Sources */,
 				3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */,
 				22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */,
 				22D5E0EA1F3741CB004673C4 /* MyTourTableViewCell.swift in Sources */,
@@ -649,14 +679,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
-				DEVELOPMENT_TEAM = 7ZBZB7WTZS;
+				DEVELOPMENT_TEAM = X3LC26ANLH;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pasha.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -664,14 +697,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
-				DEVELOPMENT_TEAM = 7ZBZB7WTZS;
+				DEVELOPMENT_TEAM = X3LC26ANLH;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pasha.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

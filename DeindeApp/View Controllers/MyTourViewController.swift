@@ -34,6 +34,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     var passingPlace = PlaceVO()
     var sortedPlaces: [PlaceVO] = []
     var locationManager = CLLocationManager()
+    var refreshControl = UIRefreshControl()
     var usersCotravelling: [UserVO] = []{
         didSet {
             cotravellersTableView.reloadData()
@@ -80,56 +81,18 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cotravellersButton.isHidden = buttonHidden
+//        if Reachability.isConnectedToNetwork() == true {
         
-        if Reachability.isConnectedToNetwork() == true {
-            TripsModel.instance.loadPlacesForTrip(trip: trip, callback:  { [weak self] ( places, error) in
-                if let error = error {
-                    self?.showError()
-                } else {
-                    if let places = places {
-                        for place in places {
-                            self?.trip.setPlaces(places: places)
-                            self?.tripPlaces?.append(place)
-                            
-                            
-                            self?.setMarkers(coordinates: place.coords!, time: place.time!, totalTime: place.totalHoursNumber!)
-                            
-                            var sortedPlaces: [PlaceVO] = []
-                            let range = Int((self?.rangeSlider?.lowerValue)!)...Int((self?.rangeSlider?.upperValue)!)
-                            sortedPlaces = (self?.tripPlaces?.filter { range ~= $0.totalHoursNumber! })!
-                            
-                            self?.hideAllMarkers()
-                            
-                            for place in sortedPlaces {
-                                let markers = self?.markerArray.filter { $0.totalTime == place.totalHoursNumber
-                                }
-                                for marker in markers! {
-                                    marker.showMarker(map: (self?.viewWithMap)!)
-                                }
-                            }
-                        }
-                        self?.tripPlaces = self?.tripPlaces?.sorted(by: { $0.totalHoursNumber! < $1.totalHoursNumber!})
-                        self?.setCamera(position: (self?.tripPlaces?[0].coords?.location().coordinate)!)
-                    }
-                }
-                SwiftSpinner.hide()
-            })
-            
-            UserModel.instance.loadUsersForTrip(trip: trip, callback: { [weak self] (users, error) in
-                if let error = error {
-                    self?.showError()
-                } else {
-                    if let users = users {
-                        for user in users {
-                            //print(user)
-                            self?.usersCotravelling.append(user)
-                        }
-                    }
-                }
-                SwiftSpinner.hide()
-            })
-                     
+        refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+       
+        cotravellersTableView.refreshControl = refreshControl
+
+        if (tripPlaces?.isEmpty)! {
+            loadPlacesForTrip()
+        }
+        if usersCotravelling.isEmpty {
+            loadUsersForTrip()
+        }
             tripNameLabel.text = trip.title
             state = .map
             cotravellersTableView.dataSource = self
@@ -157,9 +120,9 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
 
             viewWithMap?.delegate = self
             
-        } else {
-            AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
-        }
+//        } else {
+//            AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
+//        }
 
         
     }
@@ -201,9 +164,34 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! PlaceDetailsViewController
-        destination.place = passingPlace
-        destination.tripName = trip.title!
+        if segue.identifier == "markerToMyTourDetailsVCSegue" {
+            let destination = segue.destination as! PlaceDetailsViewController
+            destination.place = passingPlace
+            destination.tripName = trip.title!
+        }
+        if segue.identifier == "detailUserInfo" {
+            if let indexPath = cotravellersTableView.indexPathForSelectedRow {
+                let destination = segue.destination as! MyTourCotravellersViewController
+                let userSegue = usersCotravelling[indexPath.row]
+                if userSegue.firstName != nil {
+                    destination.userNameVar = userSegue.firstName!
+                }
+                if userSegue.details != nil {
+                    destination.userAboutVar = userSegue.details!
+                }
+                if userSegue.avatar?.url != nil {
+                    destination.userFotoVar = (userSegue.avatar?.url)!
+                }
+                if userSegue.facebook != nil {
+                    destination.userLinkFacebookVar = userSegue.facebook!
+                }
+                if userSegue.telNumber != nil {
+                    destination.userPhoneNumberVar = userSegue.telNumber!
+                }
+                
+            }
+            
+        }
     }
     
     
@@ -292,8 +280,71 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
         return usersCotravelling.count
     }
     
-    func showError() {
-        print("Error while loading data")
+    func loadPlacesForTrip() {
+        TripsModel.instance.loadPlacesForTrip(trip: trip, callback:  { [weak self] ( places, error) in
+            if let error = error {
+                self?.showError(error: error)
+            } else {
+                if let places = places {
+                    for place in places {
+                        self?.trip.setPlaces(places: places)
+                        self?.tripPlaces?.append(place)
+                        
+                        
+                        self?.setMarkers(coordinates: place.coords!, time: place.time!, totalTime: place.totalHoursNumber!)
+                        
+                        var sortedPlaces: [PlaceVO] = []
+                        let range = Int((self?.rangeSlider?.lowerValue)!)...Int((self?.rangeSlider?.upperValue)!)
+                        sortedPlaces = (self?.tripPlaces?.filter { range ~= $0.totalHoursNumber! })!
+                        
+                        self?.hideAllMarkers()
+                        
+                        for place in sortedPlaces {
+                            let markers = self?.markerArray.filter { $0.totalTime == place.totalHoursNumber
+                            }
+                            for marker in markers! {
+                                marker.showMarker(map: (self?.viewWithMap)!)
+                            }
+                        }
+                    }
+                    self?.tripPlaces = self?.tripPlaces?.sorted(by: { $0.totalHoursNumber! < $1.totalHoursNumber!})
+                    self?.setCamera(position: (self?.tripPlaces?[0].coords?.location().coordinate)!)
+                }
+            }
+            //SwiftSpinner.hide()
+        })
+    }
+    
+    func loadUsersForTrip() {
+        UserModel.instance.loadUsersForTrip(trip: trip, callback: { [weak self] (users, error) in
+            if let error = error {
+                self?.showError(error: error)
+            } else {
+                if let users = users {
+                    for user in users {
+                        //print(user)
+                        self?.usersCotravelling.append(user)
+                    }
+                }
+            }
+            //SwiftSpinner.hide()
+        })
+    }
+
+    
+    private func endAnimation() {
+        refreshControl.endRefreshing()
+    }
+    
+    
+    
+    func showError(error: Error) {
+        AlertDialog.showAlert("Неочiкувана помилка", message: "Спробуйте ще раз", viewController: self)
+        print("Error while loading data \(error)")
+    }
+
+    func refreshData() {
+        
     }
 
     

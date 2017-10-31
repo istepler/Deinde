@@ -181,25 +181,26 @@ class DataLoader {
             print("Image data is nil")
             return
         }
+        
+        
         let imageName = "pic\(user.id!).jpg"
         print(imageName)
         let imageFile = PFFile(name: imageName, data: imageData)
+        
         if let picture = imageFile {
-            picture.saveInBackground(block: { [weak self] (true, false) in
-            })
-            let currentUser = PFObject(withoutDataWithClassName: "User", objectId: user.id)
-            currentUser.setObject(picture, forKey: "avatar")
-            currentUser.saveInBackground(block: { [weak self] (success, error) in
-                if success {
-                    print("Image is saved")
-                    callback(true, nil)
+            picture.saveInBackground(block: { (success, error) in
+                let currentUser = PFObject(withoutDataWithClassName: "_User", objectId: user.id)
+                currentUser.setObject(picture, forKey: "avatar")
+                currentUser.saveInBackground { (success, error) in
+                    print(success)
+                    if success {
+                        print("Image is saved")
+                        callback(true, nil)
+                    } else if error != nil {
+                        print("Error occured while uploading a photo")
+                        callback(false, error)
+                    }
                 }
-                if error != nil {
-                    print("Error occured while uploading a photo")
-                    callback(false, error)
-                    AlertDialog.showAlert("Error", message: "Error occured while uploading a photo", viewController: ProfileViewController())
-                }
-                
             })
         }
     }

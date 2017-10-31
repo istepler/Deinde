@@ -55,7 +55,7 @@ class TripsModel {
     
     func loadPlacesForTrip(trip: TripVO, callback: @escaping (_ places: [PlaceVO]?, _ error: Error?) -> ()) {
         let dataLoader = DataLoader()
-        SwiftSpinner.show("loading places for trips")
+        //SwiftSpinner.show("loading places for trips")
 
         dataLoader.placesForTripRequest(trip: trip) { [weak self] (places, error) in
             if let error = error {
