@@ -14,14 +14,12 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tripsTableView: UITableView!
     @IBOutlet weak var allTripsButton: UIButton!
-    @IBOutlet weak var freeTripsButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var refreshControl = UIRefreshControl()
     
     enum TripsViewControllerState {
         case allTrips
-        case freeTrips
     }
     
     var allTrips: [TripVO] = [] {
@@ -31,14 +29,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             tripsTableView.reloadData()
         }
     }
-    var freeTrips: [TripVO] = [] {
-        didSet {
-            tripsTableView.dataSource = self
-            tripsTableView.delegate = self
-            tripsTableView.reloadData()
-        }
-    }
-    
+
     var state: TripsViewControllerState? {
         didSet {
             if let state = state {
@@ -50,20 +41,9 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         tripsTableView.reloadData()
                     }
                     allTripsButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
-                    freeTripsButton.backgroundColor = UIColor.clear
-                case .freeTrips:
-                    if freeTrips.isEmpty {
-                        loadFreeTrips()
-                    } else {
-                        tripsTableView.reloadData()
-                    }
-                    freeTripsButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
-                    allTripsButton.backgroundColor = UIColor.clear
-                    
                     
                 }
             }
-            //tripsTableView.reloadData()
         }
     }
     
@@ -98,20 +78,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self?.showError(error: error)
             } else {
                 self?.allTrips = TripsModel.instance.allTrips
-                print(self?.allTrips)
-                self?.endAnimation()
-            }
-        }
-    }
-    
-    func loadFreeTrips() {
-        activityIndicator.startAnimating()
-        TripsModel.instance.loadFreeTrips { [weak self] (_, error) in
-            if let error = error {
-                self?.showError(error: error)
-            } else {
-                self?.freeTrips = TripsModel.instance.freeTrips
-                print(self?.freeTrips)
+//                print(self?.allTrips)
                 self?.endAnimation()
             }
         }
@@ -125,18 +92,12 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if state == .allTrips {
             loadAllTrips()
         }
-        if state == .freeTrips {
-            loadFreeTrips()
-        }
     }
     
     // MARK: Actions
     
     @IBAction func allTripsButtonPressed(_ sender: UIButton) {
         state = .allTrips
-    }
-    @IBAction func freeTripsButtonPressed(_ sender: UIButton) {
-        state = .freeTrips
     }
     
     // MARK: TableViewDataSource & TableViewDelegate
@@ -150,9 +111,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if state == .allTrips {
             numberOfRows = allTrips.count
         }
-        if state == .freeTrips {
-            numberOfRows = freeTrips.count
-        }
+        
         return numberOfRows
         
     }
@@ -163,9 +122,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if state == .allTrips {
             trip = allTrips[indexPath.row]
         }
-        if state == .freeTrips {
-            trip = freeTrips[indexPath.row]
-        }
+        
         cell.configureCell(trip: trip)
         return cell
     }
@@ -175,21 +132,9 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let indexPath = tripsTableView.indexPath(for: cell)
         let index = indexPath!.row
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+//
         if state == .allTrips {
             performSegue(withIdentifier: "detailTripSegue", sender: cell)
-        }
-        if state == .freeTrips {
-            let destinationVC = storyboard.instantiateViewController(withIdentifier: "MyTourViewController") as? MyTourViewController
-            let trip = freeTrips[indexPath!.row]
-            if let vc = destinationVC {
-                vc.trip = trip
-                if let duration = trip.duration {
-                    vc.tripDays = duration
-                    vc.buttonHidden = true
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
         }
         
     }

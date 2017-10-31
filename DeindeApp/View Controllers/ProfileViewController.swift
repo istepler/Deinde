@@ -60,13 +60,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         super.viewDidLoad()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if PFUser.current() == nil {
-            
+            StID.instance.strId = "ProfileViewController"
             let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as!ActivationViewController
-            vc.previousVCIdentifier = "ProfileViewController"
-            navigationController?.setViewControllers([vc], animated: true)
-        } else {
-            navigationController?.setViewControllers([self], animated: true)
             
+            navigationController?.setViewControllers([vc], animated: true)
         }
         
         if PFUser.current() != nil {
@@ -85,28 +82,23 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
                             let url = URL(string: stringUrl)
                             
                             if let url = url {
-                                
                                 self.userPhotoImage.sd_setBackgroundImage(with: url, for: .normal)
                             }
-                            
+    
                         }
-                        
-                        
                     }
                 })
             }
-            
         }
-        
         
         self.descriptionTextView.delegate = self
         self.phoneNumberTextField.delegate = self
         self.nameTextField.delegate = self
         
         descriptionTextView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
-        
-        
     }
+    
+  
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -155,9 +147,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     }
     
     override func viewDidLayoutSubviews() {
-        
         userPhotoImage.layer.cornerRadius = userPhotoImage.frame.size.width/2
-        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -207,26 +197,6 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    
-    
-    
-    
-    
-    //    func maskRoundedImage(image: UIImage, radius: Float) -> UIImage {
-    //        var imageView: UIImageView = UIImageView(image: image)
-    //        var layer: CALayer = CALayer()
-    //        layer = imageView.layer
-    //
-    //        layer.masksToBounds = true
-    //        layer.cornerRadius = CGFloat(radius)
-    //
-    //        UIGraphicsBeginImageContext(imageView.bounds.size)
-    //        layer.render(in: UIGraphicsGetCurrentContext()!)
-    //        var roundedImage = UIGraphicsGetImageFromCurrentImageContext()
-    //        UIGraphicsEndImageContext()
-    //
-    //        return roundedImage!
-    //    }
     
     @IBAction func editButton(_ sender: UIButton) {
         nameTextField.inputView?.isUserInteractionEnabled = true

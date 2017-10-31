@@ -11,8 +11,6 @@ import SDWebImage
 import Parse
 import SystemConfiguration
 
-
-
 class MyToursListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var myToursTableView: UITableView!
@@ -35,20 +33,42 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         if PFUser.current() == nil {
+
+            StID.instance.strId = "MyToursListViewController"
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as! ActivationViewController
-            vc.previousVCIdentifier = "MyToursListViewController"
             navigationController?.setViewControllers([vc], animated: true)
             
         }
-        
-        
+       
+        myToursTableView.dataSource = self
+        myToursTableView.delegate = self
+        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, email: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
+            if Reachability.isConnectedToNetwork() == true {
+            UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
+                if let error = error {
+                    self?.showError()
+                } else {
+                    if let trips = trips {
+                        for trip in trips {
+                            self?.userTrips?.append(trip)
+                            print(trip)
+                        }
+                    }
+                }
+                SwiftSpinner.hide()
+            }
+            } else {
+                AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
+
         
         if PFUser.current() != nil {
             
             UserModel.instance.currentUser = UserVO()
             UserModel.instance.currentUser?.id = PFUser.current()?.objectId
             
+
         }
 //        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
         print(UserModel.instance.currentUser)
@@ -86,7 +106,6 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
     }
-
     private func endAnimation() {
         refreshControl.endRefreshing()
         activityIndicator.stopAnimating()
@@ -96,8 +115,6 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
        
         loadUserTrips()
     }
-
-
     // MARK: - TableViewDataSource & TableViewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -124,8 +141,6 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         AlertDialog.showAlert("Неочiкувана помилка", message: "Спробуйте ще раз", viewController: self)
         print("Error while loading data \(error)")
     }
-    
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
