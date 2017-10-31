@@ -48,7 +48,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
             if Reachability.isConnectedToNetwork() == true {
             UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
                 if let error = error {
-                    self?.showError()
+                    self?.showError(error: error)
                 } else {
                     if let trips = trips {
                         for trip in trips {
@@ -79,6 +79,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         myToursTableView.refreshControl = refreshControl
 
     
+    }
     }
     
     override func viewWillAppear(_ animated: Bool) {
