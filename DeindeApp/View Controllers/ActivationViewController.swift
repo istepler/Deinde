@@ -10,74 +10,58 @@ import UIKit
 import SystemConfiguration
 
 class ActivationViewController: UIViewController {
-    @IBOutlet weak var firstCodePartTextField: UITextField!
-    @IBOutlet weak var secondCodePartTextField: UITextField!
-    @IBOutlet weak var thirdCodePartTextField: UITextField!
+
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    var previousVCIdentifier = ""
+    var previousVCIdentifier = StID.instance.strId
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTargets()
-        
-    }
-    
-    
-    func firstPartTextFieldDidChange(_ textField: UITextField) {
-        if firstCodePartTextField.text?.characters.count == 2 {
-            secondCodePartTextField.becomeFirstResponder()
-            if secondCodePartTextField.text?.characters.count == 2 {
-                thirdCodePartTextField.becomeFirstResponder()
-                if thirdCodePartTextField.text?.characters.count == 2 {
-                    self.view.endEditing(true)
-                }
-            }
-        }
-    }
-    
-    func secondPartTextFieldDidChange(_ textField: UITextField) {
-        if secondCodePartTextField.text?.characters.count == 2 {
-            thirdCodePartTextField.becomeFirstResponder()
-            if thirdCodePartTextField.text?.characters.count == 2 {
-                self.view.endEditing(true)
-            }
-        }
-    }
-    
-    func thirdPartTextFieldDidChange(_ textField: UITextField) {
-        if thirdCodePartTextField.text?.characters.count == 2 {
-            self.view.endEditing(true)
-        }
-        
-    }
-    
-    func addTargets() {
-        firstCodePartTextField.addTarget(self, action: #selector(firstPartTextFieldDidChange(_:)), for: .editingChanged)
-        secondCodePartTextField.addTarget(self, action: #selector(secondPartTextFieldDidChange(_:)), for: .editingChanged)
-        thirdCodePartTextField.addTarget(self, action: #selector(thirdPartTextFieldDidChange(_:)), for: .editingChanged)
 
+        if previousVCIdentifier == "MyToursListViewController" {
+            tabBarController?.tabBar.items![2].isEnabled = false
+        } else if previousVCIdentifier == "ProfileViewController" {
+            tabBarController?.tabBar.items![1].isEnabled = false
+        }
+        
     }
+
     
     @IBAction func beginTravelButtonPressed(_ sender: Any) {
         var activationCode = ""
+        var email = ""
         let currentUser = UserVO()
-        if let firstPart = firstCodePartTextField.text, let  secondPart = secondCodePartTextField.text, let thirdPart = thirdCodePartTextField.text {
-            activationCode = firstPart + secondPart + thirdPart
+        if let passwordPart = passwordTextField.text, let emailPart = emailTextField.text {
+            activationCode = passwordPart
+            email = emailPart
+        } else {
+            AlertDialog.showAlert("Error", message: "Enter correct email/password!", viewController: self)
         }
+        
         UserModel.instance.currentUser = currentUser
         UserModel.instance.currentUser?.activationCode = activationCode
+        UserModel.instance.currentUser?.email = email
+     
         UserModel.instance.login { (loggedIn, error) in
             if error != nil {
                 self.showError(error: error!)
             } else {
             UserModel.instance.loggedUser = loggedIn
-                print(loggedIn)
+//                print(loggedIn)
+                self.navigationController?.popViewController(animated: true)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: self.previousVCIdentifier) as! ProfileViewController
-               // self.navigationController?.setViewControllers([vc], animated: true)
-                self.navigationController?.present(vc, animated: true, completion: nil)
+                if self.previousVCIdentifier == "MyToursListViewController" {
+                    let vc = storyboard.instantiateViewController(withIdentifier: self.previousVCIdentifier) as! MyToursListViewController
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.tabBarController?.tabBar.items![2].isEnabled = true
 
-            
+                } else if self.previousVCIdentifier == "ProfileViewController" {
+                    let vc = storyboard.instantiateViewController(withIdentifier: self.previousVCIdentifier) as! ProfileViewController
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.tabBarController?.tabBar.items![1].isEnabled = true
+
+                }
             }
             
         }
@@ -87,11 +71,11 @@ class ActivationViewController: UIViewController {
         view.endEditing(true)
     }
     
+
     func showError(error: Error) {
         AlertDialog.showAlert("Неочiкувана помилка", message: "Спробуйте ще раз", viewController: self)
         print("Error while login \(error)")
     }
-    
-    
+
 }
 

@@ -11,8 +11,6 @@ import SDWebImage
 import Parse
 import SystemConfiguration
 
-
-
 class MyToursListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var myToursTableView: UITableView!
@@ -26,9 +24,11 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         if PFUser.current() == nil {
+
+            StID.instance.strId = "MyToursListViewController"
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as! ActivationViewController
-            vc.previousVCIdentifier = "MyToursListViewController"
             navigationController?.setViewControllers([vc], animated: true)
             
         }
@@ -36,7 +36,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         
         myToursTableView.dataSource = self
         myToursTableView.delegate = self
-        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
+        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, email: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
             if Reachability.isConnectedToNetwork() == true {
             UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
                 if let error = error {
@@ -61,9 +61,6 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
 
-
-
-
     // MARK: - TableViewDataSource & TableViewDelegate
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,8 +82,6 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
     func showError() {
         print("Error while loading data")
     }
-    
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

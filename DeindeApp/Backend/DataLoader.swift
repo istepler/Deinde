@@ -101,6 +101,7 @@ class DataLoader {
                             id:             object.value(forKey: "objectId") as? String,
                             firstName:      object.value(forKey: "firstName") as? String,
                             secondName:     object.value(forKey: "secondName") as? String,
+                            email:          object.value(forKey: "email") as? String,
                             facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
                             details:    object.value(forKey: "details") as? String,
@@ -158,6 +159,7 @@ class DataLoader {
                             id:             object.value(forKey: "objectId") as? String,
                             firstName:      object.value(forKey: "firstName") as? String,
                             secondName:     object.value(forKey: "secondName") as? String,
+                            email:          object.value(forKey: "email") as? String,
                             facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
                             details:    object.value(forKey: "details") as? String,
@@ -203,7 +205,7 @@ class DataLoader {
     }
     
     func userLoginRequest(user: UserVO, callback: @escaping (_ loggedIn: PFUser?, _ error: Error?) ->()) {
-        if let code = user.activationCode, let pass = user.activationCode {
+        if let code = user.email, let pass = user.activationCode {
             PFUser.logInWithUsername(inBackground: code, password: pass) { [weak self] (loggedUser, error) in
                 if error != nil {
                     print("Login error")

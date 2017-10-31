@@ -16,7 +16,7 @@ struct UserVO {
     var id: String?
     var firstName: String?
     var secondName: String?
-    //var email: String?
+    var email: String?
     var facebook: URL?
     var telNumber: String?
     //var avatar: URL?

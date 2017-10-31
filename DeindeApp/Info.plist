@@ -47,10 +47,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow location</string>
 	<key>NSCameraUsageDescription</key>
 	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
 	<key>UIAppFonts</key>

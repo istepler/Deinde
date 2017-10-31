@@ -23,6 +23,7 @@
 		22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */; };
 		293F507B1F45E373005D4A3B /* Alert Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507A1F45E373005D4A3B /* Alert Message.swift */; };
 		293F507D1F45E992005D4A3B /* loading + sheckingForConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507C1F45E992005D4A3B /* loading + sheckingForConnection.swift */; };
+		29D50FA31FA88E1E007C44CE /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D50FA21FA88E1E007C44CE /* StoryboardID.swift */; };
 		350F6CE11F36030400B924F8 /* TripsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350F6CE01F36030400B924F8 /* TripsModel.swift */; };
 		350F6CE31F3604CA00B924F8 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350F6CE21F3604CA00B924F8 /* DataLoader.swift */; };
 		3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B79E1F22AA4900827A98 /* UserVO.swift */; };
@@ -79,6 +80,7 @@
 		2813DDCD1F3A0D32008EC382 /* DeindeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeindeApp.entitlements; sourceTree = "<group>"; };
 		293F507A1F45E373005D4A3B /* Alert Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert Message.swift"; sourceTree = "<group>"; };
 		293F507C1F45E992005D4A3B /* loading + sheckingForConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "loading + sheckingForConnection.swift"; sourceTree = "<group>"; };
+		29D50FA21FA88E1E007C44CE /* StoryboardID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
 		350F6CE01F36030400B924F8 /* TripsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModel.swift; sourceTree = "<group>"; };
 		350F6CE21F3604CA00B924F8 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		3582B79E1F22AA4900827A98 /* UserVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVO.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				350F6CE01F36030400B924F8 /* TripsModel.swift */,
 				359D63DD1F3BCF6C00E1DB26 /* UserModel.swift */,
+				29D50FA21FA88E1E007C44CE /* StoryboardID.swift */,
 			);
 			name = Models;
 			path = "View Controllers";
@@ -377,7 +380,7 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3398483R66;
+						DevelopmentTeam = 7ZBZB7WTZS;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -480,7 +483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -499,6 +502,7 @@
 				3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */,
 				22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */,
 				22D5E0EA1F3741CB004673C4 /* MyTourTableViewCell.swift in Sources */,
+				29D50FA31FA88E1E007C44CE /* StoryboardID.swift in Sources */,
 				22D5E0EC1F3C8185004673C4 /* MyToursListViewController.swift in Sources */,
 				359D63DE1F3BCF6C00E1DB26 /* UserModel.swift in Sources */,
 				22E614211F2A2A47000B7D50 /* RangeSliderTrackLayer.swift in Sources */,
@@ -646,11 +650,11 @@
 			baseConfigurationReference = 934039572AB9FB34940901B6 /* Pods-DeindeApp.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
-				DEVELOPMENT_TEAM = 3398483R66;
+				DEVELOPMENT_TEAM = 7ZBZB7WTZS;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = krit.andrey.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = pasha.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -661,11 +665,11 @@
 			baseConfigurationReference = F482B0F36CB433A3219B78C7 /* Pods-DeindeApp.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
-				DEVELOPMENT_TEAM = 3398483R66;
+				DEVELOPMENT_TEAM = 7ZBZB7WTZS;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = krit.andrey.DeindeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = pasha.DeindeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
