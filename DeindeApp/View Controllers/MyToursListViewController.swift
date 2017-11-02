@@ -42,9 +42,9 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
        
-        myToursTableView.dataSource = self
-        myToursTableView.delegate = self
-        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, email: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
+//        myToursTableView.dataSource = self
+//        myToursTableView.delegate = self
+        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, email: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, password: nil)//temp user authorization
             if Reachability.isConnectedToNetwork() == true {
             UserModel.instance.loadUserTrips { [weak self] ( trips, error) in
                 if let error = error {
@@ -57,40 +57,27 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
                         }
                     }
                 }
-                SwiftSpinner.hide()
             }
             } else {
-                AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
+                AlertDialog.showAlert("Помилка", message: "Перевірте підключення до інтернету", viewController: self)
 
         
         if PFUser.current() != nil {
-            
             UserModel.instance.currentUser = UserVO()
             UserModel.instance.currentUser?.id = PFUser.current()?.objectId
-            
-
         }
-//        UserModel.instance.currentUser = UserVO(id: "HSNBRRV2pO", firstName: nil, secondName: nil, facebook: nil, telNumber: nil, details: nil, avatar: nil, activationCode: nil)//temp user authorization
-        print(UserModel.instance.currentUser)
+                
         refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
         if (userTrips?.isEmpty)! {
             loadUserTrips()
         }
+                
         myToursTableView.refreshControl = refreshControl
-
-    
     }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//                if PFUser.current() == nil {
-//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let vc = storyboard.instantiateViewController(withIdentifier: "ActivationViewController") as! ActivationViewController
-//                    //self.present(vc, animated: false, completion: nil)
-//                    navigationController?.pushViewController(vc, animated: false)
-//                }
-//
         
     }
     
@@ -100,7 +87,7 @@ class MyToursListViewController: UIViewController, UITableViewDelegate, UITableV
             if let error = error {
                 self?.showError(error: error)
             } else {
-                if let trips = trips {
+                if trips != nil {
                     self?.userTrips = UserModel.instance.userTrips
                     self?.endAnimation()
                 }

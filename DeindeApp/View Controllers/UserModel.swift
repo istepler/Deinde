@@ -88,7 +88,7 @@ class UserModel {
                 callback(true, nil)
             } else {
                 callback(false, error)
-                print(error)
+//              print(error)
             }
         }
     }

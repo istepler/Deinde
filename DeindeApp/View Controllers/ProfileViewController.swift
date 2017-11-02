@@ -24,36 +24,36 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet weak var facebookLoginButton: UIButton!
     
     @IBAction func facebookLoginButtonPressed(_ sender: UIButton!) {
-        let loginManager = LoginManager()
-        if AccessToken.current == nil {
-            loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
-                switch loginResult {
-                case .failed(let error):
-                    print(error)
-                case .cancelled:
-                    self.viewDidAppear(true)
-                case .success( _, _, _):
-                    self.facebookLoginButton.alpha = 1.0
-                    let fbUserData = GraphRequestConnection()
-                    fbUserData.add(GraphRequest(graphPath: "/me", parameters: ["fields": "name, picture.type(large), link"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!, apiVersion: GraphAPIVersion.defaultVersion)) { httpResponse, result in
-                        switch result {
-                        case .success(let response):
-                            self.nameTextField.text? = (response.dictionaryValue?["name"] as? String)!
-                            //var link = (response.dictionaryValue?["link"] as? String)!
-                            //var pictureFB = JSON(response.dictionaryValue?["picture"] as Any)
-                            //var pictureFBData = pictureFB["data"].dictionary
-                        //var pictureFBURL = pictureFBData?["url"]?.string
-                        case .failed(let error):
-                            print("Graph Request Failed: \(error)")
-                        }
-                    }
-                    fbUserData.start()
-                }
-            }
-        } else {
-            loginManager.logOut()
-            self.viewDidAppear(true)
-        }
+//        let loginManager = LoginManager()
+//        if AccessToken.current == nil {
+//            loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
+//                switch loginResult {
+//                case .failed(let error):
+//                    print(error)
+//                case .cancelled:
+//                    self.viewDidAppear(true)
+//                case .success( _, _, _):
+//                    self.facebookLoginButton.alpha = 1.0
+//                    let fbUserData = GraphRequestConnection()
+//                    fbUserData.add(GraphRequest(graphPath: "/me", parameters: ["fields": "name, picture.type(large), link"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!, apiVersion: GraphAPIVersion.defaultVersion)) { httpResponse, result in
+//                        switch result {
+//                        case .success(let response):
+//                            self.nameTextField.text? = (response.dictionaryValue?["name"] as? String)!
+//                            //var link = (response.dictionaryValue?["link"] as? String)!
+//                            //var pictureFB = JSON(response.dictionaryValue?["picture"] as Any)
+//                            //var pictureFBData = pictureFB["data"].dictionary
+//                        //var pictureFBURL = pictureFBData?["url"]?.string
+//                        case .failed(let error):
+//                            print("Graph Request Failed: \(error)")
+//                        }
+//                    }
+//                    fbUserData.start()
+//                }
+//            }
+//        } else {
+//            loginManager.logOut()
+//            self.viewDidAppear(true)
+//        }
     }
     
     override func viewDidLoad() {

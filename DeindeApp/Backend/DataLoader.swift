@@ -13,7 +13,7 @@ class DataLoader {
     
     func allTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: false).addAscendingOrder("date")
-        query.findObjectsInBackground { [weak self] (objects, error) in
+        query.findObjectsInBackground { (objects, error) in
             if let error = error {
                 // TODO: handle error
                 callback(nil, error)
@@ -39,7 +39,7 @@ class DataLoader {
     
     func freeTripsRequest(callback: @escaping (_ trips: [TripVO]?, _ error: Error?) -> ()) {
         let query = PFQuery(className: "TripVO").whereKey("freeTrip", equalTo: true)
-        query.findObjectsInBackground { [weak self] (objects, error) in
+        query.findObjectsInBackground { (objects, error) in
             if let error = error {
                 // TODO: handle error
                 callback(nil, error)
@@ -66,7 +66,7 @@ class DataLoader {
         if let tripId = trip.id {
             let tripPointer = PFObject(withoutDataWithClassName: "TripVO", objectId: tripId)
             let query = PFQuery(className: "PlaceVO").whereKey("inTrip", equalTo: tripPointer)
-            query.findObjectsInBackground { [weak self] (objects, error) in
+            query.findObjectsInBackground { (objects, error) in
                 if let error = error {
                     callback(nil, error)
                 } else if let objects = objects {
@@ -92,7 +92,7 @@ class DataLoader {
             let tripObject = PFObject(withoutDataWithClassName: "TripVO", objectId: tripId)
             let relation = tripObject.relation(forKey: "usersOnTrip")
             let query = relation.query()
-            query.findObjectsInBackground { [weak self] (objects, error) in
+            query.findObjectsInBackground { (objects, error) in
                 if let error = error {
                     callback(nil, error)
                 } else if let objects = objects {
@@ -106,7 +106,7 @@ class DataLoader {
                             telNumber:      object.value(forKey: "telNumber") as? String,
                             details:    object.value(forKey: "details") as? String,
                             avatar:         object.value(forKey: "avatar") as? PFFile,
-                            activationCode: nil)
+                            password: nil)
                     }
                     callback(users, nil)
                 }
@@ -119,7 +119,7 @@ class DataLoader {
         if let userId = user.id {
             let userObject = PFObject(withoutDataWithClassName: "User", objectId: userId)
             let query = PFQuery(className: "TripVO").whereKey("usersOnTrip", equalTo: userObject)
-            query.findObjectsInBackground { [weak self] (objects, error) in
+            query.findObjectsInBackground { (objects, error) in
                 if let error = error {
                     callback(nil, error)
                     print(error)
@@ -150,7 +150,7 @@ class DataLoader {
     func userDataRequest(user: UserVO, callback: @escaping (_ user: UserVO?, _ error: Error?) -> ()) {
         if let userId = user.id {
             let query = PFQuery(className: "_User")
-            query.getObjectInBackground(withId: userId) { [weak self] (object, error) in
+            query.getObjectInBackground(withId: userId) { (object, error) in
                 if let error = error {
                     callback(nil, error)
                 } else {
@@ -164,7 +164,7 @@ class DataLoader {
                             telNumber:      object.value(forKey: "telNumber") as? String,
                             details:    object.value(forKey: "details") as? String,
                             avatar:         object.value(forKey: "avatar") as? PFFile,
-                            activationCode:     nil)}
+                            password:     nil)}
                     callback(user, nil)
                     
                 }
@@ -206,8 +206,8 @@ class DataLoader {
     }
     
     func userLoginRequest(user: UserVO, callback: @escaping (_ loggedIn: PFUser?, _ error: Error?) ->()) {
-        if let code = user.email, let pass = user.activationCode {
-            PFUser.logInWithUsername(inBackground: code, password: pass) { [weak self] (loggedUser, error) in
+        if let code = user.email, let pass = user.password {
+            PFUser.logInWithUsername(inBackground: code, password: pass) { (loggedUser, error) in
                 if error != nil {
                     print("Login error")
                     callback(nil, error)

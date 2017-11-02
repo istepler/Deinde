@@ -49,6 +49,11 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Reachability.isConnectedToNetwork() == true {
+            loadAllTrips()
+        } else {
+             AlertDialog.showAlert("Помилка", message: "Не вдається підключитись до сервера, спробуйте знову", viewController: self)
+        }
         refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
         state = .allTrips
         tripsTableView.refreshControl = refreshControl
@@ -67,7 +72,7 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func showError(error: Error) {
-        AlertDialog.showAlert("Неочiкувана помилка", message: "Спробуйте ще раз", viewController: self)
+        AlertDialog.showAlert("Помилка", message: "Не вдається підключитись до сервера, спробуйте знову", viewController: self)
         print("Error while loading data \(error)")
     }
     
@@ -78,7 +83,6 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self?.showError(error: error)
             } else {
                 self?.allTrips = TripsModel.instance.allTrips
-//                print(self?.allTrips)
                 self?.endAnimation()
             }
         }

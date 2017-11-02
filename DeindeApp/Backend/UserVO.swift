@@ -22,7 +22,7 @@ struct UserVO {
     //var avatar: URL?
     var details: String?
     var avatar: PFFile?
-    var activationCode: String?
+    var password: String?
     //var userTours: [TripVO]?
  
     

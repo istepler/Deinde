@@ -81,7 +81,7 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if Reachability.isConnectedToNetwork() == true {
+        if Reachability.isConnectedToNetwork() == true {
         
         refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
        
@@ -120,9 +120,9 @@ class MyTourViewController: UIViewController, GMSMapViewDelegate, UITableViewDel
 
             viewWithMap?.delegate = self
             
-//        } else {
-//            AlertDialog.showAlert("Error", message: "Check your internet connection", viewController: self)
-//        }
+        } else {
+            AlertDialog.showAlert("Помилка", message: "Перевірте підключення до інтернету", viewController: self)
+        }
 
         
     }

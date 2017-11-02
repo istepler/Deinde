@@ -23,7 +23,7 @@
 		22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */; };
 		28019DD41F46CD9A00433211 /* MyTourCotravellersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28019DD31F46CD9A00433211 /* MyTourCotravellersViewController.swift */; };
 		293F507B1F45E373005D4A3B /* Alert Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507A1F45E373005D4A3B /* Alert Message.swift */; };
-		293F507D1F45E992005D4A3B /* loading + sheckingForConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507C1F45E992005D4A3B /* loading + sheckingForConnection.swift */; };
+		293F507D1F45E992005D4A3B /* sheckingForConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507C1F45E992005D4A3B /* sheckingForConnection.swift */; };
 		29D50FA31FA88E1E007C44CE /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D50FA21FA88E1E007C44CE /* StoryboardID.swift */; };
 		350F6CE11F36030400B924F8 /* TripsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350F6CE01F36030400B924F8 /* TripsModel.swift */; };
 		350F6CE31F3604CA00B924F8 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350F6CE21F3604CA00B924F8 /* DataLoader.swift */; };
@@ -32,7 +32,6 @@
 		3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B7A21F22AC2B00827A98 /* PlaceVO.swift */; };
 		3582B7A51F22ADE300827A98 /* PlaceCoordsVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582B7A41F22ADE300827A98 /* PlaceCoordsVO.swift */; };
 		359222331F224F4200C64D6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359222321F224F4200C64D6C /* AppDelegate.swift */; };
-		359222351F224F4200C64D6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359222341F224F4200C64D6C /* ViewController.swift */; };
 		359222381F224F4200C64D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359222361F224F4200C64D6C /* Main.storyboard */; };
 		3592223A1F224F4200C64D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359222391F224F4200C64D6C /* Assets.xcassets */; };
 		3592223D1F224F4200C64D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3592223B1F224F4200C64D6C /* LaunchScreen.storyboard */; };
@@ -81,7 +80,7 @@
 		28019DD31F46CD9A00433211 /* MyTourCotravellersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTourCotravellersViewController.swift; sourceTree = "<group>"; };
 		2813DDCD1F3A0D32008EC382 /* DeindeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeindeApp.entitlements; sourceTree = "<group>"; };
 		293F507A1F45E373005D4A3B /* Alert Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert Message.swift"; sourceTree = "<group>"; };
-		293F507C1F45E992005D4A3B /* loading + sheckingForConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "loading + sheckingForConnection.swift"; sourceTree = "<group>"; };
+		293F507C1F45E992005D4A3B /* sheckingForConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sheckingForConnection.swift; sourceTree = "<group>"; };
 		29D50FA21FA88E1E007C44CE /* StoryboardID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
 		350F6CE01F36030400B924F8 /* TripsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsModel.swift; sourceTree = "<group>"; };
 		350F6CE21F3604CA00B924F8 /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 		3582B7A41F22ADE300827A98 /* PlaceCoordsVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCoordsVO.swift; sourceTree = "<group>"; };
 		3592222F1F224F4200C64D6C /* DeindeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeindeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359222321F224F4200C64D6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = DeindeApp/AppDelegate.swift; sourceTree = "<group>"; };
-		359222341F224F4200C64D6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		359222371F224F4200C64D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		359222391F224F4200C64D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = DeindeApp/Assets.xcassets; sourceTree = "<group>"; };
 		3592223C1F224F4200C64D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -221,7 +219,7 @@
 		3582B7981F22A1FF00827A98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				293F507C1F45E992005D4A3B /* loading + sheckingForConnection.swift */,
+				293F507C1F45E992005D4A3B /* sheckingForConnection.swift */,
 				293F507A1F45E373005D4A3B /* Alert Message.swift */,
 				C147BCCB1F3254CD00A17760 /* Fonts */,
 				359222321F224F4200C64D6C /* AppDelegate.swift */,
@@ -251,7 +249,6 @@
 				C147BCF01F325FF600A17760 /* ProfileViewController */,
 				35BC4F5B1F2E77190039749B /* TripsViewController */,
 				35E586671F45671800952C41 /* ActivationViewController */,
-				359222341F224F4200C64D6C /* ViewController.swift */,
 				35BC4F5E1F2E93130039749B /* DetailWebViewController.swift */,
 				22963F1B1F23CF25002E6A64 /* PlaceDetailsViewController.swift */,
 				22963F161F23CD7C002E6A64 /* Map */,
@@ -383,7 +380,7 @@
 				TargetAttributes = {
 					3592222E1F224F4200C64D6C = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3398483R66;
+						DevelopmentTeam = 7ZBZB7WTZS;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -512,7 +509,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -523,7 +520,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22963F101F23B665002E6A64 /* MyTourViewController.swift in Sources */,
-				359222351F224F4200C64D6C /* ViewController.swift in Sources */,
 				35E586691F45675200952C41 /* ActivationViewController.swift in Sources */,
 				350F6CE31F3604CA00B924F8 /* DataLoader.swift in Sources */,
 				22963F181F23CD9F002E6A64 /* MapMarker.swift in Sources */,
@@ -540,7 +536,7 @@
 				359222331F224F4200C64D6C /* AppDelegate.swift in Sources */,
 				C147BCF21F32606C00A17760 /* ProfileViewController.swift in Sources */,
 				293F507B1F45E373005D4A3B /* Alert Message.swift in Sources */,
-				293F507D1F45E992005D4A3B /* loading + sheckingForConnection.swift in Sources */,
+				293F507D1F45E992005D4A3B /* sheckingForConnection.swift in Sources */,
 				2278D9411F45890D00C7064B /* TimeThumbView.swift in Sources */,
 				22E6141D1F2A2A38000B7D50 /* RangeSlider.swift in Sources */,
 				3582B7A31F22AC2B00827A98 /* PlaceVO.swift in Sources */,
@@ -682,7 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
-				DEVELOPMENT_TEAM = 3398483R66;
+				DEVELOPMENT_TEAM = 7ZBZB7WTZS;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -700,7 +696,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DeindeApp/DeindeApp.entitlements;
-				DEVELOPMENT_TEAM = 3398483R66;
+				DEVELOPMENT_TEAM = 7ZBZB7WTZS;
 				INFOPLIST_FILE = DeindeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

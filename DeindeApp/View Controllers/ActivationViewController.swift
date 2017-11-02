@@ -29,26 +29,27 @@ class ActivationViewController: UIViewController {
 
     
     @IBAction func beginTravelButtonPressed(_ sender: Any) {
-        var activationCode = ""
+        var usrPassword = ""
         var email = ""
         let currentUser = UserVO()
         if let passwordPart = passwordTextField.text, let emailPart = emailTextField.text {
-            activationCode = passwordPart
+            usrPassword = passwordPart
             email = emailPart
-        } else {
-            AlertDialog.showAlert("Error", message: "Enter correct email/password!", viewController: self)
         }
         
         UserModel.instance.currentUser = currentUser
-        UserModel.instance.currentUser?.activationCode = activationCode
+        UserModel.instance.currentUser?.password = usrPassword
         UserModel.instance.currentUser?.email = email
      
         UserModel.instance.login { (loggedIn, error) in
             if error != nil {
+                if usrPassword == "" || email == "" {
+                    AlertDialog.showAlert("Помилка", message: "Ви не ввели всі потрібні поля!", viewController: self)
+                }
                 self.showError(error: error!)
             } else {
+                
             UserModel.instance.loggedUser = loggedIn
-//                print(loggedIn)
                 self.navigationController?.popViewController(animated: true)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 if self.previousVCIdentifier == "MyToursListViewController" {
@@ -60,7 +61,6 @@ class ActivationViewController: UIViewController {
                     let vc = storyboard.instantiateViewController(withIdentifier: self.previousVCIdentifier) as! ProfileViewController
                     self.navigationController?.pushViewController(vc, animated: true)
                     self.tabBarController?.tabBar.items![1].isEnabled = true
-
                 }
             }
             
@@ -70,10 +70,9 @@ class ActivationViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
 
     func showError(error: Error) {
-        AlertDialog.showAlert("Неочiкувана помилка", message: "Спробуйте ще раз", viewController: self)
+    AlertDialog.showAlert("Помилка", message: "Користувача не знайдено, перевірте введені дані!", viewController: self)
         print("Error while login \(error)")
     }
 
