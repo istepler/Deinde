@@ -22,6 +22,7 @@
 		22E614231F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614221F2A3B04000B7D50 /* RangeSliderDayMarkerLayer.swift */; };
 		22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */; };
 		28019DD41F46CD9A00433211 /* MyTourCotravellersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28019DD31F46CD9A00433211 /* MyTourCotravellersViewController.swift */; };
+		29244A771FABCC9E001E03A7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29244A761FABCC9E001E03A7 /* RegistrationViewController.swift */; };
 		293F507B1F45E373005D4A3B /* Alert Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507A1F45E373005D4A3B /* Alert Message.swift */; };
 		293F507D1F45E992005D4A3B /* sheckingForConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293F507C1F45E992005D4A3B /* sheckingForConnection.swift */; };
 		29D50FA31FA88E1E007C44CE /* StoryboardID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D50FA21FA88E1E007C44CE /* StoryboardID.swift */; };
@@ -79,6 +80,7 @@
 		22E614241F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderDayMarkerColors.swift; sourceTree = "<group>"; };
 		28019DD31F46CD9A00433211 /* MyTourCotravellersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTourCotravellersViewController.swift; sourceTree = "<group>"; };
 		2813DDCD1F3A0D32008EC382 /* DeindeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeindeApp.entitlements; sourceTree = "<group>"; };
+		29244A761FABCC9E001E03A7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		293F507A1F45E373005D4A3B /* Alert Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert Message.swift"; sourceTree = "<group>"; };
 		293F507C1F45E992005D4A3B /* sheckingForConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sheckingForConnection.swift; sourceTree = "<group>"; };
 		29D50FA21FA88E1E007C44CE /* StoryboardID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardID.swift; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 			path = RangeSlider;
 			sourceTree = "<group>";
 		};
+		29244A751FABCC7C001E03A7 /* Registration VC */ = {
+			isa = PBXGroup;
+			children = (
+				29244A761FABCC9E001E03A7 /* RegistrationViewController.swift */,
+			);
+			name = "Registration VC";
+			sourceTree = "<group>";
+		};
 		2FB406D5F3255BC366291689 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +253,7 @@
 		3582B79B1F22A71900827A98 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29244A751FABCC7C001E03A7 /* Registration VC */,
 				22D5E0ED1F3C8529004673C4 /* MyToursListViewController */,
 				22D5E0E81F37416C004673C4 /* MyTourViewController */,
 				350F6CE41F361CA600B924F8 /* LoadingViewController */,
@@ -527,6 +538,7 @@
 				28019DD41F46CD9A00433211 /* MyTourCotravellersViewController.swift in Sources */,
 				3582B79F1F22AA4900827A98 /* UserVO.swift in Sources */,
 				22E614251F2A5652000B7D50 /* RangeSliderDayMarkerColors.swift in Sources */,
+				29244A771FABCC9E001E03A7 /* RegistrationViewController.swift in Sources */,
 				22D5E0EA1F3741CB004673C4 /* MyTourTableViewCell.swift in Sources */,
 				29D50FA31FA88E1E007C44CE /* StoryboardID.swift in Sources */,
 				22D5E0EC1F3C8185004673C4 /* MyToursListViewController.swift in Sources */,

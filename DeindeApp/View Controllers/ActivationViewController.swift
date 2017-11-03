@@ -13,6 +13,11 @@ class ActivationViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var regButton: UIButton! {
+        didSet{
+            regButton.layer.cornerRadius = 15
+        }
+    }
     
     var previousVCIdentifier = StID.instance.strId
     
@@ -27,6 +32,9 @@ class ActivationViewController: UIViewController {
         
     }
 
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        
+    }
     
     @IBAction func beginTravelButtonPressed(_ sender: Any) {
         var usrPassword = ""

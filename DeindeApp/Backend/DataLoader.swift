@@ -160,7 +160,7 @@ class DataLoader {
                             firstName:      object.value(forKey: "firstName") as? String,
                             secondName:     object.value(forKey: "secondName") as? String,
                             email:          object.value(forKey: "email") as? String,
-                            facebook:       URL(string:((object.value(forKey: "facebook") as! String))),
+                            facebook:       URL(string:((object.value(forKey: "facebook") as? String ?? ""))),
                             telNumber:      object.value(forKey: "telNumber") as? String,
                             details:    object.value(forKey: "details") as? String,
                             avatar:         object.value(forKey: "avatar") as? PFFile,
@@ -219,7 +219,30 @@ class DataLoader {
                 }
             }
         }
-        
-        
     }
+
+    func userRegisterRequest(email: String, password: String, firstName: String, secondName: String) {
+        let user = PFUser()
+        user.username = email
+        user.password = password
+        user.email = email
+        user["firstName"] = firstName
+        user["secondName"] = secondName
+        
+        // other fields can be set just like with PFObject
+
+        user.signUpInBackground { (signedUp, error) in
+            if let error = error {
+                print(error)
+            } else {
+                print("Юзерa створено")
+            }
+        }
+    }
+    
+    
+    
+
+
+
 }

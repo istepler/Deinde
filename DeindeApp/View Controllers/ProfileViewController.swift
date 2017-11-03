@@ -21,7 +21,11 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var userPhotoImage: UIButton!
-    @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var facebookLoginButton: UIButton! {
+        didSet{
+            facebookLoginButton.isEnabled = false
+        }
+    }
     
     @IBAction func facebookLoginButtonPressed(_ sender: UIButton!) {
 //        let loginManager = LoginManager()
@@ -75,7 +79,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate, UITextFieldDe
                         self.showError(error: error)
                     } else {
                         self.descriptionTextView.text = UserModel.instance.currentUser?.details
-                        self.nameTextField.text = UserModel.instance.currentUser?.firstName
+                        self.nameTextField.text = "\(UserModel.instance.currentUser?.firstName! ?? "Ім'я") \(UserModel.instance.currentUser?.secondName! ?? "Прізвище")"
                         self.phoneNumberTextField.text = UserModel.instance.currentUser?.telNumber
                         self.userPhotoImage.sd_setShowActivityIndicatorView(true)
                         if let stringUrl = UserModel.instance.currentUser?.avatar?.url {

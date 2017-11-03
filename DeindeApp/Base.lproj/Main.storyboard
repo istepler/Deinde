@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="95f-nR-seq">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
         <array key="ProximaNova-Bold.otf">
             <string>ProximaNova-Bold</string>
         </array>
-        <array key="ProximaNova-Regular.otf">
+        <array key="ProximaNova-Reg.otf">
             <string>ProximaNova-Regular</string>
         </array>
     </customFonts>
@@ -303,7 +303,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjd-Yn-cXW">
-                                        <rect key="frame" x="10" y="18" width="394" height="28"/>
+                                        <rect key="frame" x="10" y="16.666666666666671" width="394" height="29.333333333333329"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
                                         <color key="textColor" cyan="0.0" magenta="0.0001772865653" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -447,13 +447,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BJ-KG-7gi">
-                                        <rect key="frame" x="30" y="17" width="354" height="28"/>
+                                        <rect key="frame" x="30" y="15.666666666666668" width="354" height="29.333333333333332"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
                                         <color key="textColor" cyan="0.0" magenta="0.0001772865653" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWK-5A-hWZ">
-                                        <rect key="frame" x="0.0" y="16" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="15.333333333333336" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="5F2-rm-Iq6"/>
                                             <constraint firstAttribute="width" constant="30" id="wXi-I1-xyN"/>
@@ -836,7 +836,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="347.66666666666669"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundProfile" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-Vo-HXf">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="347.66666666666669"/>
+                                                <rect key="frame" x="0.0" y="-20" width="414" height="368"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deinde_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="aHz-C6-1Ww">
                                                 <rect key="frame" x="162.66666666666666" y="17" width="89" height="38"/>
@@ -846,10 +846,10 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bGr-de-SxO">
-                                                <rect key="frame" x="122.66666666666666" y="86" width="170.33333333333334" height="232.66666666666669"/>
+                                                <rect key="frame" x="125" y="86" width="165.66666666666669" height="232.66666666666669"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJb-bC-R19">
-                                                        <rect key="frame" x="19.666666666666671" y="0.0" width="130.99999999999994" height="130.66666666666666"/>
+                                                        <rect key="frame" x="82.666666666666657" y="0.0" width="0.33333333333334281" height="0.0"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="LJb-bC-R19" secondAttribute="height" multiplier="1:1" id="Tky-Lr-e2x"/>
                                                         </constraints>
@@ -858,14 +858,20 @@
                                                             <action selector="avatarButton:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="Yzx-gW-bkk"/>
                                                         </connections>
                                                     </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Esq-wd-jSd">
+                                                        <rect key="frame" x="10.666666666666657" y="6" width="144.33333333333334" height="132.66666666666666"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Esq-wd-jSd" secondAttribute="height" multiplier="125:122" constant="8.7295081967213264" id="QRq-vo-aRT"/>
+                                                        </constraints>
+                                                    </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sh9-ou-wXG">
-                                                        <rect key="frame" x="0.0" y="136.66666666666669" width="170.33333333333331" height="96.000000000000028"/>
+                                                        <rect key="frame" x="0.0" y="144.66666666666669" width="165.66666666666669" height="88.000000000000028"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-Lm-B7j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="170.33333333333331" height="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="165.66666666666669" height="18.000000000000028"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Як Вас звати ?" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-7P-8Gb">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="157.33333333333331" height="26"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="152.66666666666669" height="18.000000000000028"/>
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="22"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -876,7 +882,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-OR-Ftk">
-                                                                        <rect key="frame" x="157.33333333333331" y="0.0" width="13" height="26"/>
+                                                                        <rect key="frame" x="152.66666666666669" y="0.0" width="13" height="18.000000000000028"/>
                                                                         <state key="normal" image="pen"/>
                                                                         <connections>
                                                                             <action selector="editButton:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="njo-gA-0RI"/>
@@ -885,7 +891,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuA-NV-AKD">
-                                                                <rect key="frame" x="0.0" y="56.000000000000028" width="170.33333333333331" height="40"/>
+                                                                <rect key="frame" x="0.0" y="48.000000000000028" width="165.66666666666669" height="40"/>
                                                                 <state key="normal" image="fbLogo"/>
                                                                 <connections>
                                                                     <action selector="loginButtonClicked:" destination="PRQ-KZ-xGM" eventType="touchUpInside" id="gnn-gC-4ow"/>
@@ -895,12 +901,6 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esq-wd-jSd">
-                                                <rect key="frame" x="116" y="62" width="144.5" height="132.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Esq-wd-jSd" secondAttribute="height" multiplier="125:122" constant="8.7295081967213264" id="QRq-vo-aRT"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94708508253097534" green="0.25140425562858582" blue="0.16514763236045837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -911,8 +911,8 @@
                                             <constraint firstAttribute="trailing" secondItem="OhV-Vo-HXf" secondAttribute="trailing" id="StB-me-c1j"/>
                                             <constraint firstItem="aHz-C6-1Ww" firstAttribute="centerX" secondItem="TQr-9s-1z3" secondAttribute="centerX" id="TDV-cy-7G1"/>
                                             <constraint firstItem="bGr-de-SxO" firstAttribute="centerX" secondItem="TQr-9s-1z3" secondAttribute="centerX" id="amZ-oS-qps"/>
-                                            <constraint firstItem="OhV-Vo-HXf" firstAttribute="top" secondItem="TQr-9s-1z3" secondAttribute="top" id="d7d-f2-DdP"/>
                                             <constraint firstAttribute="bottom" secondItem="bGr-de-SxO" secondAttribute="bottom" constant="29" id="isK-dn-pvH"/>
+                                            <constraint firstItem="OhV-Vo-HXf" firstAttribute="top" secondItem="TQr-9s-1z3" secondAttribute="top" constant="-20" id="raQ-2B-dW9"/>
                                             <constraint firstItem="OhV-Vo-HXf" firstAttribute="leading" secondItem="TQr-9s-1z3" secondAttribute="leading" id="yZ5-zc-EWv"/>
                                         </constraints>
                                     </view>
@@ -937,14 +937,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-Xv-SJE">
-                                                <rect key="frame" x="18" y="169.66666666666669" width="378" height="1"/>
+                                                <rect key="frame" x="18" y="170.66666666666669" width="378" height="1"/>
                                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="pHE-yF-F81"/>
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Мобільний номер телефону" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nY8-n7-PcS">
-                                                <rect key="frame" x="18" y="134.66666666666663" width="378" height="21"/>
+                                                <rect key="frame" x="18" y="134.66666666666663" width="378" height="22.000000000000057"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -979,7 +979,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="x9O-dD-7na" firstAttribute="top" secondItem="Snt-HC-us4" secondAttribute="top" id="4gl-vD-C95"/>
                             <constraint firstItem="qCe-cG-GeQ" firstAttribute="leading" secondItem="Snt-HC-us4" secondAttribute="leading" id="BwH-xV-sFL"/>
                             <constraint firstItem="qCe-cG-GeQ" firstAttribute="top" secondItem="Snt-HC-us4" secondAttribute="top" id="C7y-m8-Rwp"/>
                             <constraint firstAttribute="trailing" secondItem="qCe-cG-GeQ" secondAttribute="trailing" id="DZg-s4-1dv"/>
@@ -1004,7 +1003,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZB-ar-cq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3191" y="1057"/>
+            <point key="canvasLocation" x="3189.8550724637685" y="1055.7065217391305"/>
         </scene>
         <!--My Tour Cotravellers View Controller-->
         <scene sceneID="uLS-kE-bO9">
@@ -1216,7 +1215,7 @@
                                     <constraint firstAttribute="height" constant="60" id="od7-gN-H1u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="22"/>
-                                <state key="normal" title="ПОЧАТИ ПОДОРОЖУВАТИ"/>
+                                <state key="normal" title="ПОЧАТИ ПОДОРОЖУВАТИ "/>
                                 <connections>
                                     <action selector="beginTravelButtonPressed:" destination="g7b-MZ-ZAa" eventType="touchUpInside" id="jxS-OY-za0"/>
                                 </connections>
@@ -1224,7 +1223,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pcW-Hx-hhj">
                                 <rect key="frame" x="70" y="254" width="274" height="28"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введіть email" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="WTH-jW-1py">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введіть логін" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="WTH-jW-1py">
                                         <rect key="frame" x="0.0" y="0.0" width="274" height="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1265,6 +1264,28 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTP-7Z-Msw">
+                                <rect key="frame" x="107.66666666666669" y="621" width="199" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="6Bx-Sk-ds8"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" Я новий користувач ">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="20" name=".SFNSDisplay"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="g7b-MZ-ZAa" eventType="touchUpInside" id="ZHF-c9-on1"/>
+                                    <segue destination="bGN-s2-BvZ" kind="show" id="sYg-ul-eQo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9119997621" green="0.18182963129999999" blue="0.14378869529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1280,18 +1301,21 @@
                             <constraint firstItem="omB-jP-zS9" firstAttribute="top" secondItem="kPv-mI-Mu3" secondAttribute="bottom" id="djE-I6-PXN"/>
                             <constraint firstItem="pcW-Hx-hhj" firstAttribute="leading" secondItem="cfV-MR-Cj0" secondAttribute="leadingMargin" constant="50" id="g2P-v8-cpA"/>
                             <constraint firstItem="cpx-tz-aeZ" firstAttribute="centerX" secondItem="cfV-MR-Cj0" secondAttribute="centerX" id="gjh-fO-vfa"/>
+                            <constraint firstItem="qTP-7Z-Msw" firstAttribute="centerX" secondItem="cfV-MR-Cj0" secondAttribute="centerX" id="iSk-6q-I1O"/>
                             <constraint firstItem="pcW-Hx-hhj" firstAttribute="centerX" secondItem="cfV-MR-Cj0" secondAttribute="centerX" id="p6S-wd-gbF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pcW-Hx-hhj" secondAttribute="trailing" constant="50" id="p88-OP-4HM"/>
+                            <constraint firstItem="kPv-mI-Mu3" firstAttribute="top" secondItem="qTP-7Z-Msw" secondAttribute="bottom" constant="8" id="wRN-5N-kec"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="WTH-jW-1py" id="hWn-o9-hns"/>
                         <outlet property="passwordTextField" destination="Xk7-i4-Z1B" id="DOC-NR-WsK"/>
+                        <outlet property="regButton" destination="qTP-7Z-Msw" id="M7I-7b-aB5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7uk-sn-qoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4023" y="-1149"/>
+            <point key="canvasLocation" x="4021.739130434783" y="-1149.4565217391305"/>
         </scene>
         <!--Detail Web View Controller-->
         <scene sceneID="jEu-f3-aiQ">
@@ -1313,13 +1337,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suntrip Camp на березі моря!  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIj-CD-d7a">
-                                        <rect key="frame" x="40" y="17" width="344" height="28"/>
+                                        <rect key="frame" x="40" y="15.666666666666668" width="344" height="29.333333333333332"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="24"/>
                                         <color key="textColor" cyan="0.0" magenta="0.0001772865653" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Md-ZG-0Mh">
-                                        <rect key="frame" x="0.0" y="16" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="15.333333333333336" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="fVk-0F-e21"/>
                                             <constraint firstAttribute="height" constant="30" id="k4z-kW-eg4"/>
@@ -1384,6 +1408,157 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2l-NV-zpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3190" y="1135"/>
+        </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="x3h-jO-RmA">
+            <objects>
+                <viewController storyboardIdentifier="RegistrationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bGN-s2-BvZ" customClass="RegistrationViewController" customModule="DeindeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iqa-In-hnC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lpt-AP-dJX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wIn-n3-2Kg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deinde_logo" translatesAutoresizingMaskIntoConstraints="NO" id="yQR-1k-mPw">
+                                <rect key="frame" x="71" y="30" width="271" height="174"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="367" placeholderIntrinsicHeight="60" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdt-S0-lBw">
+                                <rect key="frame" x="0.0" y="676" width="414" height="60"/>
+                                <color key="backgroundColor" red="0.36146518589999999" green="0.75026172400000002" blue="0.14854839440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aRp-eJ-qvC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="22"/>
+                                <state key="normal" title="Зареєструватись!"/>
+                                <connections>
+                                    <action selector="registerUser:" destination="bGN-s2-BvZ" eventType="touchUpInside" id="UVe-un-wuQ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="cyi-I8-Ttg">
+                                <rect key="frame" x="70" y="224" width="274" height="28"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введіть ім'я" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="J1a-YJ-CBx">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="049-EA-DDV">
+                                        <rect key="frame" x="0.0" y="26" width="274" height="2"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="1" green="0.99699645039999996" blue="0.98402655559999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="dej-hL-vhd"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ciW-V0-Cgz">
+                                <rect key="frame" x="70" y="267" width="274" height="28"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введіть прізвище" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-40-TFS">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xe-JM-NO7">
+                                        <rect key="frame" x="0.0" y="26" width="274" height="2"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="1" green="0.99699645039999996" blue="0.98402655559999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="g2O-jL-n2U"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kfh-pV-tsP">
+                                <rect key="frame" x="70" y="306" width="274" height="28"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введіть email" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="z0T-zJ-cMS">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JO2-fv-DaE">
+                                        <rect key="frame" x="0.0" y="26" width="274" height="2"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="1" green="0.99699645039999996" blue="0.98402655559999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="PNw-cU-wjr"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="509-8e-M7c">
+                                <rect key="frame" x="70" y="345" width="274" height="28"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введіть пароль" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="67S-e4-BdY">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Czx-vV-y4w">
+                                        <rect key="frame" x="0.0" y="26" width="274" height="2"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="1" green="0.99699645039999996" blue="0.98402655559999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="J16-ZZ-ZLz"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9119997621" green="0.18182963129999999" blue="0.14378869529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="509-8e-M7c" firstAttribute="top" secondItem="z0T-zJ-cMS" secondAttribute="bottom" constant="15" id="2ao-Ml-crp"/>
+                            <constraint firstItem="cyi-I8-Ttg" firstAttribute="top" secondItem="yQR-1k-mPw" secondAttribute="bottom" constant="20" id="3Xg-vF-YyU"/>
+                            <constraint firstItem="yQR-1k-mPw" firstAttribute="centerX" secondItem="wIn-n3-2Kg" secondAttribute="centerX" id="4fX-5a-iSE"/>
+                            <constraint firstAttribute="trailing" secondItem="Zdt-S0-lBw" secondAttribute="trailing" id="58P-5H-Tnl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ciW-V0-Cgz" secondAttribute="trailing" constant="50" id="6RC-cq-mc1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kfh-pV-tsP" secondAttribute="trailing" constant="50" id="8Wo-VS-dj5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="509-8e-M7c" secondAttribute="trailing" constant="50" id="9pj-fx-C5h"/>
+                            <constraint firstItem="Zdt-S0-lBw" firstAttribute="leading" secondItem="wIn-n3-2Kg" secondAttribute="leading" id="A0a-0a-Q0d"/>
+                            <constraint firstItem="ciW-V0-Cgz" firstAttribute="leading" secondItem="wIn-n3-2Kg" secondAttribute="leadingMargin" constant="50" id="Bow-s6-U7i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cyi-I8-Ttg" secondAttribute="trailing" constant="50" id="DgR-Aw-4S8"/>
+                            <constraint firstItem="z0T-zJ-cMS" firstAttribute="top" secondItem="8Sc-40-TFS" secondAttribute="bottom" constant="15" id="Hpn-1O-Bvz"/>
+                            <constraint firstItem="cyi-I8-Ttg" firstAttribute="leading" secondItem="wIn-n3-2Kg" secondAttribute="leadingMargin" constant="50" id="IYJ-wg-WjG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yQR-1k-mPw" secondAttribute="trailing" constant="52" id="O77-LN-OKC"/>
+                            <constraint firstItem="yQR-1k-mPw" firstAttribute="top" secondItem="Iqa-In-hnC" secondAttribute="bottom" constant="10" id="Py6-7x-dbO"/>
+                            <constraint firstItem="kfh-pV-tsP" firstAttribute="leading" secondItem="wIn-n3-2Kg" secondAttribute="leadingMargin" constant="50" id="WmX-xH-qBH"/>
+                            <constraint firstItem="509-8e-M7c" firstAttribute="leading" secondItem="wIn-n3-2Kg" secondAttribute="leadingMargin" constant="50" id="aGM-ja-voS"/>
+                            <constraint firstItem="ciW-V0-Cgz" firstAttribute="top" secondItem="cyi-I8-Ttg" secondAttribute="bottom" constant="15" id="knY-jy-uFY"/>
+                            <constraint firstItem="Lpt-AP-dJX" firstAttribute="top" secondItem="Zdt-S0-lBw" secondAttribute="bottom" id="rg1-yw-Jqo"/>
+                            <constraint firstItem="cyi-I8-Ttg" firstAttribute="centerX" secondItem="wIn-n3-2Kg" secondAttribute="centerX" id="u47-1Q-yX9"/>
+                            <constraint firstItem="yQR-1k-mPw" firstAttribute="leading" secondItem="wIn-n3-2Kg" secondAttribute="leadingMargin" constant="51" id="yNt-1D-TDB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="z0T-zJ-cMS" id="gu2-XE-hmG"/>
+                        <outlet property="firstNameTextField" destination="J1a-YJ-CBx" id="zQ8-3k-vb2"/>
+                        <outlet property="lastNameTextField" destination="8Sc-40-TFS" id="wFM-fd-HbT"/>
+                        <outlet property="passwordTextField" destination="67S-e4-BdY" id="03G-4J-bVW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="prz-C0-0sI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4909" y="-1149"/>
         </scene>
     </scenes>
     <resources>

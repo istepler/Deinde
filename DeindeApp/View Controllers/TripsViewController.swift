@@ -41,7 +41,6 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         tripsTableView.reloadData()
                     }
                     allTripsButton.backgroundColor = UIColor(colorLiteralRed: 233/255, green: 46/255, blue: 37/255, alpha: 1)
-                    
                 }
             }
         }
@@ -50,10 +49,11 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         if Reachability.isConnectedToNetwork() == true {
-            loadAllTrips()
+            state = .allTrips
         } else {
              AlertDialog.showAlert("Помилка", message: "Не вдається підключитись до сервера, спробуйте знову", viewController: self)
         }
+        
         refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
         state = .allTrips
         tripsTableView.refreshControl = refreshControl
